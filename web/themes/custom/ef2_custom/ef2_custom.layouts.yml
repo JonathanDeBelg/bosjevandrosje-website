@@ -1,0 +1,15 @@
+content_page:
+  label: Contentpagina
+  category: Page
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/layout/page/content-page
+  regions:
+    header_content:
+      label: Header
+    body_content:
+      label: Body
+    aside_content:
+      label: Sidebar
+    banner_content:
+      label: Banner

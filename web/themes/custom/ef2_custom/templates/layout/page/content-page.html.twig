@@ -1,0 +1,53 @@
+{#
+/**
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+**/
+#}
+
+{% set classes = [
+    'layout',
+    'content-page'
+] %}
+
+
+{% if content %}
+    <div{{ attributes.addClass(classes) }}>
+        {% if content.header_content|render %}
+            <div class="header-wrapper">
+                {{ content.header_content }}
+            </div>
+        {% endif %}
+
+        {% if content.body_content|render %}
+            <div class="body-wrapper container">
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ content.body_content }}
+                    </div>
+
+                    {% if content.aside_content|render %}
+                        <div class="col-lg-3 offset-lg-1 col-md-4">
+                            <aside class="section-aside">
+                                {{ content.aside_content }}
+                            </aside>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if content.banner|render %}
+            <section class="section-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            {{ content.banner_content }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    </div>
+{% endif %}

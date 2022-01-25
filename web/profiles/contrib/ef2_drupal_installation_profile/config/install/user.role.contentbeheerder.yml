@@ -1,0 +1,56 @@
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DH1bp3SyBxGnw1Ax8kjRQc8cMyvICk7CtSwHl0fX0Vw
+id: contentbeheerder
+label: Contentbeheerder
+weight: -8
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access own webform configuration'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'administer menu'
+  - 'administer webform element access'
+  - 'change own username'
+  - 'clone node entity'
+  - 'clone paragraph entity'
+  - 'clone taxonomy_term entity'
+  - 'clone webform entity'
+  - 'create basic_page content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete any basic_page content'
+  - 'delete any webform submission'
+  - 'delete basic_page revisions'
+  - 'delete own basic_page content'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'delete terms in tags'
+  - 'edit any basic_page content'
+  - 'edit any webform'
+  - 'edit any webform submission'
+  - 'edit own basic_page content'
+  - 'edit own webform'
+  - 'edit terms in tags'
+  - 'revert basic_page revisions'
+  - 'translate interface'
+  - 'use menu link attributes'
+  - 'use text format full_html'
+  - 'use yoast seo'
+  - 'view all revisions'
+  - 'view any webform submission'
+  - 'view basic_page revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'

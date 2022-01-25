@@ -1,0 +1,7 @@
+name: Bosje van drosje Webform Handler
+type: module
+description: Recurring payments handler
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - 'webform:webform'

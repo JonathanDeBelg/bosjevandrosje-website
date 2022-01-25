@@ -1,0 +1,97 @@
+.page-node-type-basic-page {
+    header.secondary-header {
+        padding-bottom: 100px;
+        padding-top: 100px;
+    }
+
+    .field--name-field-contentblokken {
+        h3, h2, h4 {
+            color: $color-white;
+        }
+
+        > .field__item {
+            background-color: $color-main;
+            margin: 50px 0;
+            
+            .paragraph {
+                display: grid;
+                grid-template-columns: 3fr 7fr;
+
+                @include media-breakpoint-down(md) {
+                    grid-template-columns: 4fr 6fr;
+                }
+                
+                @include media-breakpoint-down(sm) {
+                    grid-template-columns: 1fr;
+                }
+             }
+
+            &:nth-child(odd) {
+                padding-bottom: 30px;
+
+                .field--name-field-textbox-image {
+                    img {
+                        margin-top: -30px;
+                        margin-left: -20px;
+                    }
+                }
+
+                .field--name-field-textbox {
+                    padding-right: 30px;
+                    padding-top: 30px;
+                }
+            }
+
+            &:nth-child(even) {
+                padding-top: 50px;
+                
+                .paragraph {
+                    grid-template-columns: 7fr 3fr;
+
+                    @include media-breakpoint-down(md) {
+                        grid-template-columns: 6fr 4fr;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                .field--name-field-textbox-image {
+                    order: 2;
+
+                    img {
+                        margin-top: -80px;
+                        margin-right: -20px;
+                        margin-left: auto;
+                    }
+                }
+
+                .field--name-field-textbox {
+                    order: 1;
+                    padding-left: 30px;
+                }
+            }
+
+            &:nth-child(4n+1) {
+                background-color: #94B6C1;
+            }
+            
+            &:nth-child(4n+2) {
+                background-color: rgba(67, 69, 79, 0.3);
+            }
+
+            &:nth-child(4n+3) {
+                background-color: rgba(227, 179, 208, 0.37);
+            }
+
+            &:nth-child(4n+4) {
+                background-color: rgba(223, 215, 213, 0.37);
+            }
+
+            &:last-of-type {
+                margin-bottom: 100px;
+            }
+        }
+    }
+}

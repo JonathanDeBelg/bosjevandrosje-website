@@ -1,0 +1,53 @@
+footer {
+    padding: 2rem 0;
+    background-color: $color-background;
+
+    #copyright {
+        margin-left: auto;
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.8em;
+            color: $color-text;
+
+            &:hover,
+            &:focus {
+                color: lighten($color-text, 30%);
+            }
+
+            span.icon-logo-ef2 {
+                display: inline-block;
+                font-size: 0;
+
+                &:before {
+                    font-size: 1.5rem;
+                    margin-left: 0.5rem;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    .region-footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0 20px;
+
+        #block-footerrightcol {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+
+            #block-sitebranding-2 {
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+

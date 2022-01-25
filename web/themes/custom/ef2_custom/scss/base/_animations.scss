@@ -1,0 +1,21 @@
+// Turns off CSS animations when user has reduced motion settings on their computer
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+// CSS declarations when Javascript is available
+.js {
+
+}
+
+// CSS declarations when no Javascript is available
+.no-js {
+
+}

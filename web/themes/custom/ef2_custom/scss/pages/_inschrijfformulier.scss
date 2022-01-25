@@ -1,0 +1,114 @@
+.webform-submission-inschrijfformulier-form,
+.webform-submission-cadeaukaartformulier-form {
+    #edit-contact--2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+        }
+        
+        #edit-wrapper {
+            grid-template-columns: 1fr;
+
+            @include media-breakpoint-up(md) {
+                border-right: 1px solid black;
+                padding-right: 25px;
+            }
+            
+            margin: 0;
+            row-gap: 0.7rem;
+        }
+
+        .webform-flex--container,
+        .webform-flexbox .webform-flexbox {
+            margin: 0;
+            display: grid;
+        }
+
+        .webform-flexbox.form-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 15px;
+
+            @include media-breakpoint-down(sm) {
+                grid-template-columns: 1fr;
+
+                &#edit-woon {
+                    grid-template-columns: 2fr 1fr;
+                }
+            }
+        }
+
+        #edit-col-right {
+            @include media-breakpoint-up(md) {
+                padding-left: 25px;
+            }
+
+            .js-form-item-bezorginggegevens {
+                .btn-outline-success {
+                    border: 1px solid black;
+                    padding: 7px 10px;
+                    display: inline-block;
+                }
+
+                input[type="radio"] {
+                    display: none;
+                }
+
+                input[type="radio"]:checked+label {
+                    border: 1px solid green;
+                    background-color: lighten(green, 70);
+                }
+
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 20px;
+                }
+            }
+        }
+    }
+
+    #edit-abonnement {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        #edit-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            padding-right: 25px;
+            border-right: 1px solid black;
+        }
+
+        #edit-container-01 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            padding-left: 25px;
+        }
+    }
+
+    #edit-hoevaak--wrapper {
+        .form-radios {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .form-item-bezorginggegevens {
+        .webform-options-display-buttons {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+.webform-submission-cadeaukaartformulier-form {
+    #edit-contact--2 {
+        grid-template-columns: 1fr;
+
+        #edit-wrapper {
+            padding-right: 0px;
+            border-right: none;
+        }
+    }
+}

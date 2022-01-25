@@ -1,0 +1,9 @@
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SnUsUnooHzy8AO_n-KLgqaECP8jjwk-VNVPcuq75jrc
+id: footer
+label: Voet
+description: Websitegegevens-links
+locked: true

@@ -1,0 +1,15 @@
+{
+ "name": "ef2/ef2_drupal_installation_profile",
+ "description": "Basic installation profile for EF2 Drupal installations",
+ "type": "drupal-profile",
+ "authors": [
+   {
+      "name": "Kees Cornelisse",
+      "email": "kees@ef2.nl"
+   },
+   {
+      "name": "Simon Blok",
+      "email": "simon@ef2.nl"
+   }
+ ]
+}

@@ -1,0 +1,13 @@
+global-css:
+  css:
+    theme:
+      'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700': { type: external }
+      css/main.min.css: {}
+      css/lightbox.min.css: {}
+global-js:
+  js:
+    js/app.min.js: {}
+    js/bundle.min.js: {}
+    js/theme/lightbox.min.js: {}
+  dependencies:
+   - core/jquery

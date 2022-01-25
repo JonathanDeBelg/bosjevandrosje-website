@@ -1,0 +1,253 @@
+/*
+	Form styling
+    - In case of using the checkbox element use the 'description' field to create longer text after the checkbox.
+*/
+
+input,
+select {
+    width: 100%;
+}
+
+// Input
+// input[type=email],
+input[type=password],
+// input[type=text],
+input[type=number],
+// input[type=tel],
+input.form-search,
+textarea {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: $input-padding-y $input-padding-x;
+    font-family: $input-font-family;
+    font-weight: $input-font-weight;
+    line-height: $input-line-height;
+    color: $input-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border-width: 0 0 $input-border-width 0;
+    border-style: solid;
+    border-color: $input-border-color;
+    border-radius: $input-border-radius;
+    width: 100%;
+
+    // Placeholder
+    &::placeholder {
+        color: $input-placeholder-color;
+        opacity: 1; // Override Firefox's unusual default opacity
+    }
+}
+
+label {
+    display: block;
+}
+
+.form-text {
+    width: 100%;
+    margin-top: 0;
+}
+
+// Form required *
+.form-required:after {
+    content: '*';
+    background: none;
+    color: $color-main;
+    font-size: 0.75em;
+}
+
+.form-item {
+    margin-top: 0;
+    margin-bottom: .7em;
+}
+
+// Checkbox
+.form-type-checkbox {
+    position: relative;
+    padding-left: $checkbox-padding;
+
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        position: absolute;
+        top: 0.35em;
+        left: 0;
+        background-color: transparent;
+        border: 2px solid $color-main;
+        border-radius: 0;
+        display: inline-block;
+        width: $checkbox-size;
+        min-width: $checkbox-size;
+        height: $checkbox-size;
+        cursor: pointer;
+
+        &:active,
+        &:checked:active {
+            background-color: rgba($color-main, 0.2);
+        }
+
+        &:checked {
+            background-color: rgba($color-main, 0.2);
+
+            &:after {
+                content: '';
+                @include icon($icon-name: 'check', $icon-size: 0.75em);
+                @include center-absolute;
+            }
+        }
+    }
+
+    label,
+    .description {
+        margin: 0;
+    }
+}
+
+// Radio buttons
+.form-type-radio {
+    position: relative;
+    padding-left: $radio-padding;
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        position: absolute;
+        top: 0.35em;
+        left: 0;
+        display: inline-block;
+        background-color: transparent;
+        border: 2px solid $color-main;
+        border-radius: 100%;
+        width: $radio-size;
+        min-width: $radio-size;
+        height: $radio-size;
+        cursor: pointer;
+
+        &:checked {
+            background-color: rgba($color-main, 0.2);
+
+            &:after {
+                content: '';
+                @include center-absolute;
+                background-color: $color-main;
+                border-radius: 100%;
+                width: calc(#{$radio-size} - 10px);
+                min-width: calc(#{$radio-size} - 10px);
+                height: calc(#{$radio-size} - 10px);
+            }
+        }
+    }
+
+    label,
+    .description {
+        margin: 0;
+    }
+}
+
+// Submit button
+button.form-submit {
+    @include btn-primary;
+}
+
+
+form .form-wrapper > .webform-flexbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 20px;
+}
+
+.webform-flexbox,
+#edit-container,
+#edit-container-01 {
+    .form-item {
+        select, input {
+            padding: 10px
+        }
+    }
+}
+
+.webform-actions {
+  .webform-button--previous {
+    margin-right: 5px;
+  }
+}
+
+ul.thumbnails.image_picker_selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  li .thumbnail.selected {
+    border: 1px solid green;
+    background-color: lighten(green, 70);
+
+    > * {
+      color: $color-text;
+    }
+  }
+}
+
+.webform-progress-tracker .progress-title[role="link"] {
+  color: green;
+}
+
+.progress-step {
+
+  .progress-marker::before {
+    padding-top: 4px;
+  }
+
+  &.is-active .progress-marker::before {
+    background-color: lighten(green, 70);
+    border: 1px solid green;
+    color: $color-text;
+  }
+}
+
+.webform-options-display-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+
+    .form-type-radio {
+        padding-left: 0;
+    }
+
+    label.webform-options-display-buttons-label  {
+        border: 1px solid black;
+        padding: 10px;
+        display: inline-block;
+        border-radius: 0;
+        height: auto;
+        display: block;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]:checked+label {
+        border: 1px solid green;
+        background-color: lighten(green, 70);
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+#edit-abonnement-page--2 {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  column-gap: 50px;
+
+  .js-webform-computed {
+    .js-webform-computed-wrapper {
+      position: sticky;
+      top: 20px;
+      padding: 20px 20px 10px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      margin-top: 100px;
+    }
+
+  }
+}

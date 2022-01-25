@@ -1,0 +1,47 @@
+/*
+   EF2 default SCSS kit
+*/
+
+@use "sass:math";
+@use "sass:list";
+
+@import "abstracts/variables";
+@import '../node_modules/bootstrap/scss/bootstrap-grid';
+
+//Abstracts
+@import "abstracts/mixins";
+@import "abstracts/mixins-typography";
+@import "abstracts/functions";
+@import "base/reset";
+
+//Themes
+@import "themes/ckeditor";
+@import "themes/user-logged-in";
+
+//Base
+@import "base/typography";
+@import "base/animations";
+@import "base/icomoon";
+
+//Components
+@import "components/cta";
+@import "components/branding";
+@import "components/menu-toggle";
+@import "components/form";
+@import "components/breadcrumb";
+@import "components/blocks";
+
+//Layout
+@import "layout/navigation";
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
+@import "layout/regions";
+
+//Pages
+@import "pages/homepage";
+@import "pages/contentpage";
+@import "pages/about_us";
+@import "pages/inschrijfformulier";
+@import "pages/blog";
+

@@ -1,0 +1,103 @@
+// Font gets imported in libraries.yml
+
+body {
+  font-weight: $font-weight-base;
+  font-size: 1rem;
+  color: $color-text;
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+.virtual-h1 {
+  @include h1;
+  margin-bottom: 1em;
+}
+
+h2,
+.virtual-h2 {
+  @include h2;
+  margin-bottom: 1em;
+}
+
+h3,
+.virtual-h3 {
+  @include h3;
+  margin-bottom: 1em;
+}
+
+h4,
+.virtual-h4 {
+  @include h4;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+.intro-text {
+  @include intro-text;
+}
+
+a, button {
+  color: $color-main;
+  text-decoration: underline;
+  transition: $transition-hover;
+
+    &:hover,
+    &:focus {
+        color: darken(white, 10%);
+    }
+}
+
+ul.usps {
+  margin-bottom: 20px;
+
+  li {
+    list-style-type: none;
+    padding-bottom: 10px;
+
+    &:before {
+      content: $icon-checkmark;
+      font-size: 1.3rem;
+      padding-right: 10px;
+      color: green;
+      padding-top: 2px;
+
+      font-family: '#{$icomoon-font-family}' !important;
+      speak: never;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      text-decoration: none;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}
+
+h2.underline,
+h3.underline {
+  position: relative;
+  color: $color-text;
+  display: inline-block;
+
+  &:before {
+    content: "";
+    width: auto;
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    left: 0px;
+    right: 0px;
+    bottom: -10px;
+  }
+}

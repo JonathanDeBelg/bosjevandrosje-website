@@ -1,0 +1,19 @@
+langcode: nl
+status: true
+dependencies:
+  theme:
+    - ef2_custom
+id: tabbladen
+theme: ef2_custom
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabbladen
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

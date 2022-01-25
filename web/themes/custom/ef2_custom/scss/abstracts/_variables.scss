@@ -1,0 +1,95 @@
+/**
+ * Put all variables here that are necessary for this project
+ * Group colors by starting their names with "color-"
+ */
+
+// Font weights
+$font-weight-normal:    400;
+$font-weight-bold:      600;
+$font-weight-base:      $font-weight-normal;
+
+// Fonts
+$font-family-base:    'Josefin Sans', Arial, sans-serif;
+$font-family-titles:  $font-family-base;
+$line-height-base:    1.7;
+
+// Icons
+$icomoon-font-family: "icomoon" !default;
+$icomoon-font-path: "../fonts" !default;
+
+$icon-facebook: "\ea90";
+$icon-instagram: "\ea92";
+$icon-checkmark: "\ea10";
+
+// Colors
+$color-main:        #1cad52;
+$color-secondary:   #FF2E00;
+$color-white:       #2e2b2b;
+$color-background:  #e7c2d6;
+$color-text:        #000000;
+
+// Bootstrap grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1380px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Margins/Paddings
+$paragraph-margin-bottom:   2rem;
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+    (
+      0: 0,
+      1: ($spacer * .25),
+      2: ($spacer * .5),
+      3: $spacer,
+      4: ($spacer * 1.5),
+      5: ($spacer * 2),
+      6: ($spacer * 3),
+      7: ($spacer * 4),
+      8: ($spacer * 4.5)
+    ),
+    $spacers
+);
+
+// Transitions
+$transition-hover: all 0.1s ease-in-out;
+
+// Button styling
+$btn-font-size:     1rem;
+$btn-font-family:   $font-family-titles;
+$btn-font-weight:   $font-weight-base;
+$btn-line-height:   1.272;
+$btn-padding-y:     0.54em;
+$btn-padding-x:     1rem;
+$btn-border-radius: 0;
+$btn-transition:    color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// Input styling
+$input-padding-y:           0.5rem;
+$input-padding-x:           0.75rem;
+$input-border-width:        1px;
+$input-height-border:       $input-border-width * 2;
+$input-line-height:         $line-height-base;
+$input-border-color:        $color-main;
+$input-border-radius:       0;
+$input-font-size:           1em;
+$input-color:               $color-text;
+$input-placeholder-color:   $color-text;
+$checkbox-size:             1rem;
+$checkbox-padding:          calc(#{$checkbox-size} + 0.5em);
+$radio-size:                1rem;
+$radio-padding:             calc(#{$radio-size} + 0.5em);
+$input-bg:                  transparent;

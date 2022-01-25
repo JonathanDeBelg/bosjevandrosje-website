@@ -1,0 +1,25 @@
+.page-node-type-blog {
+  header.secondary-header {
+    min-height: unset;
+  }
+
+  .paragraph--type--tekst-zonder-achtergrondkleur {
+    max-width: 1140px;
+    padding: 50px 20px;
+    width: 100%;
+    margin: auto;
+  }
+
+  #main-content-container {
+    background-color: #EDEFEE;
+    max-width: unset;
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  .view-home-header {
+    .header-image {
+      min-height: 300px;
+    }
+  }
+}

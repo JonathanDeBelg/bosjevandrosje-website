@@ -1,0 +1,9 @@
+/**
+Calculate the width of a Bootstrap column
+Use as: width: calc-col(9);
+**/
+
+@function calc-col($col) {
+    $result: ($col / 12);
+    @return percentage($result);
+}

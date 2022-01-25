@@ -1,0 +1,114 @@
+/*
+	Hamburger toggle
+*/
+
+button#menu-toggle {
+    $icon-line-height:          6px;
+    $icon-line-width:           26px;
+    $icon-line-space:           4px;
+    $icon-line-border-radius:   5px;
+    $icon-line-color:           $color-main;
+
+    @include center-absolute-Y;
+    right: $grid-gutter-width/2;
+    display: none;
+    align-items: center;
+    margin-left: auto;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    height: calc(#{$icon-line-height*3} + #{$icon-line-space*2});
+    outline: none;
+    width: $icon-line-width;
+    z-index: 20;
+
+    @include media-breakpoint-down(lg) {
+        display: block;
+    }
+
+    .bars {
+        width: $icon-line-width;
+        height: $icon-line-height;
+        background-color: $icon-line-color;
+        border-radius: $icon-line-border-radius;
+        position: absolute;
+        display: block;
+        top: auto;
+        bottom: 0;
+        transition-delay: 0.13s;
+        transition-timing-function: cubic-bezier(.55, .055, .675, .19);
+        transition-duration: 0.13s;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: $icon-line-color;
+            width: $icon-line-width;
+            height: $icon-line-height;
+            border-radius: $icon-line-border-radius;
+        }
+
+        &:before {
+            top: calc(#{-$icon-line-height} + #{-$icon-line-space});
+            transition: top .12s cubic-bezier(.33333, .66667, .66667, 1) .2s, transform .13s cubic-bezier(.55, .055, .675, .19);
+        }
+
+        &:after {
+            top: calc(#{-$icon-line-height*2} + #{-$icon-line-space*2});
+            transition: top .2s cubic-bezier(.33333, .66667, .66667, 1) .2s, opacity .1s linear;
+        }
+    }
+
+    .text {
+        @include center-absolute-X;
+        text-transform: lowercase;
+        font-size: 8px;
+        font-weight: $font-weight-bold;
+        line-height: 1;
+        color: $icon-line-color;
+        top: 100%;
+        margin-top: $icon-line-space;
+
+        .close-text {
+            display: none;
+        }
+
+        .open-text {
+            display: block;
+        }
+    }
+
+    &[aria-expanded='true'] {
+        .bars {
+            transition-delay: 0.22s;
+            transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+            transform: translate3d(0, -10px, 0) rotate(-50deg);
+
+            &:before {
+                transition: top .1s cubic-bezier(.33333, 0, .66667, .33333) .16s, transform .13s cubic-bezier(.215, .61, .355, 1) .25s;
+                transform: rotate(-80deg);
+                top: 0;
+            }
+
+            &:after {
+                transition: top .2s cubic-bezier(.33333, 0, .66667, .33333), opacity .1s linear .22s;
+                opacity: 0;
+                top: 0;
+            }
+        }
+
+        .text {
+            .close-text {
+                display: block;
+            }
+
+            .open-text {
+                display: none;
+            }
+        }
+    }
+}

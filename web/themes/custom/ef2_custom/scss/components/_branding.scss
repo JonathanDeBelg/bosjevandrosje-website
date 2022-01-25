@@ -1,0 +1,15 @@
+/*
+	Website logo
+*/
+
+.block-system-branding-block {
+    a.site-logo {
+        display: block;
+
+        img {
+            display: block;
+            max-width: 150px;
+            height: 80px;
+        }
+    }
+}

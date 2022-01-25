@@ -1,0 +1,14 @@
+/*
+	Main layout for the content area of the theme, between header and footer.
+*/
+
+main {
+}
+
+.text-formatted {
+    @include ckeditor();
+}
+
+.field--name-body {
+    @include ckeditor();
+}

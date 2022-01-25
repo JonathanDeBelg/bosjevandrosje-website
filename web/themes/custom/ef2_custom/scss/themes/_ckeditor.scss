@@ -1,0 +1,62 @@
+/*
+	Place all styling that counts for the components that the user can add themself in this document.
+	All styling below will be added to the editor.css.
+	Pay attention! All specific classes that you add you will also have to add to the editor in Drupal.
+*/
+
+@mixin ckeditor() {
+
+    img {
+        width: auto !important;
+        height: auto !important;
+        max-width: 100%;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+
+        tr {
+            th {
+                text-align: left;
+                padding-left: 15px;
+                font-weight: bold;
+            }
+
+            td {
+                padding: 20px 15px;
+            }
+        }
+    }
+
+    .video-embed-field-responsive-video {
+        margin-bottom: 1em;
+        width: 100%;
+    }
+
+    blockquote {
+        font-weight: $font-weight-bold;
+        font-size: 1.15em;
+        margin: 0;
+        padding: 2em 0;
+
+        p {
+            margin-bottom: 0;
+
+            &:before {
+                content: "\"";
+                display: inline;
+            }
+
+            &:after {
+                content: "\"";
+                display: inline;
+            }
+        }
+    }
+
+    //If there is a <p> before a blockquote, than less space above because the <p> already has margin on the bottom.
+    p + blockquote {
+        padding-top: 1em;
+    }
+}

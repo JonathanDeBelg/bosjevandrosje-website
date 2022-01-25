@@ -1,0 +1,133 @@
+/*
+    Element centering
+*/
+
+// Centers an element
+@mixin center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+// Centers an element vertically
+@mixin center-absolute-Y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+// Centers an element horizontally
+@mixin center-absolute-X {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*
+    Overlays and backgrounds
+*/
+
+// Places an overlay over the element. Fills the whole element.
+@mixin coloroverlay($color, $opacity: .4) {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color;
+        opacity: $opacity;
+        z-index: -1;
+    }
+}
+
+// Fills background outside bootstrap container
+@mixin full-width-background($color: $color-main) {
+    position: relative;
+    z-index: 0;
+
+    &:before {
+        content: '';
+        @include center-absolute-X;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        background-color: $color;
+        z-index: -1;
+    }
+}
+
+// Stretch an absolute item from top to bottom, left to right
+@mixin fill-absolute-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+/*
+    Accessibility
+*/
+
+// Hides an element but still visible on screenreaders
+@mixin visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    word-wrap: normal;
+}
+
+// Focus box-shadow for accessibility
+@mixin focus-box-shadow($color) {
+    box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($color), $color, 15%), .5);
+}
+
+// Accessibility icons
+@mixin icon($icon-name: 'arrow-right', $icon-size: 1em, $icon-color: $color-main) {
+    content: '';
+    mask: url('../images/icons/#{$icon-name}.svg') no-repeat 50% 50%;
+    mask-size: contain;
+    mask-position: right;
+    display: inline-block;
+    height: $icon-size;
+    width: $icon-size;
+    background-color: $icon-color;
+    transition: $transition-hover;
+}
+
+/*
+    Extra
+*/
+
+// Places an arrow
+@mixin arrowIcon($direction:'down', $lineWidth:1px, $color: black, $size: 7px) {
+    content: '';
+    display: inline-block;
+    border-top: $lineWidth solid $color;
+    border-left: $lineWidth solid $color;
+    width: $size;
+    height: $size;
+    position: relative;
+
+    @if $direction == 'down' {
+        transform: rotate(-135deg);
+        top: -$size/2;
+    }
+
+    @if $direction == 'up' {
+        transform: rotate(45deg);
+        top: 0;
+    }
+}
+
+
+

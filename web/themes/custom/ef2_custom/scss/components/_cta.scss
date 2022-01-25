@@ -1,0 +1,43 @@
+@mixin btn {
+    display: inline-flex;
+    position: relative;
+    font-size: $btn-font-size;
+    font-family: $btn-font-family;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height;
+    padding: $btn-padding-y $btn-padding-x;
+    border-radius: $btn-border-radius;
+    transition: $btn-transition;
+    box-shadow: 0 5px 10px 0 rgba(26,26,26,0.3);
+    text-align: center;
+    text-decoration: none;
+    margin: 0.25em 0.5em 0.25em 0;
+    color: white;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+		color: $color-white;
+	}
+}
+
+@mixin btn-primary {
+	@include btn;
+	background: $color-main;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+		background-color: darken($color-main, 10%);
+	}
+}
+
+.btn-primary {
+	@include btn-primary;
+}
+
+.btn-secondary {
+  color: $color-white;
+  border: 1px solid $color-white;
+  border-radius: 12px;
+  padding: 15px;
+  text-decoration: none;
+}

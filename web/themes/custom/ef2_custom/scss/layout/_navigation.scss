@@ -1,0 +1,136 @@
+/*
+	Styling for menu's
+*/
+
+nav {
+    ul.menu {
+        margin: 0;
+
+        li {
+            list-style: none;
+            padding: 0;
+
+            a, button {
+                text-decoration: none;
+                display: inline-block;
+                color: $color-text;
+
+                &:hover,
+                &:focus,
+                &.is-active {
+                    color: $color-main;
+                }
+            }
+        }
+    }
+}
+
+//Mainmenu
+body {
+    .menu--main {
+        & > ul.menu {
+            display: flex;
+            margin-right: -1em;
+
+            & > li {
+                display: inline-block;
+                margin-right: 20px;
+                position: relative;
+            }
+
+            li {
+                // Submenu
+                &.menu-item--expanded {
+                    & > button:after {
+                        @include icon($icon-name: 'chevron-down', $icon-color: $color-text, $icon-size: 0.625em);
+                        margin-left: 0.5em;
+                    }
+
+                    &.open {
+                        & > .submenu {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+
+                        & > button:after {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                &.menu-item--active-trail {
+                    & > button,
+                    & > a {
+                        color: $color-main;
+
+                        &:after {
+                            background-color: $color-main;
+                        }
+                    }
+                }
+
+                & > .submenu {
+                    @include center-absolute-X;
+                    visibility: hidden;
+                    opacity: 0;
+                    padding: 1rem;
+                    border: 1px solid $color-background;
+                    background-color: $color-background;
+                    width: 150px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        /*
+            Hamburger with menu-toggle is visible
+        */
+
+        .menu--main {
+            overflow-y: auto;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: $color-background;
+            min-height: 100vh;
+            height: 100%;
+            transition: opacity 0.5s;
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            z-index: 10;
+
+            & > ul.menu {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+
+                & > li {
+                    opacity: 0;
+                    transition: opacity .0s;
+                    transition-delay: 0s;
+                }
+            }
+        }
+    }
+
+    &.main-menu-active {
+        .menu--main {
+            visibility: visible;
+            opacity: 1;
+
+            & > ul.menu {
+                & > li {
+                    opacity: 1;
+                    transition-duration: 0.8s;
+                    transition-delay: 0.2s;
+                }
+            }
+        }
+    }
+}
+
+

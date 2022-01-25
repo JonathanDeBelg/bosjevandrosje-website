@@ -1,0 +1,5 @@
+admin: gin
+default: ef2_custom
+_core:
+  default_config_hash: Qt5vKslbdoAcJfUy4PegXjVkJzO_pGbw_Kg_f3XrZnw
+langcode: nl

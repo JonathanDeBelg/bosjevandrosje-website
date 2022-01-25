@@ -1,0 +1,99 @@
+name: EF2 Drupal installation profile
+type: profile
+description: 'Basic installation profile for EF2 Drupal installations'
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+# Optional: Declare your installation profile as a distribution
+# This will make the installer auto-select this installation profile.
+# The distribution_name property is used in the installer and other places as
+# a label for the software being installed.
+distribution:
+  name: EF2 Drupal 9
+
+# Required modules
+dependencies:
+  - admin_toolbar
+  - admin_toolbar_tools
+  - antibot
+  - automated_cron
+  - background_image_formatter
+  - block
+  - block_content
+  - blockgroup
+  - breakpoint
+  - ckeditor
+  - color
+  - config
+  - contextual
+  - crop
+  - ctools
+  - datetime
+  - dblog
+  - devel
+  - ds
+  - dynamic_page_cache
+  - easy_breadcrumb
+  - editor
+  - editor_advanced_link
+  - ef2_admin
+  - entity_clone
+  - entity_reference_revisions
+  - eu_cookie_compliance
+  - field_group
+  - field_ui
+  - file
+  - fixed_block_content
+  - focal_point
+  - gin_login
+  - gin_toolbar
+  - help
+  - history
+  - image
+  - imce
+  - ip_anon
+  - link_class
+  - linkit
+  - mailsystem
+  - masquerade
+  - menu_block
+  - menu_link_attributes
+  - menu_link_content
+  - menu_ui
+  - metatag
+  - mimemail
+  - node
+  - options
+  - page_cache
+  - paragraphs
+  - paragraphs_asymmetric_translation_widgets
+  - path
+  - pathauto
+  - quickedit
+  - rabbit_hole
+  - rdf
+  - redirect
+  - restui
+  - robots_dtap
+  - schema_metatag
+  - search_api
+  - shortcut
+  - simple_sitemap
+  - svg_image
+  - taxonomy
+  - token
+  - toolbar
+  - tour
+  - video_embed_field
+  - views
+  - views_infinite_scroll
+  - views_row_insert
+  - views_ui
+  - webform
+  - webform_ui
+  - yoast_seo
+themes:
+  - ef2_custom
+  - bartik
+  - seven
+  - gin

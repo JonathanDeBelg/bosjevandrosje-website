@@ -1,0 +1,26 @@
+diff --git a/core/modules/views/js/ajax_view.es6.js b/core/modules/views/js/ajax_view.es6.js
+index 9a07351..7a83da0 100644
+--- a/core/modules/views/js/ajax_view.es6.js
++++ b/core/modules/views/js/ajax_view.es6.js
+@@ -139,7 +139,7 @@
+     this.exposedFormAjax = [];
+     // Exclude the reset buttons so no AJAX behaviors are bound. Many things
+     // break during the form reset phase if using AJAX.
+-    $('input[type=submit], input[type=image]', this.$exposed_form)
++    $('input[type=submit], input[type=image], input[type=checkbox], button[type=submit]', this.$exposed_form)
+       .not('[data-drupal-selector=edit-reset]')
+       .each(function (index) {
+         const selfSettings = $.extend({}, that.element_settings, {
+diff --git a/core/modules/views/js/ajax_view.js b/core/modules/views/js/ajax_view.js
+index 794bf80..bebbd7e 100644
+--- a/core/modules/views/js/ajax_view.js
++++ b/core/modules/views/js/ajax_view.js
+@@ -80,7 +80,7 @@
+   Drupal.views.ajaxView.prototype.attachExposedFormAjax = function () {
+     var that = this;
+     this.exposedFormAjax = [];
+-    $('input[type=submit], input[type=image]', this.$exposed_form).not('[data-drupal-selector=edit-reset]').each(function (index) {
++    $('input[type=submit], input[type=image], input[type=checkbox], button[type=submit]', this.$exposed_form).not('[data-drupal-selector=edit-reset]').each(function (index) {
+       var selfSettings = $.extend({}, that.element_settings, {
+         base: $(this).attr('id'),
+         element: this

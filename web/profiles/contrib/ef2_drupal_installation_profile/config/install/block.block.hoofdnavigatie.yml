@@ -1,0 +1,30 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - ef2_custom
+id: hoofdnavigatie
+theme: ef2_custom
+region: header
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: Hoofdnavigatie
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'main:'
+  suggestion: main
+  label_type: block
+  label_link: false
+visibility: {  }
