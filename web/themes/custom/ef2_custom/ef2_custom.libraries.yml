@@ -8,6 +8,5 @@ global-js:
   js:
     js/app.min.js: {}
     js/bundle.min.js: {}
-    js/theme/lightbox.min.js: {}
   dependencies:
    - core/jquery

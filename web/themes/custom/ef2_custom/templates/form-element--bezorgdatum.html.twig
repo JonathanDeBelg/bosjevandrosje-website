@@ -11,12 +11,6 @@
  */
 #}
 
-{% if errors %}
-  <div class="form-item--error-message">
-    <strong>{{ errors }}</strong>
-  </div>
-{% endif %}
-
 <div{{ attributes.addClass('js-webform-radios webform-options-display-buttons webform-options-display-buttons-horizontal form-radios') }}>
   {% if date("l") not in ['Wednesday']  %}
   <div class="webform-options-display-buttons-wrapper">
@@ -85,7 +79,6 @@
       <label for="edit-bezorginggegevens-opt-2" class="btn btn-outline-success webform-options-display-buttons-label option">{{ now|date_modify("next thursday +1 week")|date("d-m-Y") }}</label>
     </div>
   </div>
-
   <div class="webform-options-display-buttons-wrapper">
     <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
       <input
@@ -101,3 +94,16 @@
   </div>
   {% endif %}
 </div>
+
+<input
+  data-drupal-selector="edit-bezorgdatum"
+  type="text"
+  id="edit-bezorgdatum"
+  name="bezorgdatum"
+  value="{% if date("l") not in ['Wednesday']  %}{{ now|date_modify("next thursday +1 week")|date("d-m-Y") }}{% else %}{{ now|date_modify("next thursday")|date("d-m-Y") }}{% endif %}"
+  size="60"
+  maxlength="255"
+  required="required"
+  aria-required="true"
+  class="form-text required d-none"
+  >
