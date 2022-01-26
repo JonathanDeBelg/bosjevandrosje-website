@@ -1,0 +1,6 @@
+services:
+  bvd_payments.create_subscription:
+    class: '\Drupal\bvd_payments\EventSubscriber\PaymentPaidByCustomer'
+    arguments: [ '@entity_type.manager' ]
+    tags:
+    - { name: 'event_subscriber' }

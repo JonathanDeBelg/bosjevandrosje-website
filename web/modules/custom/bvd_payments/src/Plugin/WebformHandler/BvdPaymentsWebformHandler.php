@@ -10,8 +10,6 @@ use Drupal\Core\Routing\TrustedRedirectResponse;
 use Drupal\mollie\Mollie;
 use Drupal\webform\Plugin\WebformHandlerBase;
 use Drupal\webform\WebformSubmissionInterface;
-use Mollie\Api\Exceptions\ApiException;
-use Mollie\Api\Resources\Subscription;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -95,14 +93,8 @@ final class BvdPaymentsWebformHandler extends WebformHandlerBase {
       $response = $this->createFirstPayment($webform_submission, $description, $form_state);
 
       \Drupal::logger('bvd_mollie')->info(var_export($response, true));
-
-      //TODO on status change > paid subscription aanmaken via de invoke/state/change function.
-
-      $webform_submission->setData([
-//      'mollie_customer' => $subscription->customerId,
-      ]);
-    } catch (InvalidPluginDefinitionException $e) {
-    } catch (PluginNotFoundException $e) {
+    } catch (InvalidPluginDefinitionException|PluginNotFoundException $e) {
+      \Drupal::logger('bvd_mollie_error')->info(var_export($e, true));
     }
   }
 

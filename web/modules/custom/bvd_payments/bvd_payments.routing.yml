@@ -1,5 +1,5 @@
-mollie.webhook.subscription.status_change:
-  path: '/mollie/webhook/subscription/{context}/{context_id}'
+mollie.subscription.webhook.status_change:
+  path: '/mollie/subscriptions/webhook/{context}/{context_id}'
   defaults:
     _controller: 'Drupal\bvd_payments\Controller\WebhookController::invokeStatusChangeHook'
   requirements:
