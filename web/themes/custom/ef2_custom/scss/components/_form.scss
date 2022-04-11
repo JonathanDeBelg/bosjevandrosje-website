@@ -31,7 +31,6 @@ textarea {
     border-color: $input-border-color;
     border-radius: $input-border-radius;
     width: 100%;
-
     // Placeholder
     &::placeholder {
         color: $input-placeholder-color;
@@ -65,7 +64,6 @@ label {
 .form-type-checkbox {
     position: relative;
     padding-left: $checkbox-padding;
-
     input[type="checkbox"] {
         -webkit-appearance: none;
         position: absolute;
@@ -79,15 +77,12 @@ label {
         min-width: $checkbox-size;
         height: $checkbox-size;
         cursor: pointer;
-
         &:active,
         &:checked:active {
             background-color: rgba($color-main, 0.2);
         }
-
         &:checked {
             background-color: rgba($color-main, 0.2);
-
             &:after {
                 content: '';
                 @include icon($icon-name: 'check', $icon-size: 0.75em);
@@ -95,7 +90,6 @@ label {
             }
         }
     }
-
     label,
     .description {
         margin: 0;
@@ -106,7 +100,6 @@ label {
 .form-type-radio {
     position: relative;
     padding-left: $radio-padding;
-
     input[type="radio"] {
         -webkit-appearance: none;
         position: absolute;
@@ -120,10 +113,8 @@ label {
         min-width: $radio-size;
         height: $radio-size;
         cursor: pointer;
-
         &:checked {
             background-color: rgba($color-main, 0.2);
-
             &:after {
                 content: '';
                 @include center-absolute;
@@ -135,7 +126,6 @@ label {
             }
         }
     }
-
     label,
     .description {
         margin: 0;
@@ -147,8 +137,7 @@ button.form-submit {
     @include btn-primary;
 }
 
-
-form .form-wrapper > .webform-flexbox {
+form .form-wrapper>.webform-flexbox {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 50px;
@@ -159,59 +148,54 @@ form .form-wrapper > .webform-flexbox {
 #edit-container,
 #edit-container-01 {
     .form-item {
-        select, input {
+        select,
+        input {
             padding: 10px
         }
     }
 }
 
 .webform-actions {
-  .webform-button--previous {
-    margin-right: 5px;
-  }
+    .webform-button--previous {
+        margin-right: 5px;
+    }
 }
 
 ul.thumbnails.image_picker_selector {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-
-  li .thumbnail.selected {
-    border: 1px solid green;
-    background-color: lighten(green, 70);
-
-    > * {
-      color: $color-text;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    li .thumbnail.selected {
+        border: 1px solid green;
+        background-color: lighten(green, 70);
+        >* {
+            color: $color-text;
+        }
     }
-  }
 }
 
 .webform-progress-tracker .progress-title[role="link"] {
-  color: green;
+    color: green;
 }
 
 .progress-step {
-
-  .progress-marker::before {
-    padding-top: 4px;
-  }
-
-  &.is-active .progress-marker::before {
-    background-color: lighten(green, 70);
-    border: 1px solid green;
-    color: $color-text;
-  }
+    .progress-marker::before {
+        padding-top: 4px;
+    }
+    &.is-active .progress-marker::before {
+        background-color: lighten(green, 70);
+        border: 1px solid green;
+        color: $color-text;
+    }
 }
 
 .webform-options-display-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
-
     .form-type-radio {
         padding-left: 0;
     }
-
-    label.webform-options-display-buttons-label  {
+    label.webform-options-display-buttons-label {
         border: 1px solid black;
         padding: 10px;
         display: inline-block;
@@ -219,35 +203,34 @@ ul.thumbnails.image_picker_selector {
         height: auto;
         display: block;
     }
-
     input[type="radio"] {
         display: none;
     }
-
     input[type="radio"]:checked+label {
         border: 1px solid green;
         background-color: lighten(green, 70);
     }
-
     p {
         font-size: 1rem;
     }
 }
 
 #edit-abonnement-page--2 {
-  display: grid;
-  grid-template-columns: 7fr 3fr;
-  column-gap: 50px;
-
-  .js-webform-computed {
-    .js-webform-computed-wrapper {
-      position: sticky;
-      top: 20px;
-      padding: 20px 20px 10px;
-      border: 1px solid lightgray;
-      border-radius: 5px;
-      margin-top: 100px;
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    column-gap: 50px;
+    .js-webform-computed {
+        .js-webform-computed-wrapper {
+            position: sticky;
+            top: 20px;
+            padding: 20px 20px 10px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            margin-top: 100px;
+        }
     }
+}
 
-  }
+#webform-submission-inschrijfformulier-node-6-add-form #edit-abonnement-page--2 {
+    grid-template-columns: 1fr;
 }

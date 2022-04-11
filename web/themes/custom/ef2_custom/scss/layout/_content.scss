@@ -2,8 +2,11 @@
 	Main layout for the content area of the theme, between header and footer.
 */
 
-main {
+#page-wrapper {
+    position: relative;
 }
+
+main {}
 
 .text-formatted {
     @include ckeditor();

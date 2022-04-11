@@ -74,6 +74,7 @@
         "drupal/schema_metatag": "^1.4",
         "drupal/search_api": "^1.19",
         "drupal/simple_sitemap": "^3.3",
+        "drupal/smtp": "^1.0",
         "drupal/starrating": "^4.1@alpha",
         "drupal/svg_image": "^1.14",
         "drupal/token": "^1",

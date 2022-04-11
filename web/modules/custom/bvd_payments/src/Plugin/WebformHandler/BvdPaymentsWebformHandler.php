@@ -102,47 +102,45 @@ final class BvdPaymentsWebformHandler extends WebformHandlerBase {
    * @param WebformSubmissionInterface $webform_submission
    * @param string $description
    * @param FormStateInterface $form_state
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws InvalidPluginDefinitionException
+   * @throws PluginNotFoundException
    */
   public function createFirstPayment(WebformSubmissionInterface $webform_submission, string $description, FormStateInterface $form_state): TrustedRedirectResponse
   {
-    if ($webform_submission->getElementData('betaalopties') == self::SEPA) {
-      /** @var \Drupal\mollie_customers\Entity\Customer  */
-      $customer = $this->entityTypeManager->getStorage('mollie_customer')->create(
+    /** @var \Drupal\mollie_customers\Entity\Customer  */
+    $customer = $this->entityTypeManager->getStorage('mollie_customer')->create(
+      [
+        'name' => $webform_submission->getElementData('voornaam'),
+        'email' => $webform_submission->getElementData('e_mailadres'),
+      ]
+    );
+
+    try {
+      $customer->save();
+
+      $this->customer = $customer;
+
+      $transaction = $this->entityTypeManager->getStorage('mollie_recurring_payment')->create(
         [
-          'name' => $webform_submission->getElementData('voornaam'),
-          'email' => $webform_submission->getElementData('e_mailadres'),
+          'amount' => '0.01',
+          'currency' => 'EUR',
+          'context' => 'mollie_webform',
+          'description' => $description,
+          'context_id' => $webform_submission->id(),
+          'method' => [],
+          'customerId' => $customer->id(),
+          'sequenceType' => "first",
         ]
       );
 
-      try {
-        $customer->save();
+      $transaction->save();
 
-        $this->customer = $customer;
+      $response = new TrustedRedirectResponse($transaction->getCheckoutUrl(), '303');
 
-        $transaction = $this->entityTypeManager->getStorage('mollie_recurring_payment')->create(
-          [
-            'amount' => '0.01',
-            'currency' => 'EUR',
-            'context' => 'mollie_webform',
-            'description' => $description,
-            'context_id' => $webform_submission->id(),
-            'method' => [],
-            'customerId' => $customer->id(),
-            'sequenceType' => "first",
-          ]
-        );
-
-        $transaction->save();
-
-        $response = new TrustedRedirectResponse($transaction->getCheckoutUrl(), '303');
-
-        $form_state->setResponse($response);
-        return $response;
-      } catch (EntityStorageException $e) {
-        watchdog_exception('mollie', $e);
-      }
+      $form_state->setResponse($response);
+      return $response;
+    } catch (EntityStorageException $e) {
+      watchdog_exception('mollie', $e);
     }
   }
 }
