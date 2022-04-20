@@ -101,3 +101,11 @@
         }
     }
 }
+
+.field--name-field-producten {
+  .field__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
