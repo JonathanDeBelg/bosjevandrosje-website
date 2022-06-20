@@ -42,8 +42,9 @@
             text-align: center;
         }
 
-      .field--name-field-afbeelding {
-        margin: auto 0 auto 2rem;
+      .field--name-field-afbeelding img {
+        margin: 0 auto 1rem;
+        width: 50px;
       }
     }
 }
