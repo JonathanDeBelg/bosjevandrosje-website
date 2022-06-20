@@ -41,6 +41,10 @@
         .field--name-field-tekst {
             text-align: center;
         }
+
+      .field--name-field-afbeelding {
+        margin: auto 0 auto 2rem;
+      }
     }
 }
 
@@ -103,9 +107,31 @@
 }
 
 .field--name-field-producten {
-  .field__items {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+  padding: 70px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  > .field__item {
+    padding: 5px;
+    border: 1px solid $color-main;
+    position: relative;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .field--name-field-link {
+      font-size: 0;
+
+      .field__item a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 20;
+      }
+    }
   }
 }
