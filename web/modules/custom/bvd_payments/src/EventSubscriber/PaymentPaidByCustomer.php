@@ -43,7 +43,7 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
    */
   public function __construct(EntityTypeManagerInterface $entityTypeManager) {
     $this->mollieApiClient = new MollieApiClient();
-    $this->mollieApiClient->setApiKey(Settings::get('mollie.settings')['live_key']);
+    $this->mollieApiClient->setApiKey(Settings::get('mollie.settings')['test_key']);
     $this->entityTypeManager = $entityTypeManager;
   }
 
