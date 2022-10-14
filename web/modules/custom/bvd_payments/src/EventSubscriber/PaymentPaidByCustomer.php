@@ -126,7 +126,7 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
         ->setAbsolute()->toString();
       $webhookUrl = str_replace(
         $defaultBaseUrl,
-        "{$config->get('webhook_base_url')}/",
+        "{$config->get('webhgook_base_url')}/",
         $webhookUrl
       );
     }
