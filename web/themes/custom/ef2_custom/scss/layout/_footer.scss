@@ -32,12 +32,20 @@ footer {
     .region-footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem;
         padding: 0 20px;
+
+        @include media-breakpoint-down(sm) {
+           grid-template-columns: 1fr;
+        }
 
         #block-footerrightcol {
             display: flex;
-            align-items: flex-end;
             flex-direction: column;
+
+            @include media-breakpoint-up(sm) {
+                align-items: flex-end;
+            }
 
             #block-sitebranding-2 {
                 margin-bottom: 2.5rem;

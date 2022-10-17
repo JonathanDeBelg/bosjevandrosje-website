@@ -106,5 +106,9 @@
     padding: 50px 20px;
     width: 100%;
     margin: auto;
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
   }
 }
