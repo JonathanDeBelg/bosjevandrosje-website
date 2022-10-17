@@ -8,4 +8,4 @@ for (var i = 0; i < rad.length; i++) {
     var radioChoice = document.querySelector('input[name="bezorginggegevens"]:checked').value;
     document.getElementById("edit-bezorgdatum").setAttribute('value', radioChoice);
   });
-}g
+}
