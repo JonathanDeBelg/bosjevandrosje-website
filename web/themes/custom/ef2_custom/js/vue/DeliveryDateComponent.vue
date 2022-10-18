@@ -51,7 +51,7 @@ module.exports = {
             dayInt = 4;
           }
           let actualDate = new Date();
-          let daysToAdd = this.getNumberOfDays(actualDate);
+          let daysToAdd = this.getNumberOfDays(date, actualDate);
 
           let nextThreeWeeksUpcomingDates = [];
           for(let i in [1, 2, 3]) {
@@ -84,13 +84,21 @@ module.exports = {
   },
 
   methods: {
-    getNumberOfDays: function (actualDate) {
+    getNumberOfDays: function (chosenDate,actualDate) {
       let dayName = this.getDayName(actualDate, "en-EN");
       let daysToAdd = 7;
-      if (['Monday', 'Tuesday', 'Saturday', 'Sunday'].includes(dayName)) {
-        daysToAdd = 0;
+
+      if(chosenDate === 'thursday') {
+        if (['Monday', 'Tuesday', 'Wednesday', 'Saturday', 'Sunday'].includes(dayName)) {
+          daysToAdd = 0;
+        }
+      } else {
+        if (['Monday', 'Tuesday', 'Saturday', 'Sunday'].includes(dayName)) {
+          daysToAdd = 0;
+        }
       }
       return daysToAdd;
+
     },
 
     getDayName(dateStr, locale) {
