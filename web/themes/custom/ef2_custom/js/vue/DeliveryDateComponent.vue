@@ -9,6 +9,7 @@
           :id="`edit-bezorginggegevens-opt-${ index }`"
           name="bezorginggegevens"
           :value="`${ date }`"
+          v-on:change="updateFormField"
         required>
         <label :for="`edit-bezorginggegevens-opt-${ index }`" class="btn btn-outline-success webform-options-display-buttons-label option">
           {{ date }}
@@ -35,7 +36,7 @@ module.exports = {
   data: function() {
     return {
       dateVar: this.date,
-      error: false
+      error: false,
     }
   },
 
@@ -49,7 +50,6 @@ module.exports = {
           if(date === 'thursday') {
             dayInt = 4;
           }
-          console.log(dayInt);
           let actualDate = new Date();
           let daysToAdd = this.getNumberOfDays(actualDate);
 
@@ -73,13 +73,11 @@ module.exports = {
     },
   },
 
-  created() {
-  },
-
   mounted() {
     let placeElem = document.getElementById("edit-woonplaats");
     placeElem.addEventListener('change', this.updateDeliveryDates)
   },
+
   destroyed() {
     let placeElem = document.getElementById("edit-woonplaats");
     placeElem.removeEventListener('change', this.updateDeliveryDates)
@@ -112,7 +110,11 @@ module.exports = {
         return false;
       }
       return true;
+    },
+
+    updateFormField: function(value) {
+      document.getElementById("edit-bezorgdatum").setAttribute('value', value.target.value);
     }
-},
+  },
 }
 </script>
