@@ -45,16 +45,15 @@ module.exports = {
       if(this.dateVar !== undefined) {
         let jsonDate = this.isJson(this.dateVar);
         if(jsonDate !== false) {
-          let date = jsonDate.date;
-          console.log(JSON.parse(this.dateVar));
+          let date = JSON.parse(this.dateVar).date;
           if(date === 'thursday') {
             dayInt = 4;
           }
+          console.log(dayInt);
           let actualDate = new Date();
           let daysToAdd = this.getNumberOfDays(actualDate);
 
           let nextThreeWeeksUpcomingDates = [];
-
           for(let i in [1, 2, 3]) {
             daysToAdd = daysToAdd * i;
 
@@ -64,6 +63,7 @@ module.exports = {
               ),
             ));
           }
+
           this.error = false;
           return nextThreeWeeksUpcomingDates.map((value)=> {return value.toLocaleDateString() + ', ' +  this.getDayName(value, 'nl-NL')});
         }
