@@ -1,17 +1,27 @@
 <template>
-  <div class="webform-options-display-buttons-wrapper">
-    <div v-for="(date, index) in dates" class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
-      <input
-        :data-drupal-selector="`edit-bezorginggegevens-opt-${ index }`"
-        type="radio"
-        class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"
-        :id="`edit-bezorginggegevens-opt-${ index }`"
-        name="bezorginggegevens"
-        :value="`${ date }`"
-      required>
-      <label :for="`edit-bezorginggegevens-opt-${ index }`" class="btn btn-outline-success webform-options-display-buttons-label option">
-        {{ date }}
-      </label>
+  <div class="js-webform-radios webform-options-display-buttons webform-options-display-buttons-horizontal form-radios">
+    <div v-for="(date, index) in dates" class="webform-options-display-buttons-wrapper">
+      <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
+        <input
+          :data-drupal-selector="`edit-bezorginggegevens-opt-${ index }`"
+          type="radio"
+          class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"
+          :id="`edit-bezorginggegevens-opt-${ index }`"
+          name="bezorginggegevens"
+          :value="`${ date }`"
+        required>
+        <label :for="`edit-bezorginggegevens-opt-${ index }`" class="btn btn-outline-success webform-options-display-buttons-label option">
+          {{ date }}
+        </label>
+      </div>
+    </div>
+
+    <div v-if="this.error !== false" class="webform-options-display-buttons-wrapper">
+      <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
+        <label class="btn btn-outline-success webform-options-display-buttons-label option">
+          {{ this.error }}
+        </label>
+      </div>
     </div>
   </div>
 </template>
@@ -24,32 +34,42 @@ module.exports = {
 
   data: function() {
     return {
-      dateVar: this.date
+      dateVar: this.date,
+      error: false
     }
   },
 
   computed: {
     dates() {
       let dayInt = 5;
-      let date = JSON.parse(this.dateVar).value;
-      if(date === 'thursday') {
-        dayInt = 4;
+      if(this.dateVar !== undefined) {
+        let jsonDate = this.isJson(this.dateVar);
+        if(jsonDate !== false) {
+          let date = jsonDate.date;
+          console.log(JSON.parse(this.dateVar));
+          if(date === 'thursday') {
+            dayInt = 4;
+          }
+          let actualDate = new Date();
+          let daysToAdd = this.getNumberOfDays(actualDate);
+
+          let nextThreeWeeksUpcomingDates = [];
+
+          for(let i in [1, 2, 3]) {
+            daysToAdd = daysToAdd * i;
+
+            nextThreeWeeksUpcomingDates.push(new Date(
+              actualDate.setDate(
+                actualDate.getDate() + ((7 - actualDate.getDay() + dayInt) % 7 || 7) + daysToAdd,
+              ),
+            ));
+          }
+          this.error = false;
+          return nextThreeWeeksUpcomingDates.map((value)=> {return value.toLocaleDateString() + ', ' +  this.getDayName(value, 'nl-NL')});
+        }
       }
-      let actualDate = new Date();
-      let daysToAdd = this.getNumberOfDays(actualDate);
-
-      let nextThreeWeeksUpcomingDates = [];
-
-      for(let i in [1, 2, 3]) {
-        daysToAdd = daysToAdd * i;
-
-        nextThreeWeeksUpcomingDates.push(new Date(
-          actualDate.setDate(
-            actualDate.getDate() + ((7 - actualDate.getDay() + dayInt) % 7 || 7) + daysToAdd,
-          ),
-        ));
-      }
-      return nextThreeWeeksUpcomingDates.map((value)=> {return value.toLocaleDateString() + ', ' +  this.getDayName(value, 'nl-NL')});
+      this.error = "Kies eerst een woonplaats!"
+      return [];
     },
   },
 
@@ -83,7 +103,16 @@ module.exports = {
     updateDeliveryDates(event) {
       let placeElem = document.getElementById("edit-woonplaats");
       this.dateVar = placeElem.options[placeElem.selectedIndex].value;
+    },
+
+    isJson(str) {
+      try {
+        JSON.parse(str);
+      } catch (e) {
+        return false;
+      }
+      return true;
     }
-  },
+},
 }
 </script>

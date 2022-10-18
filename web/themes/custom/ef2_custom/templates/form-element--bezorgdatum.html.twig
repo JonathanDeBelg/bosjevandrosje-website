@@ -11,108 +11,106 @@
  */
 #}
 
-<div{{ attributes.addClass('js-webform-radios webform-options-display-buttons webform-options-display-buttons-horizontal form-radios') }}>
-{#  <delivery-date date='{"value": "friday"}'></delivery-date>#}
-  {% if date("l") not in ['Wednesday']  %}
-  <div class="webform-options-display-buttons-wrapper">
-    <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
-      <input
-        data-drupal-selector="edit-bezorginggegevens-opt-1"
-        type="radio"
-        class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"
-        id="edit-bezorginggegevens-opt-1"
-        name="bezorginggegevens"
-        value="{{ now|date_modify("next friday +1 week")|date("d-m-Y") }}"
-        required>
-      <label for="edit-bezorginggegevens-opt-1" class="btn btn-outline-success webform-options-display-buttons-label option">
-        {{ now|date_modify("next friday +1 week")|date("d-m-Y") }}<br>
-        Vrijdag
-      </label>
-    </div>
-  </div>
-  <div class="webform-options-display-buttons-wrapper">
-    <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
-      <input
-        data-drupal-selector="edit-bezorginggegevens-opt-2"
-        type="radio"
-        class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"
-        id="edit-bezorginggegevens-opt-2"
-        name="bezorginggegevens"
-        value="{{ now|date_modify("next friday +2 week")|date("d-m-Y") }}"
-        required>
-      <label for="edit-bezorginggegevens-opt-2" class="btn btn-outline-success webform-options-display-buttons-label option">
-        {{ now|date_modify("next friday +2 week")|date("d-m-Y") }}<br>
-        Vrijdag
-      </label>
-    </div>
-  </div>
-  <div class="webform-options-display-buttons-wrapper">
-    <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
-      <input
-        data-drupal-selector="edit-bezorginggegevens-opt-3"
-        type="radio"
-        class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"
-        id="edit-bezorginggegevens-opt-3"
-        name="bezorginggegevens"
-        value="{{ now|date_modify("next friday +3 week")|date("d-m-Y") }}"
-        required>
-      <label for="edit-bezorginggegevens-opt-3" class="btn btn-outline-success webform-options-display-buttons-label option">
-        {{ now|date_modify("next friday +3 week")|date("d-m-Y") }}<br>
-        Vrijdag
-      </label>
-    </div>
-  </div>
-  {% else %}
-    <div class="webform-options-display-buttons-wrapper">
-      <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
-        <input
-          data-drupal-selector="edit-bezorginggegevens-opt-1"
-          type="radio"
-          class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"
-          id="edit-bezorginggegevens-opt-1"
-          name="bezorginggegevens"
-          value="{{ now|date_modify("next friday")|date("d-m-Y") }}"
-          required>
-        <label for="edit-bezorginggegevens-opt-1" class="btn btn-outline-success webform-options-display-buttons-label option">
-          {{ now|date_modify("next friday")|date("d-m-Y") }}<br>
-          {{ now|date_modify("next friday")|date("l") }}
-        </label>
-      </div>
-    </div>
-    <div class="webform-options-display-buttons-wrapper">
-      <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
-        <input
-          data-drupal-selector="edit-bezorginggegevens-opt-2"
-          type="radio"
-          class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"
-          id="edit-bezorginggegevens-opt-2"
-          name="bezorginggegevens"
-          value="{{ now|date_modify("next friday +1 week")|date("d-m-Y") }}"
-          required>
-        <label for="edit-bezorginggegevens-opt-2" class="btn btn-outline-success webform-options-display-buttons-label option">
-          {{ now|date_modify("next friday +1 week")|date("d-m-Y") }}<br>
-          {{ now|date_modify("next friday +1 week")|date("l") }}
-        </label>
-      </div>
-    </div>
-    <div class="webform-options-display-buttons-wrapper">
-      <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">
-        <input
-          data-drupal-selector="edit-bezorginggegevens-opt-3"
-          type="radio"
-          class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"
-          id="edit-bezorginggegevens-opt-3"
-          name="bezorginggegevens"
-          value="{{ now|date_modify("next friday +2 week")|date("d-m-Y") }}"
-          required>
-        <label for="edit-bezorginggegevens-opt-3" class="btn btn-outline-success webform-options-display-buttons-label option">
-          {{ now|date_modify("next friday +2 week")|date("d-m-Y") }}<br>
-          {{ now|date_modify("next friday +2 week")|date("l") }}
-        </label>
-      </div>
-    </div>
-  {% endif %}
-</div>
+<delivery-date></delivery-date>
+{#  {% if date("l") not in ['Wednesday']  %}#}
+{#  <div class="webform-options-display-buttons-wrapper">#}
+{#    <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">#}
+{#      <input#}
+{#        data-drupal-selector="edit-bezorginggegevens-opt-1"#}
+{#        type="radio"#}
+{#        class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"#}
+{#        id="edit-bezorginggegevens-opt-1"#}
+{#        name="bezorginggegevens"#}
+{#        value="{{ now|date_modify("next friday +1 week")|date("d-m-Y") }}"#}
+{#        required>#}
+{#      <label for="edit-bezorginggegevens-opt-1" class="btn btn-outline-success webform-options-display-buttons-label option">#}
+{#        {{ now|date_modify("next friday +1 week")|date("d-m-Y") }}<br>#}
+{#        Vrijdag#}
+{#      </label>#}
+{#    </div>#}
+{#  </div>#}
+{#  <div class="webform-options-display-buttons-wrapper">#}
+{#    <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">#}
+{#      <input#}
+{#        data-drupal-selector="edit-bezorginggegevens-opt-2"#}
+{#        type="radio"#}
+{#        class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"#}
+{#        id="edit-bezorginggegevens-opt-2"#}
+{#        name="bezorginggegevens"#}
+{#        value="{{ now|date_modify("next friday +2 week")|date("d-m-Y") }}"#}
+{#        required>#}
+{#      <label for="edit-bezorginggegevens-opt-2" class="btn btn-outline-success webform-options-display-buttons-label option">#}
+{#        {{ now|date_modify("next friday +2 week")|date("d-m-Y") }}<br>#}
+{#        Vrijdag#}
+{#      </label>#}
+{#    </div>#}
+{#  </div>#}
+{#  <div class="webform-options-display-buttons-wrapper">#}
+{#    <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">#}
+{#      <input#}
+{#        data-drupal-selector="edit-bezorginggegevens-opt-3"#}
+{#        type="radio"#}
+{#        class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"#}
+{#        id="edit-bezorginggegevens-opt-3"#}
+{#        name="bezorginggegevens"#}
+{#        value="{{ now|date_modify("next friday +3 week")|date("d-m-Y") }}"#}
+{#        required>#}
+{#      <label for="edit-bezorginggegevens-opt-3" class="btn btn-outline-success webform-options-display-buttons-label option">#}
+{#        {{ now|date_modify("next friday +3 week")|date("d-m-Y") }}<br>#}
+{#        Vrijdag#}
+{#      </label>#}
+{#    </div>#}
+{#  </div>#}
+{#  {% else %}#}
+{#    <div class="webform-options-display-buttons-wrapper">#}
+{#      <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">#}
+{#        <input#}
+{#          data-drupal-selector="edit-bezorginggegevens-opt-1"#}
+{#          type="radio"#}
+{#          class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"#}
+{#          id="edit-bezorginggegevens-opt-1"#}
+{#          name="bezorginggegevens"#}
+{#          value="{{ now|date_modify("next friday")|date("d-m-Y") }}"#}
+{#          required>#}
+{#        <label for="edit-bezorginggegevens-opt-1" class="btn btn-outline-success webform-options-display-buttons-label option">#}
+{#          {{ now|date_modify("next friday")|date("d-m-Y") }}<br>#}
+{#          {{ now|date_modify("next friday")|date("l") }}#}
+{#        </label>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="webform-options-display-buttons-wrapper">#}
+{#      <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">#}
+{#        <input#}
+{#          data-drupal-selector="edit-bezorginggegevens-opt-2"#}
+{#          type="radio"#}
+{#          class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"#}
+{#          id="edit-bezorginggegevens-opt-2"#}
+{#          name="bezorginggegevens"#}
+{#          value="{{ now|date_modify("next friday +1 week")|date("d-m-Y") }}"#}
+{#          required>#}
+{#        <label for="edit-bezorginggegevens-opt-2" class="btn btn-outline-success webform-options-display-buttons-label option">#}
+{#          {{ now|date_modify("next friday +1 week")|date("d-m-Y") }}<br>#}
+{#          {{ now|date_modify("next friday +1 week")|date("l") }}#}
+{#        </label>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="webform-options-display-buttons-wrapper">#}
+{#      <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-frequentie form-item-frequentie">#}
+{#        <input#}
+{#          data-drupal-selector="edit-bezorginggegevens-opt-3"#}
+{#          type="radio"#}
+{#          class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-bezorginggegevens form-item-bezorggegevens btn-check"#}
+{#          id="edit-bezorginggegevens-opt-3"#}
+{#          name="bezorginggegevens"#}
+{#          value="{{ now|date_modify("next friday +2 week")|date("d-m-Y") }}"#}
+{#          required>#}
+{#        <label for="edit-bezorginggegevens-opt-3" class="btn btn-outline-success webform-options-display-buttons-label option">#}
+{#          {{ now|date_modify("next friday +2 week")|date("d-m-Y") }}<br>#}
+{#          {{ now|date_modify("next friday +2 week")|date("l") }}#}
+{#        </label>#}
+{#      </div>#}
+{#    </div>#}
+{#  {% endif %}#}
 
 <input
   data-drupal-selector="edit-bezorgdatum"

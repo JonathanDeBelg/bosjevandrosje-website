@@ -192,6 +192,7 @@ ul.thumbnails.image_picker_selector {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
+
     .form-type-radio {
         padding-left: 0;
     }
@@ -214,6 +215,12 @@ ul.thumbnails.image_picker_selector {
         font-size: 1rem;
     }
 }
+
+//.webform-options-display-buttons-horizontal .webform-options-display-buttons-wrapper.date-buttons {
+//    display: grid;
+//    grid-template-columns: 1fr 1fr;
+//    column-gap: 20px;
+//}
 
 #edit-abonnement-page--2 {
     display: grid;
