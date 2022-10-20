@@ -66,7 +66,7 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
    *   Event.
    */
   public function updateOrderStatus(MollieTransactionStatusChangeEvent $event): void {
-    $bvdApiController = new BvdApiController();
+//    $bvdApiController = new BvdApiController();
     $httpStatusCode = 200;
     /** @var WebformSubmissionInterface $submission */
     $submission = $this->entityTypeManager->getStorage('webform_submission')
@@ -90,23 +90,22 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
         $submission->resave();
       }
 
-      try {
-        $httpStatusCode = $bvdApiController->sendSubscription($submission);
-        \Drupal::logger('bvd_subscriptions')->info('Subscription & customer saved to API');
-      } catch (\Exception $e) {
-        watchdog_exception('bvd_subscriptions_error', $e);
-        $httpStatusCode = 500;
-      }
+//      try {
+//        $httpStatusCode = $bvdApiController->sendSubscription($submission);
+//        \Drupal::logger('bvd_subscriptions')->info('Subscription & customer saved to API');
+//      } catch (\Exception $e) {
+//        watchdog_exception('bvd_subscriptions_error', $e);
+//      }
     } catch (InvalidPluginDefinitionException | PluginNotFoundException | EntityStorageException | ApiException $e) {
       watchdog_exception('bvd_subscriptions_error', $e);
       $httpStatusCode = 500;
     }
 
     $event->setHttpStatusCode($httpStatusCode);
-
-    $handler = $submission->getWebform()->getHandler('email');
-    $message = $handler->getMessage($submission);
-    $handler->sendMessage($submission, $message);
+//
+//    $handler = $submission->getWebform()->getHandler('email');
+//    $message = $handler->getMessage($submission);
+//    $handler->sendMessage($submission, $message);
   }
 
   /**
