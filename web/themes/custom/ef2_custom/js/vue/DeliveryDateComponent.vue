@@ -28,6 +28,7 @@
 </template>
 
 <script>
+
 module.exports = {
   name: 'deliverydate',
 
@@ -50,22 +51,16 @@ module.exports = {
           if(date === 'thursday') {
             dayInt = 4;
           }
-          let actualDate = new Date();
-          let daysToAdd = this.getNumberOfDays(date, actualDate);
+
+          let now = new Date();
+          let weeksToAdd = this.getNumberOfWeeksToAdd(date, now);
 
           let nextThreeWeeksUpcomingDates = [];
-          for(let i in [1, 2, 3]) {
-            daysToAdd = daysToAdd * i;
 
-            nextThreeWeeksUpcomingDates.push(new Date(
-              actualDate.setDate(
-                actualDate.getDate() + ((7 - actualDate.getDay() + dayInt) % 7 || 7) + daysToAdd,
-              ),
-            ));
-          }
+          weeksToAdd.forEach((week) => nextThreeWeeksUpcomingDates.push(this.$moment().add(week, 'weeks').isoWeekday(dayInt)))
 
           this.error = false;
-          return nextThreeWeeksUpcomingDates.map((value)=> {return value.toLocaleDateString() + ', ' +  this.getDayName(value, 'nl-NL')});
+          return nextThreeWeeksUpcomingDates.map((value)=> {return value.format("D-MM-YYYY") + ', ' +  value.format("dddd")});
         }
       }
       this.error = "Kies eerst een woonplaats!"
@@ -75,7 +70,7 @@ module.exports = {
 
   mounted() {
     let placeElem = document.getElementById("edit-woonplaats");
-    placeElem.addEventListener('change', this.updateDeliveryDates)
+    placeElem.addEventListener('change', this.updateDeliveryDates);
   },
 
   destroyed() {
@@ -84,21 +79,17 @@ module.exports = {
   },
 
   methods: {
-    getNumberOfDays: function (chosenDate,actualDate) {
+    getNumberOfWeeksToAdd: function (chosenDate, actualDate) {
       let dayName = this.getDayName(actualDate, "en-EN");
-      let daysToAdd = 7;
+      let weeksToAdd = [1, 2, 3];
+      const allowedDays = ['Monday', 'Tuesday', 'Saturday', 'Sunday'];
+      const deliveryDates = ['thursday', 'friday'];
 
-      if(chosenDate === 'thursday') {
-        if (['Monday', 'Tuesday', 'Wednesday', 'Saturday', 'Sunday'].includes(dayName)) {
-          daysToAdd = 0;
-        }
-      } else {
-        if (['Monday', 'Tuesday', 'Saturday', 'Sunday'].includes(dayName)) {
-          daysToAdd = 0;
-        }
+      if(deliveryDates.includes(chosenDate) && allowedDays.includes(dayName)) {
+          weeksToAdd = [0, 1, 2];
       }
-      return daysToAdd;
 
+      return weeksToAdd;
     },
 
     getDayName(dateStr, locale) {
@@ -122,7 +113,7 @@ module.exports = {
 
     updateFormField: function(value) {
       document.getElementById("edit-bezorgdatum").setAttribute('value', value.target.value);
-    }
+    },
   },
 }
 </script>
