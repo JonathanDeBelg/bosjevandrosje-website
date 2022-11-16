@@ -75,6 +75,7 @@ class BvdApiController extends ControllerBase {
       $response = $client->post($url, $data);
 
       \Drupal::logger('bvd_api_giftcard')->info($url);
+      \Drupal::logger('bvd_api_giftcard')->info(var_export($response, true));
 
       $result = json_decode($response->getBody(), TRUE);
 
