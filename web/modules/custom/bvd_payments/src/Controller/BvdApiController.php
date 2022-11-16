@@ -78,7 +78,7 @@ class BvdApiController extends ControllerBase {
 
       $result = json_decode($response->getBody(), TRUE);
 
-      $submission->setElementData('customer_no', $result['customer_no']);
+//      $submission->setElementData('customer_no', $result['customer_no']);
 //      $submission->setElementData('registration_url', $result['registration_url']);
       $submission->resave();
 
@@ -87,5 +87,4 @@ class BvdApiController extends ControllerBase {
       \Drupal::logger('bvd_api_giftcard_error')->error($e->getMessage());
     }
   }
-
 }
