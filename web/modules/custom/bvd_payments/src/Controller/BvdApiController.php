@@ -23,11 +23,24 @@ class BvdApiController extends ControllerBase {
     $client = new Client();
     $globalSettings = \Drupal::service('settings');
 
+    $data = [
+      'json' => $submission->getData()
+    ];
+    \Drupal::logger('bvd_mollie_subscrip')->info('<pre><code>' . print_r($data, TRUE) . '</code></pre>');
+
+    $httpStatusCode = 500;
+
     try {
-      $url = $globalSettings->get('webapp_url') . $globalSettings->get('webapp_subscription_url');
-      $response = $client->post($url, [
-        'json' => $submission->getData()
-      ]);
+      $url = $globalSettings->get('webapp_url') .
+        $globalSettings->get('webapp_subscription_url') .
+        '?api_token=' .
+        $globalSettings->get('webapp_auth_token');
+
+
+      $response = $client->post($url, $data);
+
+      \Drupal::logger('bvd_mollie_subscrip')->info($url);
+
 
       $result = json_decode($response->getBody(), TRUE);
 
@@ -35,9 +48,43 @@ class BvdApiController extends ControllerBase {
       $submission->setElementData('registration_url', $result['registration_url']);
       $submission->resave();
 
-      return $response->getStatusCode();
+      $httpStatusCode = $response->getStatusCode();
     } catch (RequestException $e) {
       \Drupal::logger('bvd_mollie_subscrip_error')->error($e->getMessage());
+      $httpStatusCode = $e->getCode();
+    }
+
+    return $httpStatusCode;
+  }
+
+  public function sendGiftcard(WebformSubmissionInterface $submission) {
+    $client = new Client();
+    $globalSettings = \Drupal::service('settings');
+
+    $data = [
+      'json' => $submission->getData()
+    ];
+    \Drupal::logger('bvd_api_giftcard')->info('<pre><code>' . print_r($data, TRUE) . '</code></pre>');
+
+    try {
+      $url = $globalSettings->get('webapp_url') .
+        $globalSettings->get('webapp_giftcard_url') .
+        '?api_token=' .
+        $globalSettings->get('webapp_auth_token');
+
+      $response = $client->post($url, $data);
+
+      \Drupal::logger('bvd_api_giftcard')->info($url);
+
+      $result = json_decode($response->getBody(), TRUE);
+
+      $submission->setElementData('customer_no', $result['customer_no']);
+//      $submission->setElementData('registration_url', $result['registration_url']);
+      $submission->resave();
+
+      return $response->getStatusCode();
+    } catch (RequestException $e) {
+      \Drupal::logger('bvd_api_giftcard_error')->error($e->getMessage());
     }
   }
 

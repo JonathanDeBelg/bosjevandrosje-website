@@ -24,8 +24,6 @@ class RecurringPaymentStorage extends TransactionStorageBase {
    * {@inheritdoc}
    */
   protected function createEntityFromTransaction(BaseResource $payment): ?EntityInterface {
-    \Drupal::logger('bvd_handler')->info('1');
-
     if ($payment instanceof RecurringPayment) {
       $metadata = Json::decode($payment->metadata);
 

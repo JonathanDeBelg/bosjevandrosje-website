@@ -7,10 +7,14 @@ use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\TrustedRedirectResponse;
+use Drupal\Core\Url;
+use Drupal\mollie\Events\MollieTransactionStatusChangeEvent;
 use Drupal\mollie\Mollie;
+use Drupal\mollie_customers\Entity\Customer;
 use Drupal\webform\Plugin\WebformHandlerBase;
 use Drupal\webform\WebformSubmissionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Form submission handler.
@@ -43,7 +47,7 @@ final class BvdPaymentsWebformHandler extends WebformHandlerBase {
   protected $mollieApiClient;
 
   /**
-   * @var \Drupal\mollie_customers\Entity\Customer
+   * @var Customer
    */
   private $customer;
 
@@ -81,20 +85,20 @@ final class BvdPaymentsWebformHandler extends WebformHandlerBase {
   }
 
   /**
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function confirmForm(array &$form, FormStateInterface $form_state, WebformSubmissionInterface $webform_submission) {
-    $description = $this->getWebform()->label() . ' #' . $webform_submission->id();
+    if($webform_submission->getWebform()->id() == 'inschrijfformulier' &&
+       $webform_submission->getElementData('betaalopties') == 'sepa') {
+        $description = $this->getWebform()->label() . ' #' . $webform_submission->id();
 
-    try {
-      $response = $this->createFirstPayment($webform_submission, $description, $form_state);
+      try {
+        $response = $this->createFirstPayment($webform_submission, $description, $form_state);
 
-      \Drupal::logger('bvd_mollie')->info(var_export($response, true));
-    } catch (InvalidPluginDefinitionException|PluginNotFoundException $e) {
-      \Drupal::logger('bvd_mollie_error')->info(var_export($e, true));
+        \Drupal::logger('bvd_mollie')->info(var_export($response, true));
+      } catch (InvalidPluginDefinitionException|PluginNotFoundException $e) {
+        \Drupal::logger('bvd_mollie_error')->info(var_export($e, true));
+      }
     }
   }
 
@@ -107,40 +111,40 @@ final class BvdPaymentsWebformHandler extends WebformHandlerBase {
    */
   public function createFirstPayment(WebformSubmissionInterface $webform_submission, string $description, FormStateInterface $form_state): TrustedRedirectResponse
   {
-    /** @var \Drupal\mollie_customers\Entity\Customer  */
+    /** @var Customer  */
     $customer = $this->entityTypeManager->getStorage('mollie_customer')->create(
       [
-        'name' => $webform_submission->getElementData('voornaam'),
+        'name' => $webform_submission->getElementData('voornaam') . ' ' . $webform_submission->getElementData('achternaam'),
         'email' => $webform_submission->getElementData('e_mailadres'),
       ]
     );
 
     try {
-      $customer->save();
 
+      $customer->save();
       $this->customer = $customer;
 
       $transaction = $this->entityTypeManager->getStorage('mollie_recurring_payment')->create(
         [
           'amount' => '0.01',
           'currency' => 'EUR',
-          'context' => 'mollie_webform',
           'description' => $description,
+          'context' => 'mollie_webform',
           'context_id' => $webform_submission->id(),
           'method' => [],
           'customerId' => $customer->id(),
           'sequenceType' => "first",
         ]
       );
-
       $transaction->save();
 
       $response = new TrustedRedirectResponse($transaction->getCheckoutUrl(), '303');
-
-      $form_state->setResponse($response);
-      return $response;
     } catch (EntityStorageException $e) {
       watchdog_exception('mollie', $e);
+      $response = new TrustedRedirectResponse('/er-ging-iets-mis-met-het-betalen', '303');
     }
+    $form_state->setResponse($response);
+    return $response;
+
   }
 }

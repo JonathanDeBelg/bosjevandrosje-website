@@ -10,8 +10,10 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Url;
 use Drupal\mollie\Entity\Payment;
+use Drupal\mollie\Events\MollieTransactionEventBase;
 use Drupal\mollie\Events\MollieTransactionStatusChangeEvent;
 use Drupal\webform\WebformSubmissionInterface;
+use GuzzleHttp\Exception\ClientException;
 use Mollie\Api\Exceptions\ApiException;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Subscription;
@@ -43,7 +45,7 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
    */
   public function __construct(EntityTypeManagerInterface $entityTypeManager) {
     $this->mollieApiClient = new MollieApiClient();
-    $this->mollieApiClient->setApiKey(Settings::get('mollie.settings')['live_key']);
+    $this->mollieApiClient->setApiKey(Settings::get('mollie.settings')['test_key']);
     $this->entityTypeManager = $entityTypeManager;
   }
 
@@ -62,75 +64,51 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
   /**
    * Updates the status of the order when the status of a payment has changed.
    *
-   * @param \Drupal\mollie\Events\MollieTransactionStatusChangeEvent $event
+   * @param MollieTransactionStatusChangeEvent $event
    *   Event.
+   * @throws ApiException
    */
   public function updateOrderStatus(MollieTransactionStatusChangeEvent $event): void {
-//    $bvdApiController = new BvdApiController();
-    $httpStatusCode = 200;
+    \Drupal::logger('bvd_subscription')->info("Kaaas");
+
+    $bvdApiController = new BvdApiController();
+    $httpStatusCode = 500;
     /** @var WebformSubmissionInterface $submission */
-    $submission = $this->entityTypeManager->getStorage('webform_submission')
-      ->load($event->getContextId());
+    $submission = $this->entityTypeManager->getStorage('webform_submission')->load($event->getContextId());
 
-    if($submission->getWebform()->id() != 'inschrijfformulier') {
-      return;
-    }
+    if($submission->getWebform()->id() == 'inschrijfformulier') {
+      if ($submission->getElementData('betaalopties') == 'sepa') {
+        $transactionPaid = $this->getTransactionState($event->getTransaction());
 
-    try {
-      $transaction = $event->getTransaction();
-      if (!($transaction instanceof Payment)) {
-        return;
+        if ($transactionPaid) {
+          $subscription = $this->createSubscription($submission, $event);
+          $submission->setElementData('mollie_customer', $subscription->customerId);
+          $submission->setElementData('mollie_subscription', $subscription->id);
+          $submission->resave();
+        } else {
+          return;
+        }
       }
 
-      if($transaction->getStatus() == PaymentStatus::STATUS_PAID) {
-        $subscription = $this->createSubscription($transaction, $submission, $event);
+      $httpStatusCode = $bvdApiController->sendSubscription($submission);
+      \Drupal::logger('bvd_subscription')->info('Subscription & customer saved to API');
+    } else if($submission->getWebform()->id() == 'cadeaukaartformulier') {
+      if ($submission->getElementData('betaalopties') == 'sepa') {
+        $transactionPaid = $this->getTransactionState($event->getTransaction());
+        if($transactionPaid) {
+          \Drupal::logger('bvd_giftcard')->info('Hey');
 
-        $submission->setElementData('mollie_customer', $subscription->customerId);
-        $submission->setElementData('mollie_subscription', $subscription->id);
-        $submission->resave();
+          //TODO Add transaction paid result.
+        }
       }
 
-//      try {
-//        $httpStatusCode = $bvdApiController->sendSubscription($submission);
-//        \Drupal::logger('bvd_subscriptions')->info('Subscription & customer saved to API');
-//      } catch (\Exception $e) {
-//        watchdog_exception('bvd_subscriptions_error', $e);
-//      }
-    } catch (InvalidPluginDefinitionException | PluginNotFoundException | EntityStorageException | ApiException $e) {
-      watchdog_exception('bvd_subscriptions_error', $e);
-      $httpStatusCode = 500;
+      $httpStatusCode = $bvdApiController->sendGiftcard($submission);
+      \Drupal::logger('bvd_giftcard')->info('Giftcard & customer saved to API');
     }
 
     $event->setHttpStatusCode($httpStatusCode);
-//
-//    $handler = $submission->getWebform()->getHandler('email');
-//    $message = $handler->getMessage($submission);
-//    $handler->sendMessage($submission, $message);
   }
 
-  /**
-   * @param MollieTransactionStatusChangeEvent $event
-   * @return array|\Drupal\Core\GeneratedUrl|string|string[]
-   */
-  protected function getWebhookUrl(MollieTransactionStatusChangeEvent $event)
-  {
-    $webhookUrl = Url::fromRoute(
-      'mollie.subscription.webhook.status_change',
-      ['context' => $event->getContext(), 'context_id' => $event->getContextId()],
-    )->setAbsolute()->toString();
-
-    $config = \Drupal::config('mollie.config');
-    if ($config->get('test_mode') && $config->get('webhook_base_url') !== '') {
-      $defaultBaseUrl = Url::fromRoute('<front>')
-        ->setAbsolute()->toString();
-      $webhookUrl = str_replace(
-        $defaultBaseUrl,
-        "{$config->get('webhgook_base_url')}/",
-        $webhookUrl
-      );
-    }
-    return $webhookUrl;
-  }
 
   /**
    * @param WebformSubmissionInterface $submission
@@ -152,8 +130,9 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
    * @return Subscription
    * @throws ApiException
    */
-  protected function createSubscription($transaction, WebformSubmissionInterface $submission, MollieTransactionStatusChangeEvent $event): Subscription
+  protected function createSubscription(WebformSubmissionInterface $submission, MollieTransactionStatusChangeEvent $event): Subscription
   {
+    $transaction = $event->getTransaction();
     $payment = $this->mollieApiClient->payments->get($transaction->id());
     $customer = $this->mollieApiClient->customers->get($payment->customerId);
 
@@ -164,12 +143,23 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
         "currency" => "EUR",
       ],
       "interval" => $this->getInterval($submission),
-      "webhookUrl" => $this->getWebhookUrl($event),
+//      "webhookUrl" => $this->getWebhookUrl($event),
       "description" => $submission->id(),
       "metadata" => [
         "subscription_id" => \Drupal::service('uuid')->generate(),
       ]
     ]);
     return $subscription;
+  }
+
+  private function getTransactionState(\Drupal\mollie\TransactionInterface $transaction)
+  {
+    if (!($transaction instanceof Payment)) {
+      return false;
+    }
+    if($transaction->getStatus() != PaymentStatus::STATUS_PAID) {
+      return false;
+    }
+    return true;
   }
 }
