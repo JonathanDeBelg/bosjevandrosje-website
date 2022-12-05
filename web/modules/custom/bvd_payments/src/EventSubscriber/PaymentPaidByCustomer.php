@@ -82,6 +82,7 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
 
         if ($transactionPaid) {
           $subscription = $this->createSubscription($submission, $event);
+
           $submission->setElementData('mollie_customer', $subscription->customerId);
           $submission->setElementData('mollie_subscription', $subscription->id);
           $submission->resave();
@@ -136,23 +137,26 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
     $payment = $this->mollieApiClient->payments->get($transaction->id());
     $customer = $this->mollieApiClient->customers->get($payment->customerId);
 
+    $firstDate = explode (",", $submission->getElementData('bezorgdatum'));
+    $firstDate = strtotime($firstDate[0]);
+    $firstDate = date('Y-m-d', $firstDate);
+
     /** @var Subscription */
-    $subscription = $customer->createSubscription([
+    return $customer->createSubscription([
       "amount" => [
         "value" => (string) $submission->getElementData('payment_amount'),
         "currency" => "EUR",
       ],
       "interval" => $this->getInterval($submission),
-//      "webhookUrl" => $this->getWebhookUrl($event),
+      "startDate" => $firstDate,
       "description" => $submission->id(),
       "metadata" => [
         "subscription_id" => \Drupal::service('uuid')->generate(),
       ]
     ]);
-    return $subscription;
   }
 
-  private function getTransactionState(\Drupal\mollie\TransactionInterface $transaction)
+  private function getTransactionState(\Drupal\mollie\TransactionInterface $transaction): bool
   {
     if (!($transaction instanceof Payment)) {
       return false;
