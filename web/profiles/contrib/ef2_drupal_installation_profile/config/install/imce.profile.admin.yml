@@ -1,8 +1,9 @@
+uuid: 0abab9df-3659-4075-aa21-1457181bd66e
 langcode: nl
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: Yr2l9kFlT4Sa8875bhBZ0jy7QkYNxCKbx60FqGxELAg
+  default_config_hash: kCCAWU7-6d8uRcwE0i6pa1YAN68I9TXIFxDauzrJr1U
 id: admin
 label: Beheerdersprofiel
 description: 'Configuratie voor site-beheerders'

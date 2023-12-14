@@ -1,3 +1,4 @@
+uuid: 0353d1e4-4df4-4825-9f45-67a242ad5dc7
 langcode: nl
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - system
   theme:
     - ef2_custom
+_core:
+  default_config_hash: lB3MIEq7qY-Yc1n7SFoI6uVe1oHJJv5MtPagbWYBhfU
 id: primaireinhoudvandepagina
 theme: ef2_custom
 region: content
@@ -14,6 +17,6 @@ plugin: system_main_block
 settings:
   id: system_main_block
   label: 'Primaire inhoud van de pagina'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

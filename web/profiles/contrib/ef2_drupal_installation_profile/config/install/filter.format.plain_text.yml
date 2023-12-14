@@ -1,8 +1,9 @@
+uuid: 1c245dd3-e605-47fe-84e7-a76cb80bc5f2
 langcode: nl
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
+  default_config_hash: KJSDi0wpTaxnOLLzgQH41P56l6qmJqRuYBmQeMb97SQ
 name: 'Platte tekst'
 format: plain_text
 weight: 10

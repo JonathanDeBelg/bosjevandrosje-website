@@ -1,0 +1,50 @@
+uuid: 49a4baa9-c008-4983-9c5d-a4d95925d2bd
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.media.video_youtube.field_media_oembed_video
+    - media.type.video_youtube
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: media_video_embed_layout
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          hidden_fields: div
+          body_wrapper: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      body_wrapper:
+        - field_media_oembed_video
+id: media.video_youtube.default
+targetEntityType: media
+bundle: video_youtube
+mode: default
+content:
+  field_media_oembed_video:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: body_wrapper
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

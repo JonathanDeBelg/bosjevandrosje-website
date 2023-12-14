@@ -1,8 +1,11 @@
+uuid: 55aa3e9c-096e-49bb-a1b6-798188882960
 langcode: nl
 status: true
 dependencies:
   theme:
     - ef2_custom
+_core:
+  default_config_hash: T7BEPQl-jU008C32n1w1NXxAIBdcpy7-y9RrjOatYlM
 id: tabbladen
 theme: ef2_custom
 region: content
@@ -12,8 +15,8 @@ plugin: local_tasks_block
 settings:
   id: local_tasks_block
   label: Tabbladen
-  provider: core
   label_display: '0'
+  provider: core
   primary: true
   secondary: true
 visibility: {  }

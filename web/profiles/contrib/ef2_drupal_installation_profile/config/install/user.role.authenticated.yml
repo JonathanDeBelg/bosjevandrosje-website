@@ -1,0 +1,18 @@
+uuid: f00a8a8b-cca2-4d8a-b533-c418cf0fd7d1
+langcode: nl
+status: true
+dependencies:
+  module:
+    - eu_cookie_compliance
+    - media
+    - system
+_core:
+  default_config_hash: gZxQPPgo-tv1Q5Tc5wfqLxtrE_Tm43By-wqS9tiJ7WE
+id: authenticated
+label: 'Geverifieerde gebruiker'
+weight: -9
+is_admin: false
+permissions:
+  - 'access content'
+  - 'display eu cookie compliance popup'
+  - 'view media'

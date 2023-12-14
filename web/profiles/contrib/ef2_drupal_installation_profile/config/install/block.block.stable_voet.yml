@@ -1,0 +1,33 @@
+uuid: 64eadd77-e157-41bb-bd33-8a2ff6e0bb8a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - stable
+_core:
+  default_config_hash: UGZWvuaAtNRdLWi-cK81zq9wQIiHGuTgwpHf_qweTqo
+id: stable_voet
+theme: stable
+region: footer
+weight: 0
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Voet
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'footer:'
+  suggestion: footer
+visibility: {  }

@@ -1,0 +1,11 @@
+uuid: f788bd7e-1696-4d06-a32a-7c1ff704ace7
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+id: block_content.basic
+target_entity_type_id: block_content
+target_bundle: basic
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,31 @@
+uuid: 5b4492ce-e2b8-4ba7-ab4a-b366cf25a1e0
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - ef2_custom
+id: main_menu
+theme: ef2_custom
+region: header
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: Hoofdmenu
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 2
+  expand_all_items: true
+  parent: 'main:'
+  suggestion: main
+visibility: {  }

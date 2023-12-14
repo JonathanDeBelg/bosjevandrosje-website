@@ -1,0 +1,22 @@
+uuid: 1ad4d85a-d760-4ad4-8771-62658387d832
+langcode: nl
+status: true
+dependencies:
+  theme:
+    - stable
+_core:
+  default_config_hash: T7BEPQl-jU008C32n1w1NXxAIBdcpy7-y9RrjOatYlM
+id: stable_tabbladen
+theme: stable
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabbladen
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

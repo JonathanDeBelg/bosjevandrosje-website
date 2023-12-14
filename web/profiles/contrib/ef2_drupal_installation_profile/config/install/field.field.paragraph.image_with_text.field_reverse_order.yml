@@ -1,0 +1,23 @@
+uuid: f415a895-9ba6-480e-aaa0-f55702416db2
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reverse_order
+    - paragraphs.paragraphs_type.image_with_text
+id: paragraph.image_with_text.field_reverse_order
+field_name: field_reverse_order
+entity_type: paragraph
+bundle: image_with_text
+label: 'Afbeelding aan rechterkant?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

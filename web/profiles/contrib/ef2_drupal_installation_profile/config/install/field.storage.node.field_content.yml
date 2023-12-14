@@ -1,3 +1,4 @@
+uuid: 16f3339f-283a-4950-bc42-450d264222a0
 langcode: nl
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+_core:
+  default_config_hash: EuHiKnlkEQMAVzT8VZ2yUjApxBfYhmEMqQsgDGx-Beo
 id: node.field_content
 field_name: field_content
 entity_type: node

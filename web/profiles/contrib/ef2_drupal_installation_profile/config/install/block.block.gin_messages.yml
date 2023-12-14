@@ -1,3 +1,4 @@
+uuid: afd8e4b5-81f4-43dc-8723-4094f2fc75fb
 langcode: nl
 status: true
 dependencies:
@@ -6,7 +7,7 @@ dependencies:
   theme:
     - gin
 _core:
-  default_config_hash: WvPhI8OwllG0gE69-F8qL3ai3nd5SbYD6JpmEuZcyok
+  default_config_hash: IbhHTwpy9L4ZzeKZUcA2_NNhXm18_2fIsNAalF_at-Q
 id: gin_messages
 theme: gin
 region: highlighted
@@ -16,6 +17,6 @@ plugin: system_messages_block
 settings:
   id: system_messages_block
   label: Statusberichten
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

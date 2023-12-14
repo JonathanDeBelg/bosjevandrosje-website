@@ -1,6 +1,9 @@
+uuid: 8e347eea-1bc2-47d3-8a28-a02b2f19dd35
 langcode: nl
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: jrDJgMapuJuKs8sV0a-NXe1-KEo6VmJMR93TQT3hRmU
 name: Labels
 vid: tags
 description: ''

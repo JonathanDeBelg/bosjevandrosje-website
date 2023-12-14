@@ -1,3 +1,4 @@
+uuid: 434c7415-0ee7-4471-af31-0431935e6afd
 langcode: nl
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - svg_image
     - user
+_core:
+  default_config_hash: 794WfugR65yucB-8CdFLGdJgfDVe0N56bX5OY0jPRNs
 id: user.user.default
 targetEntityType: user
 bundle: user

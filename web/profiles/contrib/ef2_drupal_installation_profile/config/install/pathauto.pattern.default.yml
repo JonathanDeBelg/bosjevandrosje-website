@@ -1,8 +1,11 @@
+uuid: 666ce525-3121-45b8-ab83-faef8f33660f
 langcode: nl
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: jhLFPYbVuftxvW0PbdwMEYsojs87AqjF4rmbuv-8ooE
 id: default
 label: Default
 type: 'canonical_entities:node'

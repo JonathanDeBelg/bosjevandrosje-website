@@ -1,4 +1,4 @@
-use_admin_theme: true
 _core:
-  default_config_hash: 2OMXCScXUOLSYID9-phjO4q36nnnaMWNUlDxEqZzG1U
+  default_config_hash: w0n_uu8yGGT2gSTNS3WXx8KOKqOoBPwJ6UITPuyaOKM
+use_admin_theme: true
 langcode: nl

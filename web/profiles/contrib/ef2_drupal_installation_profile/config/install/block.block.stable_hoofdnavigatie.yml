@@ -1,0 +1,33 @@
+uuid: c13f90d9-68e0-480a-be39-32d6fb0f5efa
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - stable
+_core:
+  default_config_hash: OYbBWvlukX6UMsd3IIRf6XuFMl5-Gss5TUEGMC-B1wI
+id: stable_hoofdnavigatie
+theme: stable
+region: header
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: Hoofdnavigatie
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'main:'
+  suggestion: main
+visibility: {  }

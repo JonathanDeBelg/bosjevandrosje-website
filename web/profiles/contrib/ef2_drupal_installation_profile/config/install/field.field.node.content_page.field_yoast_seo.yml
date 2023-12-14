@@ -1,0 +1,21 @@
+uuid: 254ef428-f855-4f3d-8023-da1377ca30f7
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yoast_seo
+    - node.type.content_page
+  module:
+    - yoast_seo
+id: node.content_page.field_yoast_seo
+field_name: field_yoast_seo
+entity_type: node
+bundle: content_page
+label: 'Real-time SEO'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

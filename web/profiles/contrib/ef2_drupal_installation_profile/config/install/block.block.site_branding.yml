@@ -1,0 +1,23 @@
+uuid: 3e649eee-5573-42ad-876d-2fd64b7c5245
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ef2_custom
+id: site_branding
+theme: ef2_custom
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Branding van de website'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

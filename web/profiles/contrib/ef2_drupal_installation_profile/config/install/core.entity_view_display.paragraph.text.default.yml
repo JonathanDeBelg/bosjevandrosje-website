@@ -1,0 +1,58 @@
+uuid: 65c8037f-9cc0-4988-a5e1-7abce16ddfba
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text.field_has_background
+    - field.field.paragraph.text.field_text
+    - paragraphs.paragraphs_type.text
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: paragraph_text
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          hidden_fields: div
+          body_wrapper: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      body_wrapper:
+        - field_text
+      hidden_fields:
+        - field_has_background
+id: paragraph.text.default
+targetEntityType: paragraph
+bundle: text
+mode: default
+content:
+  field_has_background:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: 'false'
+      format_custom_true: 'true'
+    third_party_settings: {  }
+    weight: 2
+    region: hidden_fields
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: body_wrapper
+hidden:
+  search_api_excerpt: true

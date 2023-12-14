@@ -1,8 +1,9 @@
+uuid: befbe535-0eb2-4249-8784-f758aabd7d4a
 langcode: nl
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: uLGxn83zQtCm36z5Tk6rnhKO2Bm0fafIrI8T9BAqVUs
+  default_config_hash: v-jq9T-JhAxX-ESCh5ELKrtSbHfkZm9xGfLaTwy8paU
 id: member
 label: Ledenprofiel
 description: 'Configuratie voor gebruikers'

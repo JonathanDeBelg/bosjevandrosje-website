@@ -1,0 +1,18 @@
+uuid: 9b5613cb-df64-4fe7-b4a2-8bbab2f08a8e
+langcode: nl
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_reverse_order
+field_name: field_reverse_order
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

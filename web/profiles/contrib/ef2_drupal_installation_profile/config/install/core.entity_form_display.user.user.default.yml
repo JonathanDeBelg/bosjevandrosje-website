@@ -1,3 +1,4 @@
+uuid: cca64616-de11-4796-b049-0f410a983550
 langcode: nl
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - path
     - svg_image
     - user
+_core:
+  default_config_hash: Q4gQmNiVYRGqHVoh7w5C8ZmtjnZUcyF3KhuZWH9gwY8
 id: user.user.default
 targetEntityType: user
 bundle: user

@@ -1,0 +1,33 @@
+uuid: f48ff5d5-8447-4990-bd17-cbdf4dca7a41
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - bartik
+_core:
+  default_config_hash: UGZWvuaAtNRdLWi-cK81zq9wQIiHGuTgwpHf_qweTqo
+id: bartik_voet
+theme: bartik
+region: header
+weight: 0
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Voet
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'footer:'
+  suggestion: footer
+visibility: {  }

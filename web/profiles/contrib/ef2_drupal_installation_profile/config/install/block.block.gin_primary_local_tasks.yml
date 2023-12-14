@@ -1,10 +1,11 @@
+uuid: feedab7f-e94d-4e21-a08f-e46ff4c998c2
 langcode: nl
 status: true
 dependencies:
   theme:
     - gin
 _core:
-  default_config_hash: Hh01DLj9k7UnNdPpOQXHZHW7GHf2OPNDQyCJF7_R9ac
+  default_config_hash: 99LCMoijrpy2AfbGK_Jo1qmrOmK-ANGdHIv0QZHBmCA
 id: gin_primary_local_tasks
 theme: gin
 region: header
@@ -14,8 +15,8 @@ plugin: local_tasks_block
 settings:
   id: local_tasks_block
   label: 'Primaire tabs'
-  provider: core
   label_display: '0'
+  provider: core
   primary: true
   secondary: false
 visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 82aa51ae-5bbe-4981-be57-34cfd676251d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.video_youtube.field_media_oembed_video
+    - media.type.video_youtube
+id: media.video_youtube.media_library
+targetEntityType: media
+bundle: video_youtube
+mode: media_library
+content: {  }
+hidden:
+  created: true
+  field_media_oembed_video: true
+  langcode: true
+  name: true
+  path: true
+  status: true
+  uid: true

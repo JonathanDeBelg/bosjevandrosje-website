@@ -1,0 +1,26 @@
+uuid: c55a3b4b-1d83-4923-8bd1-a55f42c3cf9c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fullwidth_image.field_image
+    - paragraphs.paragraphs_type.fullwidth_image
+  module:
+    - media_library
+_core:
+  default_config_hash: tKNd3jx_hoiCy_1DAf_u4PpZo6rdgax2BwfJPmDAdX0
+id: paragraph.fullwidth_image.default
+targetEntityType: paragraph
+bundle: fullwidth_image
+mode: default
+content:
+  field_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

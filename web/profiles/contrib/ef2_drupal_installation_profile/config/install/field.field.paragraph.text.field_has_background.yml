@@ -1,0 +1,23 @@
+uuid: 22b1f59a-aa5e-4627-85d8-1ac703ddcf44
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_has_background
+    - paragraphs.paragraphs_type.text
+id: paragraph.text.field_has_background
+field_name: field_has_background
+entity_type: paragraph
+bundle: text
+label: 'Achtergrondkleur toevoegen?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

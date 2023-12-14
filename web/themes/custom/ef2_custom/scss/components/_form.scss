@@ -15,6 +15,7 @@ input[type=password],
 input[type=number],
 // input[type=tel],
 input.form-search,
+.webform-radios-other-input input,
 textarea {
     display: block;
     width: 100%;
@@ -146,13 +147,20 @@ form .form-wrapper>.webform-flexbox {
 
 .webform-flexbox,
 #edit-container,
-#edit-container-01 {
+#edit-container-01,
+.form-item-woonplaats {
     .form-item {
         select,
         input {
             padding: 10px
         }
     }
+}
+
+.form-item-woonplaats {
+  select {
+    padding: 10px
+  }
 }
 
 .webform-actions {
@@ -216,12 +224,17 @@ ul.thumbnails.image_picker_selector {
     }
 }
 
+#edit-hoevaak-other-radios.webform-options-display-buttons {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 //.webform-options-display-buttons-horizontal .webform-options-display-buttons-wrapper.date-buttons {
 //    display: grid;
 //    grid-template-columns: 1fr 1fr;
 //    column-gap: 20px;
 //}
 
+#edit-extra-s--2,
 #edit-abonnement-page--2 {
     display: grid;
     grid-template-columns: 7fr 3fr;

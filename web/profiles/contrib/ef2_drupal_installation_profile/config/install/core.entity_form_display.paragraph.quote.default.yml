@@ -1,0 +1,36 @@
+uuid: 6642f010-19ec-4b70-b5d5-45e11e7aedeb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote.field_image
+    - field.field.paragraph.quote.field_text
+    - paragraphs.paragraphs_type.quote
+  module:
+    - media_library
+    - text
+_core:
+  default_config_hash: rf-pig8eaev3qRW-f4AQW3FM9l0U2ku_h95GdH_JacA
+id: paragraph.quote.default
+targetEntityType: paragraph
+bundle: quote
+mode: default
+content:
+  field_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

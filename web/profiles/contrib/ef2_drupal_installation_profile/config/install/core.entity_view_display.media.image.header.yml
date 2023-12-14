@@ -1,0 +1,36 @@
+uuid: fc156001-1660-4b54-b67c-182c167f002f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.header
+    - field.field.media.image.field_media_image
+    - image.style.large
+    - media.type.image
+  module:
+    - svg_image
+id: media.image.header
+targetEntityType: media
+bundle: image
+mode: header
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

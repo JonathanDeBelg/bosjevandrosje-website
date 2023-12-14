@@ -1,0 +1,61 @@
+uuid: eeb6c193-b9cf-4256-a384-1bf0616c410d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.content_page
+    - paragraphs.paragraphs_type.fullwidth_image
+    - paragraphs.paragraphs_type.image_with_text
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.teasers
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: SASFbWrScKNL5uWirOdmK0JuHhho24fSxYJsKArok48
+id: node.content_page.field_content
+field_name: field_content
+entity_type: node
+bundle: content_page
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      image_with_text: image_with_text
+      text: text
+      fullwidth_image: fullwidth_image
+      quote: quote
+      teasers: teasers
+      video: video
+    negate: 0
+    target_bundles_drag_drop:
+      fullwidth_image:
+        weight: -11
+        enabled: true
+      image_with_text:
+        weight: -13
+        enabled: true
+      quote:
+        weight: -10
+        enabled: true
+      teaser:
+        weight: -9
+        enabled: false
+      teasers:
+        weight: -8
+        enabled: true
+      text:
+        weight: -12
+        enabled: true
+      video:
+        weight: 14
+        enabled: true
+field_type: entity_reference_revisions

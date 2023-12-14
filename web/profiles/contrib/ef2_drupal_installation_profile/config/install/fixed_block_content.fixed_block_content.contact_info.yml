@@ -1,0 +1,14 @@
+uuid: 2bc7931f-6798-491b-97a0-87830c07a2c1
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+  content:
+    - 'block_content:basic:c2f9896e-72ec-4e95-a05c-d8a07a3f694d'
+id: contact_info
+title: Contactgegevens
+block_content_bundle: basic
+default_content: '{"_links":{"self":{"href":"https:\/\/drupal-demo.ef2\/block\/1?_format=hal_json"},"type":{"href":"http:\/\/fixed_block_content.drupal.org\/rest\/type\/block_content\/basic"}},"langcode":[{"value":"nl","lang":"nl"}],"type":[{"target_id":"basic"}],"status":[{"value":true,"lang":"nl"}],"info":[{"value":"Contactgegevens","lang":"nl"}],"reusable":[{"value":false}],"default_langcode":[{"value":true,"lang":"nl"}],"revision_translation_affected":[{"value":true,"lang":"nl"}],"metatag":[{"value":{"canonical_url":"https:\/\/drupal-demo.ef2\/block\/1","title":"| Drupal Demo"}}],"body":[{"value":"\u003Cp\u003EStraatnaam 12\u003Cbr \/\u003E\r\nPostcode + woonplaats\u003C\/p\u003E\r\n\r\n\u003Cp\u003E\u003Ca href=\u0022mailto:info@bedrijfsnaam.nl\u0022\u003Einfo@bedrijfsnaam.nl\u003C\/a\u003E\u003Cbr \/\u003E\r\n\u003Ca href=\u0022tel:0612345678\u0022\u003E06 - 12345678\u003C\/a\u003E\u003C\/p\u003E\r\n","format":"full_html","processed":"\u003Cp\u003EStraatnaam 12\u003Cbr \/\u003E\nPostcode + woonplaats\u003C\/p\u003E\n\n\u003Cp\u003E\u003Ca href=\u0022mailto:info@bedrijfsnaam.nl\u0022\u003Einfo@bedrijfsnaam.nl\u003C\/a\u003E\u003Cbr \/\u003E\n\u003Ca href=\u0022tel:0612345678\u0022\u003E06 - 12345678\u003C\/a\u003E\u003C\/p\u003E","summary":"","lang":"nl"}]}'
+auto_export: 2
+protected: true

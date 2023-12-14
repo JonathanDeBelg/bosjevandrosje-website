@@ -1,0 +1,17 @@
+uuid: 8e2476c8-77d4-4cf2-9962-8bcf65fec56c
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: teaser_image_350x260
+label: 'Teaser afbeelding (350x260)'
+effects:
+  e76f72b6-f71d-44ec-9649-a361d036e3b7:
+    uuid: e76f72b6-f71d-44ec-9649-a361d036e3b7
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 260
+      crop_type: focal_point

@@ -1,0 +1,10 @@
+uuid: 5d647865-d58d-406d-9705-04f333fd2193
+langcode: nl
+status: true
+dependencies: {  }
+id: teaser
+label: Teaser
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,31 @@
+uuid: 58a9395f-7c1a-45e1-b221-ab22947bd0c6
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - ef2_custom
+id: copyright_menu
+theme: ef2_custom
+region: copyright
+weight: 0
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Voet
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'footer:'
+  suggestion: footer
+visibility: {  }

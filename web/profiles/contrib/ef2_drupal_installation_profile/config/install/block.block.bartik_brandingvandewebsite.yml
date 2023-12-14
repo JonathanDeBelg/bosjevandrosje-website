@@ -1,0 +1,25 @@
+uuid: d76cbc7f-d767-442c-86ea-9f3047ed2cad
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bartik
+_core:
+  default_config_hash: k81yqt11zfoV2SDe3el_LURjVnVGQ6Yyut-4tuZ4qFE
+id: bartik_brandingvandewebsite
+theme: bartik
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Branding van de website'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

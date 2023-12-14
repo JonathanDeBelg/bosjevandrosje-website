@@ -1,0 +1,8 @@
+uuid: 25a3727d-cdfe-49d1-95c2-a2399572fdae
+langcode: nl
+status: true
+dependencies: {  }
+id: footer-menu
+label: 'Footer menu'
+description: 'Links in footer'
+locked: false

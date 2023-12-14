@@ -1,0 +1,17 @@
+uuid: b03a9e8d-9c9c-4d0f-85b2-e218317791d4
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_with_text_445x405
+label: 'Afbeelding met tekst (445x405)'
+effects:
+  9ad06b23-f1cd-4f2d-b4f1-563c1405d999:
+    uuid: 9ad06b23-f1cd-4f2d-b4f1-563c1405d999
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 445
+      height: 405
+      crop_type: focal_point

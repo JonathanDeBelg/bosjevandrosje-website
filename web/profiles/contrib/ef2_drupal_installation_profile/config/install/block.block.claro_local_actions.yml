@@ -1,10 +1,11 @@
+uuid: add2ad2e-d977-4195-bc84-bf72878008a2
 langcode: nl
 status: true
 dependencies:
   theme:
     - claro
 _core:
-  default_config_hash: osZQ9lL2jTdH5am4LJiZ29RaivhzOf6vCpoRy6FZwIE
+  default_config_hash: gOwMVMrleMLXNXtmpX8OFQEuRtWKH1gy8mXVBHs_ROs
 id: claro_local_actions
 theme: claro
 region: content
@@ -14,6 +15,6 @@ plugin: local_actions_block
 settings:
   id: local_actions_block
   label: 'Primaire beheeracties'
-  provider: core
   label_display: '0'
+  provider: core
 visibility: {  }

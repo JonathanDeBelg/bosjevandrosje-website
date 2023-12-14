@@ -1,0 +1,49 @@
+uuid: 44d05cfb-ce63-4cfb-982a-fe085f3f6e47
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fullwidth_image.field_image
+    - image.style.wide
+    - paragraphs.paragraphs_type.fullwidth_image
+  module:
+    - ds
+    - media
+third_party_settings:
+  ds:
+    layout:
+      id: paragraph_image
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          image_wrapper: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      image_wrapper:
+        - field_image
+_core:
+  default_config_hash: AHtKDzKfS-ythbPRo5mUKy8rNdexJHtyLJArpOotT50
+id: paragraph.fullwidth_image.default
+targetEntityType: paragraph
+bundle: fullwidth_image
+mode: default
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+    third_party_settings: {  }
+    weight: 0
+    region: image_wrapper
+hidden:
+  search_api_excerpt: true

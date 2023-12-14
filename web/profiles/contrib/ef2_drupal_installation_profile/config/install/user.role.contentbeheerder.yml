@@ -1,8 +1,28 @@
+uuid: e32dfc3b-28b0-48e7-a954-7d2a09e0c677
 langcode: nl
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.full_html
+    - taxonomy.vocabulary.tags
+  module:
+    - cacheflush
+    - entity_clone
+    - file
+    - filter
+    - locale
+    - menu_link_attributes
+    - node
+    - paragraphs
+    - path
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+    - webform
+    - yoast_seo
 _core:
-  default_config_hash: DH1bp3SyBxGnw1Ax8kjRQc8cMyvICk7CtSwHl0fX0Vw
+  default_config_hash: 6EMqV7_wjuB6yR462C865AKNgL2r8hI_Nw0QcaKwGiA
 id: contentbeheerder
 label: Contentbeheerder
 weight: -8
@@ -21,36 +41,29 @@ permissions:
   - 'access webform overview'
   - 'administer menu'
   - 'administer webform element access'
+  - 'cacheflush clear cache'
   - 'change own username'
   - 'clone node entity'
   - 'clone paragraph entity'
   - 'clone taxonomy_term entity'
   - 'clone webform entity'
-  - 'create basic_page content'
   - 'create terms in tags'
   - 'create url aliases'
   - 'create webform'
-  - 'delete any basic_page content'
   - 'delete any webform submission'
-  - 'delete basic_page revisions'
-  - 'delete own basic_page content'
   - 'delete own webform'
   - 'delete own webform submission'
   - 'delete terms in tags'
-  - 'edit any basic_page content'
   - 'edit any webform'
   - 'edit any webform submission'
-  - 'edit own basic_page content'
   - 'edit own webform'
   - 'edit terms in tags'
-  - 'revert basic_page revisions'
   - 'translate interface'
   - 'use menu link attributes'
   - 'use text format full_html'
   - 'use yoast seo'
   - 'view all revisions'
   - 'view any webform submission'
-  - 'view basic_page revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
   - 'view unpublished paragraphs'

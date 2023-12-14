@@ -1,8 +1,7 @@
 name: EF2 Drupal installation profile
 type: profile
 description: 'Basic installation profile for EF2 Drupal installations'
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
@@ -15,6 +14,7 @@ distribution:
 dependencies:
   - admin_toolbar
   - admin_toolbar_tools
+  - admin_toolbar_links_access_filter
   - antibot
   - automated_cron
   - background_image_formatter
@@ -22,7 +22,11 @@ dependencies:
   - block_content
   - blockgroup
   - breakpoint
+  - cacheflush
+  - cacheflush_entity
   - ckeditor
+  - clientside_validation
+  - clientside_validation_jquery
   - color
   - config
   - contextual
@@ -56,6 +60,8 @@ dependencies:
   - linkit
   - mailsystem
   - masquerade
+  - media
+  - media_library
   - menu_block
   - menu_link_attributes
   - menu_link_content
@@ -84,11 +90,14 @@ dependencies:
   - token
   - toolbar
   - tour
+  - twig_tweak
   - video_embed_field
+  - video_embed_media
   - views
   - views_infinite_scroll
   - views_row_insert
   - views_ui
+  - vitals
   - webform
   - webform_ui
   - yoast_seo

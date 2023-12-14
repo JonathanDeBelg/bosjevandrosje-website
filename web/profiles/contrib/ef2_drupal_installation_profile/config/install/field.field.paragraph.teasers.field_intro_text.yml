@@ -1,0 +1,24 @@
+uuid: e4e9909f-7c13-41c0-a050-1966a44a3bc3
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro_text
+    - paragraphs.paragraphs_type.teasers
+  module:
+    - text
+id: paragraph.teasers.field_intro_text
+field_name: field_intro_text
+entity_type: paragraph
+bundle: teasers
+label: 'Intro tekst'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<h2>Titel als Kop 2</h2>\r\n\r\n<p>Eventueel een inleidende tekst.</p>\r\n"
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

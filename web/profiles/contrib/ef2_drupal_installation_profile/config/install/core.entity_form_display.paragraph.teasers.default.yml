@@ -1,0 +1,39 @@
+uuid: 4ad87f37-93a0-4366-87d8-a7a46330f58e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teasers.field_intro_text
+    - field.field.paragraph.teasers.field_teasers
+    - paragraphs.paragraphs_type.teasers
+  module:
+    - paragraphs_asymmetric_translation_widgets
+    - text
+id: paragraph.teasers.default
+targetEntityType: paragraph
+bundle: teasers
+mode: default
+content:
+  field_intro_text:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_teasers:
+    type: paragraphs_classic_asymmetric
+    weight: 1
+    region: content
+    settings:
+      title: Paragraaf
+      title_plural: Paragrafen
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

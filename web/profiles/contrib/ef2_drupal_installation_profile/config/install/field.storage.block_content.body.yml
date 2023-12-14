@@ -1,3 +1,4 @@
+uuid: 7b3d80aa-4f68-4b18-ade1-9ffefb52042b
 langcode: nl
 status: true
 dependencies:
@@ -5,7 +6,7 @@ dependencies:
     - block_content
     - text
 _core:
-  default_config_hash: eS0snV_L3dx9shtWRTzm5eblwOJ7qKWC9IE-4GMTDFc
+  default_config_hash: 8Wd4w0BxGIWVpfZl_yaodz5rwfljWN74L9yOA8MfS2U
 id: block_content.body
 field_name: body
 entity_type: block_content

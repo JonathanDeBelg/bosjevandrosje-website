@@ -1,10 +1,11 @@
+uuid: 485f20d0-e1fc-45af-bfe3-d79c2824c06d
 langcode: nl
 status: true
 dependencies:
   theme:
     - gin
 _core:
-  default_config_hash: OQ9aJ-4qVwK1x00o9EOYK4eFDjQr_HLpbPiJaPSVZiQ
+  default_config_hash: A3URSWi4VXXScEvcBLI0ze5gLd0VsZZCMUKIQK8kZCo
 id: gin_local_actions
 theme: gin
 region: content
@@ -14,6 +15,6 @@ plugin: local_actions_block
 settings:
   id: local_actions_block
   label: 'Primaire beheeracties'
-  provider: core
   label_display: '0'
+  provider: core
 visibility: {  }

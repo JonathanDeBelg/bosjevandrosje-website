@@ -1,0 +1,24 @@
+uuid: 6a999a69-62a3-4eaa-89d2-f20d7d353909
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.quote
+  module:
+    - text
+id: paragraph.quote.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: quote
+label: Tekst
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: "<blockquote>\r\n<p>Dit is een blockquote</p>\r\n</blockquote>\r\n\r\n<p><a class=\"btn-primary\" href=\"/\">Call to action</a></p>\r\n"
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

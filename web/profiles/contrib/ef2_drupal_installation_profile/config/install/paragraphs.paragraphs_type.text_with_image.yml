@@ -1,9 +1,0 @@
-langcode: nl
-status: true
-dependencies: {  }
-id: text_with_image
-label: 'Tekst met afbeelding'
-icon_uuid: null
-icon_default: null
-description: ''
-behavior_plugins: {  }

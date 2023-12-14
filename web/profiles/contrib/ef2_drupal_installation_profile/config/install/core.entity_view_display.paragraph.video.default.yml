@@ -1,0 +1,23 @@
+uuid: 9c929173-25b8-42de-af06-b1b6e11917c2
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video.field_video_youtube
+    - paragraphs.paragraphs_type.video
+id: paragraph.video.default
+targetEntityType: paragraph
+bundle: video
+mode: default
+content:
+  field_video_youtube:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

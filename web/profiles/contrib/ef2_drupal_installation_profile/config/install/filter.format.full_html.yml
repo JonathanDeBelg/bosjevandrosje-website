@@ -1,9 +1,12 @@
+uuid: f5ca5d85-d9b1-41d5-8a73-4daefd62e4be
 langcode: nl
 status: true
 dependencies:
   module:
     - editor
     - linkit
+_core:
+  default_config_hash: Q9Y_mN7H8t4QnuA-AS1_lCW2R6Rnr3YMXmGVuuokj_Q
 name: 'Volledige html'
 format: full_html
 weight: 0
@@ -33,7 +36,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<a href hreflang class target data-*> <span class> <em> <strong class> <u class> <cite> <blockquote cite> <code> <ul type class> <ol start type> <li class> <dl> <dt> <dd> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <s class> <sup class> <sub class> <img src alt data-entity-type data-entity-uuid data-align data-caption class> <table class> <caption> <tbody> <thead> <tfoot> <th> <td class> <tr> <hr> <p class> <h1 class> <pre><br>'
+      allowed_html: '<span class=""> <em> <strong class=""> <u class=""> <cite> <blockquote cite> <code> <ul type class=""> <ol start type> <li class=""> <dl> <dt> <dd> <h2 id class=""> <h3 id class=""> <h4 id class=""> <h5 id class=""> <h6 id class=""> <s class=""> <sup class=""> <sub class=""> <img src alt data-entity-type data-entity-uuid data-align data-caption class=""> <table class=""> <caption> <tbody> <thead> <tfoot> <th> <td class=""> <tr> <hr> <h1 class=""> <pre> <br> <a href hreflang target data-* class=" btn-primary btn-secondary cta-default btn-outline text-link"> <p class=" virtual-h1 intro-text subtitle">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:

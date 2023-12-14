@@ -1,0 +1,22 @@
+uuid: b8b833d3-47f7-4c90-8ab7-05eb8071a256
+langcode: nl
+status: true
+dependencies:
+  theme:
+    - bartik
+_core:
+  default_config_hash: T7BEPQl-jU008C32n1w1NXxAIBdcpy7-y9RrjOatYlM
+id: bartik_tabbladen
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabbladen
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

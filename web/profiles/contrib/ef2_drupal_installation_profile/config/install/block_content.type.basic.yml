@@ -1,0 +1,8 @@
+uuid: a3ef5e3d-e50a-408d-9728-c7c0719796a5
+langcode: nl
+status: true
+dependencies: {  }
+id: basic
+label: Standaardblok
+revision: 0
+description: ''

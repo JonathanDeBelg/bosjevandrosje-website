@@ -1,10 +1,11 @@
+uuid: d26690db-0712-4420-816e-6f991b9d8a77
 langcode: nl
 status: false
 dependencies:
   module:
     - node
 _core:
-  default_config_hash: ElrtInxGjZd7GaapJ5O9n-ugi2hG2IxFivtgn0tHOsk
+  default_config_hash: MSn10R4m5ZKGo2doO_hjBeRz6dPI06-SGyK5i0tJhTA
 id: node.full
 label: 'Volledige inhoud'
 targetEntityType: node

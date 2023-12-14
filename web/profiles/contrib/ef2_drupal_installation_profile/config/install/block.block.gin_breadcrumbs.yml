@@ -1,3 +1,4 @@
+uuid: 3b4ac6d7-e037-4917-bc02-5bae87c45a7a
 langcode: nl
 status: true
 dependencies:
@@ -6,7 +7,7 @@ dependencies:
   theme:
     - gin
 _core:
-  default_config_hash: y9X3xgCsO59pQyzNLzY1D3SDJJxCHILLWkpPnmuTJ2E
+  default_config_hash: qgALf7Vr2H0x7U9BXnBn2HgFIq-2NNmjDN0ZpuD6sp0
 id: gin_breadcrumbs
 theme: gin
 region: breadcrumb
@@ -16,6 +17,6 @@ plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
   label: Kruimelpad
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

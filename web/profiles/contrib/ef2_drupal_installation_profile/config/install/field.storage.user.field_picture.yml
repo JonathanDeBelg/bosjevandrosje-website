@@ -1,3 +1,4 @@
+uuid: 41e96ef4-8efa-411a-841b-86e45ac7f2d1
 langcode: nl
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - file
     - image
     - user
+_core:
+  default_config_hash: Gs_am27JGNcV7-Nnyd9irktJ3OJIpVGBBH4wq_FAxjU
 id: user.field_picture
 field_name: field_picture
 entity_type: user

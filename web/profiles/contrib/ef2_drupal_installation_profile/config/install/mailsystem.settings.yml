@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: gvvnHiuwnBqIEApp_W-jpIIPnIV6f56yTVS45d0t9sc
+langcode: nl
+theme: ef2_custom
+defaults:
+  sender: php_mail
+  formatter: mime_mail

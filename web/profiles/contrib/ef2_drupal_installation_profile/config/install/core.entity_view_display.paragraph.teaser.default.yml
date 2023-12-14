@@ -1,0 +1,61 @@
+uuid: 0f5ecb57-4f35-4c21-bec5-c264785559e1
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser.field_image
+    - field.field.paragraph.teaser.field_text
+    - image.style.teaser_image_350x260
+    - paragraphs.paragraphs_type.teaser
+  module:
+    - ds
+    - media
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: teaser
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          teaser_image: div
+          teaser_text: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      teaser_text:
+        - field_text
+      teaser_image:
+        - field_image
+_core:
+  default_config_hash: ap1Mv8r6BSeugTaQw5P2u4xYJqRNhCz87IZprn7tLY8
+id: paragraph.teaser.default
+targetEntityType: paragraph
+bundle: teaser
+mode: default
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: teaser_image_350x260
+    third_party_settings: {  }
+    weight: 2
+    region: teaser_image
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: teaser_text
+hidden:
+  search_api_excerpt: true

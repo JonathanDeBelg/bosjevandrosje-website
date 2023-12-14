@@ -1,0 +1,27 @@
+uuid: ca091b97-27dd-46a2-befb-5d1eda8eb7d8
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.homepage
+  module:
+    - text
+id: node.homepage.body
+field_name: body
+entity_type: node
+bundle: homepage
+label: Body
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: "<h1>Titel van de pagina als Kop 1</h1>\r\n\r\n<p class=\"subtitle\">Met eventueel een subtitel</p>\r\n"
+    summary: ''
+    format: full_html
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

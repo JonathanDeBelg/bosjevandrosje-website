@@ -1,0 +1,78 @@
+uuid: 0151742e-e397-4690-80d1-4239789f4787
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.body
+    - field.field.node.homepage.field_content
+    - field.field.node.homepage.field_header_image
+    - field.field.node.homepage.field_meta_tags
+    - field.field.node.homepage.field_yoast_seo
+    - node.type.homepage
+  module:
+    - ds
+    - entity_reference_revisions
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: homepage
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          header_content: div
+          flex_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      header_content:
+        - field_header_image
+        - body
+      flex_content:
+        - field_content
+_core:
+  default_config_hash: ho-krgia_eFaMFQja5YlEnGobZ5VYcyGNzPsj90J4V4
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: header_content
+  field_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: flex_content
+  field_header_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: header
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: header_content
+hidden:
+  field_meta_tags: true
+  field_yoast_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

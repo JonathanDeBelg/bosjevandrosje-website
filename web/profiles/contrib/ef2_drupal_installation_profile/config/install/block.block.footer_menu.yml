@@ -1,0 +1,31 @@
+uuid: f4d0963a-8732-4e2c-951e-20cb2335c8b4
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.footer-menu
+  module:
+    - menu_block
+  theme:
+    - ef2_custom
+id: footer_menu
+theme: ef2_custom
+region: footer
+weight: -2
+provider: null
+plugin: 'menu_block:footer-menu'
+settings:
+  id: 'menu_block:footer-menu'
+  label: 'Footer menu'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'footer-menu:'
+  suggestion: footer_menu
+visibility: {  }
