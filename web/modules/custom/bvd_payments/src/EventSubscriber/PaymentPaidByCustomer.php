@@ -91,6 +91,11 @@ class PaymentPaidByCustomer implements EventSubscriberInterface {
         }
       }
 
+		$data = [
+			'json' => $submission->getData()
+		];
+		\Drupal::logger('bvd_mollie_subscrip')->info('<pre><code>' . print_r($data, TRUE) . '</code></pre>');
+
       $httpStatusCode = $bvdApiController->sendSubscription($submission);
       \Drupal::logger('bvd_subscription')->info('Subscription & customer saved to API');
     } else if($submission->getWebform()->id() == 'cadeaukaartformulier') {

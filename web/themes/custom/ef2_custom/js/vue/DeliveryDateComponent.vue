@@ -82,7 +82,7 @@ module.exports = {
     getNumberOfWeeksToAdd: function (chosenDate, actualDate) {
       let dayName = this.getDayName(actualDate, "en-EN");
       let weeksToAdd = [1, 2, 3];
-      const allowedDays = ['Monday', 'Tuesday', 'Saturday', 'Sunday'];
+      const allowedDays = ['Monday', 'Tuesday'];
       const deliveryDates = ['thursday', 'friday'];
 
       if(deliveryDates.includes(chosenDate) && allowedDays.includes(dayName)) {
