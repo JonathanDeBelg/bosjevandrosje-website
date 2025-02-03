@@ -63,7 +63,7 @@ class ZohoApiClient {
 
       $data = json_decode($response->getBody(), TRUE);
 
-      if (isset($data['access_token'], $data['refresh_token'])) {
+      if (isset($data['access_token']) || isset($data['refresh_token'])) {
         // Store tokens and expiration time.
         \Drupal::state()->set('zoho_access_token', $data['access_token']);
         \Drupal::state()->set('zoho_refresh_token', $data['refresh_token']);
@@ -73,12 +73,14 @@ class ZohoApiClient {
         return $data['access_token'];
       }
       else {
-        throw new \Exception('Failed to exchange authorization code: Invalid response from Zoho.');
+        throw new \Exception('Failed to exchange authorization code: Invalid response from Zoho. ' .
+          'Data: ' . print_r($data, TRUE));
       }
     }
     catch (RequestException $e) {
-      \Drupal::logger('zoho_webhook')->error('Failed to exchange authorization code: @message', [
+      \Drupal::logger('zoho_webhook')->error('Failed to exchange authorization code: @message, Data: @data', [
         '@message' => $e->getMessage(),
+        '@data' => $data
       ]);
       throw $e;
     }

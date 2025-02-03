@@ -41,29 +41,26 @@ class ZohoAuthController extends ControllerBase {
    */
   public function callback(Request $request) {
     $code = $request->query->get('code');
-    $state = $request->query->get('state');
-    $error = $request->query->get('error');
-  
-    if ($error) {
-      \Drupal::logger('zoho_webhook')->error('Zoho OAuth Error: @error', ['@error' => $error]);
-      return new RedirectResponse('/error-page'); // Replace with your error route.
-    }
-  
+    $state = $request->query->get('state'); // Optional state parameter
+
     if (!$code) {
-      \Drupal::logger('zoho_webhook')->error('Zoho OAuth Error: Missing code.');
-      return new RedirectResponse('/error-page'); // Replace with your error route.
+      \Drupal::messenger()->addError($this->t('Authorization failed. No authorization code received.'));
+      return $this->redirect('zoho_webhook.settings');
     }
-  
+
     try {
-      // Exchange the authorization code for tokens.
-      $this->zohoApiClient->exchangeAuthorizationCode($code, $state);
-  
-      \Drupal::logger('zoho_webhook')->info('Zoho OAuth authentication successful.');
-      return new RedirectResponse('/success-page'); // Replace with your success route.
-    }
-    catch (\Exception $e) {
-      \Drupal::logger('zoho_webhook')->error('Zoho OAuth Error: @message', ['@message' => $e->getMessage()]);
-      return new RedirectResponse('/error-page'); // Replace with your error route.
+      // Use the modular function to exchange the authorization code
+      $accessToken = $this->zohoApiClient->exchangeAuthorizationCode($code, $state);
+
+      // Success message and redirect to settings
+      \Drupal::messenger()->addStatus($this->t('Zoho authentication successful. Access token obtained.'));
+      return $this->redirect('zoho_webhook.settings');
+    } catch (\Exception $e) {
+      // Error message and redirect back
+      \Drupal::messenger()->addError($this->t('Failed to exchange authorization code: @message', [
+        '@message' => $e->getMessage(),
+      ]));
+      return $this->redirect('zoho_webhook.settings');
     }
   }
   

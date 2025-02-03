@@ -21,3 +21,11 @@ zoho_webhook.payment_response:
     _title: 'Zoho Payment Response'
   requirements:
     _permission: 'access content'
+
+zoho_webhook.settings:
+  path: '/admin/config/system/zoho-webhook'
+  defaults:
+    _form: 'Drupal\zoho_webhook\Form\ZohoWebhookSettingsForm'
+    _title: 'Zoho Webhook Settings'
+  requirements:
+    _permission: 'administer site configuration'
