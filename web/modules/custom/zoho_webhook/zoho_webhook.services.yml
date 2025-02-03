@@ -1,0 +1,12 @@
+services:
+  zoho_webhook.zoho_api_client:
+    class: Drupal\zoho_webhook\Service\ZohoApiClient
+    arguments: ['@http_client', '@settings']
+
+  zoho_webhook.auth_controller:
+    class: 'Drupal\zoho_webhook\Controller\ZohoAuthController'
+    arguments: ['@http_client', '@zoho_webhook.zoho_api_client']
+    tags:
+      - { name: controller.service_arguments }
+
+  

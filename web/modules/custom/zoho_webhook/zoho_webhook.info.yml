@@ -1,0 +1,7 @@
+name: Zoho Webhook
+type: module
+description: 'Send form requests to Zoho Billing.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:webform

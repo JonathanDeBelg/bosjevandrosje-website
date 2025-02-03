@@ -1,0 +1,23 @@
+zoho_webhook.oauth_redirect:
+  path: 'zoho/oauth/redirect'
+  defaults:
+    _controller: '\Drupal\zoho_webhook\Controller\ZohoAuthController::redirectToZoho'
+    _title: 'Zoho OAuth Redirect'
+  requirements:
+    _permission: 'access content'
+
+zoho_webhook.oauth_callback:
+  path: 'zoho/oauth/callback'
+  defaults:
+    _controller: '\Drupal\zoho_webhook\Controller\ZohoAuthController::callback'
+    _title: 'Zoho OAuth Callback'
+  requirements:
+    _permission: 'access content'
+
+zoho_webhook.payment_response:
+  path: '/zoho/payment-response'
+  defaults:
+    _controller: 'Drupal\zoho_webhook\Controller\ZohoPaymentController::handlePaymentResponse'
+    _title: 'Zoho Payment Response'
+  requirements:
+    _permission: 'access content'
