@@ -50,8 +50,8 @@ class ZohoPaymentController extends ControllerBase {
 
     // Get confirmation URL dynamically from the webform settings
     $webform = Webform::load($webformId);
-    if ($webform && $webform->hasSetting('confirmation_url')) {
-      $confirmationUrl = $webform->getSetting('confirmation_url');
+    if ($webform) {
+      $confirmationUrl = $webform->getSetting('confirmation_url') ?? '/thank-you';
     } else {
       $confirmationUrl = '/thank-you'; // Fallback confirmation page
     }
