@@ -5,7 +5,7 @@ services:
 
   zoho_webhook.auth_controller:
     class: 'Drupal\zoho_webhook\Controller\ZohoAuthController'
-    arguments: ['@http_client', '@zoho_webhook.zoho_api_client']
+    arguments: ['@http_client', '@zoho_webhook.zoho_api_client', '@settings']
     tags:
       - { name: controller.service_arguments }
 

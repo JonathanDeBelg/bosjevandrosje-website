@@ -52,6 +52,7 @@ class ZohoWebhookHandler extends WebformHandlerBase {
         'email' => $data['e_mailadres'],
         'first_name' => $data['voornaam'],
         'last_name' => $data['achternaam'],
+        'is_portal_enabled' => TRUE,
         'billing_address' => [
             'address' => $data['adres'] . ' ' . $data['huisnummer'],
             'city' => json_decode($data['woonplaats'], TRUE)['value'], // Extract city.

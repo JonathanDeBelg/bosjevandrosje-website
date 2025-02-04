@@ -46,6 +46,7 @@ class ZohoWebhookSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Zoho Client ID'),
       '#default_value' => $this->config['client_id'],
+      '#attributes' => array('readonly' => 'readonly'),
       '#required' => TRUE,
     ];
 
@@ -53,6 +54,7 @@ class ZohoWebhookSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Zoho Client Secret'),
       '#default_value' => $this->config['client_secret'],
+      '#attributes' => array('readonly' => 'readonly'),
       '#required' => TRUE,
     ];
 
@@ -62,6 +64,7 @@ class ZohoWebhookSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Redirect URI'),
       '#default_value' => $this->config['redirect_uri'],
       '#required' => TRUE,
+      '#attributes' => array('readonly' => 'readonly'),
       '#description' => $this->t('This should match the Redirect URI configured in Zoho.'),
     ];
 
@@ -87,9 +90,6 @@ class ZohoWebhookSettingsForm extends ConfigFormBase {
       'scope' => 'ZohoSubscriptions.fullaccess.all',
       'access_type' => 'offline',
     ]);
-
-    // Set a message before redirecting
-    \Drupal::messenger()->addStatus($this->t('Redirecting to Zoho for authentication.'));
 
     // Use TrustedRedirectResponse for external redirect
     $form_state->setResponse(new TrustedRedirectResponse($authUrl));

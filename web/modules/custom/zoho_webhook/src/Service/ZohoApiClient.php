@@ -30,7 +30,7 @@ class ZohoApiClient {
       'response_type' => 'code',
       'client_id' => $this->config['client_id'],
       'scope' => 'ZohoSubscriptions.fullaccess.all',
-      'redirect_uri' => $this->config['redirect_uri'],
+      'redirect_uri' => $this->config['refresh_uri'],
       'access_type' => 'offline',
       'prompt' => 'consent',
     ]);
@@ -50,18 +50,20 @@ class ZohoApiClient {
    */
   public function exchangeAuthorizationCode($code, $state) {
     try {
+
       $response = $this->httpClient->post($this->config['token_url'], [
         'form_params' => [
           'grant_type' => 'authorization_code',
           'client_id' => $this->config['client_id'],
           'client_secret' => $this->config['client_secret'],
-          'redirect_uri' => $this->config['redirect_uri'],
+          'redirect_uri' => $this->config['refresh_uri'],
           'code' => $code,
           'scope' => 'ZohoSubscriptions.fullaccess.all'
         ],
       ]);
 
       $data = json_decode($response->getBody(), TRUE);
+      dd($data);
 
       if (isset($data['access_token']) || isset($data['refresh_token'])) {
         // Store tokens and expiration time.
@@ -87,50 +89,47 @@ class ZohoApiClient {
   }
 
   /**
-   * Get or refresh the access token.
-   *
-   * @return string
-   *   The current or newly refreshed access token.
-   *
-   * @throws \Exception
-   *   When unable to obtain an access token.
+   * Fetch access token, refreshing if necessary.
    */
   public function getAccessToken() {
     $accessToken = \Drupal::state()->get('zoho_access_token');
-    $expiresAt = \Drupal::state()->get('zoho_access_token_expires_at');
-  
-    if (!$accessToken || ($expiresAt && $expiresAt <= time())) {
-      $refreshToken = \Drupal::state()->get('zoho_refresh_token');
-      if ($refreshToken) {
-        return $this->refreshAccessToken($refreshToken);
-      }
-      else {
-        // No access or refresh token available. User must authenticate.
-        throw new \Exception('No access or refresh token available. Redirect user to Zoho authorization URL.');
-      }
+    $expiresAt = \Drupal::state()->get('zoho_token_expires');
+
+    if (!$accessToken || time() >= $expiresAt) {
+      return $this->refreshAccessToken();
     }
-  
+
     return $accessToken;
   }
 
+   /**
+   * Make a request to Zoho API.
+   */
+  public function request($method, $endpoint, $options = []) {
+    $accessToken = $this->getAccessToken();
+    if (!$accessToken) {
+      throw new \Exception('Invalid Zoho access token.');
+    }
+
+    $options['headers']['Authorization'] = 'Zoho-oauthtoken ' . $accessToken;
+
+    try {
+      $response = $this->httpClient->request($method, "https://www.zohoapis.com$endpoint", $options);
+      return json_decode($response->getBody(), TRUE);
+    } catch (\Exception $e) {
+      $this->logger->error('Zoho API request failed: @message', ['@message' => $e->getMessage()]);
+      return NULL;
+    }
+  }
 
   /**
-   * Refresh the access token using the refresh token.
-   *
-   * @param string $refreshToken
-   *   The refresh token.
-   *
-   * @return string
-   *   The refreshed access token.
-   *
-   * @throws \Exception
-   *   When unable to refresh the access token.
+   * Refresh the Zoho access token.
    */
-  public function refreshAccessToken($refreshToken) {
+  private function refreshAccessToken() {
     try {
       $response = $this->httpClient->post($this->config['token_url'], [
         'form_params' => [
-          'refresh_token' => $refreshToken,
+          'refresh_token' => \Drupal::state()->get('zoho_refresh_token'),
           'client_id' => $this->config['client_id'],
           'client_secret' => $this->config['client_secret'],
           'grant_type' => 'refresh_token',
@@ -138,22 +137,17 @@ class ZohoApiClient {
       ]);
 
       $data = json_decode($response->getBody(), TRUE);
-
       if (isset($data['access_token'])) {
         \Drupal::state()->set('zoho_access_token', $data['access_token']);
-        \Drupal::state()->set('zoho_access_token_expires_at', time() + $data['expires_in']);
-        \Drupal::logger('zoho_webhook')->info('Zoho access token refreshed successfully.');
+        \Drupal::state()->set('zoho_token_expires', time() + $data['expires_in']);
+
         return $data['access_token'];
       }
-      else {
-        throw new \Exception('Failed to refresh Zoho access token: Missing access token in response.');
-      }
-    }
-    catch (RequestException $e) {
-      \Drupal::logger('zoho_webhook')->error('Zoho OAuth Error during refresh: @message', [
-        '@message' => $e->getMessage(),
-      ]);
-      throw $e;
+
+      throw new \Exception('Failed to obtain access token.');
+    } catch (\Exception $e) {
+      \Drupal::logger('zoho_webhook')->error('Zoho API authentication failed: @message', ['@message' => $e->getMessage()]);
+      return NULL;
     }
   }
 
@@ -252,6 +246,7 @@ class ZohoApiClient {
                 'json' => print_r($customerData),
             ], TRUE),
         ]);
+        \Drupal::messenger()->addError($this->t('Something went wrong while creating the customer. Contact the site admin.'));
         throw new \Exception('Failed to create Zoho customer.');
     }
   }
