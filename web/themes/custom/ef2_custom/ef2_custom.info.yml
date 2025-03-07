@@ -2,8 +2,7 @@ name: EF2 custom thema
 type: theme
 description: Maatwerkthema gerealiseerd door EF2
 screenshot: screenshot.jpg
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9.4 || ^10
 base theme: classy
 libraries:
   - ef2_custom/global-css

@@ -112,7 +112,20 @@ module.exports = {
     },
 
     updateFormField: function(value) {
-      document.getElementById("edit-bezorgdatum").setAttribute('value', value.target.value);
+      let fullDate = value.target.value;
+      let rawDate = fullDate.split(',')[0]; 
+    
+      document.getElementById("edit-bezorgdatum").setAttribute('value', fullDate);
+      
+      let rawDateField = document.getElementsByName("bezorgdatum_raw")[0];
+      if (rawDateField) {
+        rawDateField.setAttribute("value", rawDate); // Set the extracted date
+      }
+
+      let rawResidenceField = document.getElementsByName("woonplaats_raw")[0];
+      if (rawResidenceField) {
+        rawResidenceField.setAttribute("value", JSON.parse(this.dateVar).value);
+      }
     },
   },
 }
