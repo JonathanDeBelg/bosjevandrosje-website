@@ -1,0 +1,61 @@
+uuid: 670e49a1-31e2-4a1c-943b-577849d2d6d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_producten
+    - paragraphs.paragraphs_type.productenaanbod
+    - paragraphs.paragraphs_type.productenrij
+  module:
+    - entity_reference_revisions
+id: paragraph.productenrij.field_producten
+field_name: field_producten
+entity_type: paragraph
+bundle: productenrij
+label: Producten
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      productenaanbod: productenaanbod
+    negate: 0
+    target_bundles_drag_drop:
+      achtergrondafbeelding_geen_tekst:
+        weight: 12
+        enabled: false
+      contentblok_afbeelding_linksbove:
+        weight: 13
+        enabled: false
+      productenaanbod:
+        weight: 14
+        enabled: true
+      productenrij:
+        weight: 15
+        enabled: false
+      recensie:
+        weight: 16
+        enabled: false
+      resultaat:
+        weight: 17
+        enabled: false
+      tekst_links_met_achtergrondafbee:
+        weight: 18
+        enabled: false
+      tekst_links_met_afbeelding_recht:
+        weight: 19
+        enabled: false
+      tekst_rechts_met_achtergrondafbe:
+        weight: 20
+        enabled: false
+      tekst_zonder_achtergrondkleur:
+        weight: 21
+        enabled: false
+      text_with_image:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

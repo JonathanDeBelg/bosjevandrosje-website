@@ -1,0 +1,18 @@
+uuid: 558c1f5b-064b-4926-bae3-ad0c7fa71e40
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: mII4acOv33s-j8PINywrCag4OITbeJGxdPO373dnHHw
+id: education
+label: Education
+category: Demographic
+likert: false
+options: |
+  High School: High School
+  Associate Degree: Associate Degree
+  Graduate or Professional Degree: Graduate or Professional Degree
+  Some College: Some College

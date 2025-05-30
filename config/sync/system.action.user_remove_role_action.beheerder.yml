@@ -1,0 +1,14 @@
+uuid: 6b8a87fa-5cbe-4918-9047-5745ed0d1f89
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.beheerder
+  module:
+    - user
+id: user_remove_role_action.beheerder
+label: 'Remove the Beheerder role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: beheerder

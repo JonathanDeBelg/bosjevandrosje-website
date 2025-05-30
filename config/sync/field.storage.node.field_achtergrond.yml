@@ -1,0 +1,30 @@
+uuid: 43fa6abc-799a-4e92-83a5-cddb568ed30e
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+id: node.field_achtergrond
+field_name: field_achtergrond
+entity_type: node
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

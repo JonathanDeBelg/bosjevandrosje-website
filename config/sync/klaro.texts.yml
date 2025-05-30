@@ -1,0 +1,38 @@
+_core:
+  default_config_hash: FHr6psQnRtYvXa9wwVyQsT3ytUtv2w9OvbvbdMDq4a0
+langcode: en
+consentModal:
+  title: 'Gebruik van persoonsgegevens en cookies'
+  description: 'Kies alstublieft de diensten en toepassingen van derden die we willen gebruiken.'
+  privacyPolicy:
+    name: 'privacy policy'
+    text: 'Voor meer informatie kunt u ons {privacyPolicy} lezen.'
+    url: 'internal:/<front>'
+consentNotice:
+  title: 'Gebruik van persoonsgegevens en cookies'
+  changeDescription: 'Er zijn wijzigingen sinds je laatste bezoek, werk alsjeblieft je toestemming bij.'
+  description: 'We gebruiken cookies en verwerken persoonsgegevens voor de volgende doeleinden: {purposes}.'
+  learnMore: Aanpassen
+ok: Accepteren
+save: Opslaan
+decline: Weigeren
+close: Sluiten
+acceptAll: 'Accepteer alle'
+acceptSelected: 'Accept selected'
+service:
+  disableAll:
+    title: 'Alle diensten in- of uitschakelen'
+    description: 'Gebruik deze schakelaar om alle diensten in of uit te schakelen.'
+  optOut:
+    title: (opt-out)
+    description: 'Deze dienst wordt standaard geladen (afmelden is mogelijk).'
+  required:
+    title: '(altijd vereist)'
+    description: 'Deze dienst is altijd vereist.'
+  purposes: Doeleinden
+  purpose: Doel
+contextualConsent:
+  acceptAlways: Altijd
+  acceptOnce: 'Ja (deze keer)'
+  description: 'Externe inhoud geladen door {title} weergeven?'
+poweredBy: 'Bosje van Drosje'

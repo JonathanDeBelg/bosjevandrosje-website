@@ -1,0 +1,10 @@
+uuid: d5cf5d91-704c-4276-94e9-d1d683c73f79
+langcode: en
+status: true
+dependencies: {  }
+id: tekst_rechts_met_achtergrondafbe
+label: 'Tekst rechts met achtergrondafbeelding'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

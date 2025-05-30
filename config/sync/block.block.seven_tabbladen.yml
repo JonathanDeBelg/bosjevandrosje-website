@@ -1,0 +1,22 @@
+uuid: a784c9c5-56c2-46a3-b940-879f646d19df
+langcode: nl
+status: true
+dependencies:
+  theme:
+    - seven
+_core:
+  default_config_hash: T7BEPQl-jU008C32n1w1NXxAIBdcpy7-y9RrjOatYlM
+id: seven_tabbladen
+theme: seven
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabbladen
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,26 @@
+uuid: eb16807d-ddc7-4024-a3d8-2fa8f6ee482b
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: v-jq9T-JhAxX-ESCh5ELKrtSbHfkZm9xGfLaTwy8paU
+id: member
+label: Ledenprofiel
+description: 'Configuratie voor gebruikers'
+conf:
+  extensions: 'jpg png gif'
+  maxsize: 2.0
+  quota: 50.0
+  maxwidth: 1024
+  maxheight: 1024
+  replace: 0
+  thumbnail_style: ''
+  thumbnail_grid_style: false
+  ignore_usage: false
+  folders:
+    -
+      path: 'users/user[user:uid]'
+      permissions:
+        browse_files: true
+        upload_files: true
+        delete_files: true

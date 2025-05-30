@@ -1,0 +1,21 @@
+uuid: bf962589-5c63-4da6-9dcf-37ef80196787
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tekst
+    - paragraphs.paragraphs_type.tekst_zonder_achtergrondkleur
+  module:
+    - text
+id: paragraph.tekst_zonder_achtergrondkleur.field_tekst
+field_name: field_tekst
+entity_type: paragraph
+bundle: tekst_zonder_achtergrondkleur
+label: Tekst
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

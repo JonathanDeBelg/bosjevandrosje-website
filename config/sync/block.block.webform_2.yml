@@ -1,0 +1,30 @@
+uuid: 9e0e6d10-45b5-4600-9576-4a2af5b709da
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.cadeaukaartformulier
+  module:
+    - system
+    - webform
+  theme:
+    - ef2_custom
+id: webform_2
+theme: ef2_custom
+region: secondary_content
+weight: -6
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Cadeaukaartformulier
+  label_display: '0'
+  provider: webform
+  webform_id: cadeaukaartformulier
+  default_data: ''
+  redirect: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /bloemen-cadeau-geven

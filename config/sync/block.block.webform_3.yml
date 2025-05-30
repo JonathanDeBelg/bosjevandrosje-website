@@ -1,0 +1,30 @@
+uuid: a2f001c7-2472-4662-8171-1b3bf0641b45
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.contact
+  module:
+    - system
+    - webform
+  theme:
+    - ef2_custom
+id: webform_3
+theme: ef2_custom
+region: secondary_content
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: '0'
+  provider: webform
+  webform_id: contact
+  default_data: ''
+  redirect: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /contact

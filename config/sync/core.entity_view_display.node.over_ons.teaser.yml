@@ -1,0 +1,43 @@
+uuid: 310c3695-a457-46d6-8ad7-bf1f8b11bb30
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.over_ons.body
+    - field.field.node.over_ons.field_achtergrond
+    - field.field.node.over_ons.field_contentblokken
+    - field.field.node.over_ons.field_meta_tags
+    - field.field.node.over_ons.field_samengestelde_bosjes
+    - field.field.node.over_ons.field_tekst_header
+    - field.field.node.over_ons.field_yoast_seo
+    - node.type.over_ons
+  module:
+    - text
+    - user
+id: node.over_ons.teaser
+targetEntityType: node
+bundle: over_ons
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_achtergrond: true
+  field_contentblokken: true
+  field_meta_tags: true
+  field_samengestelde_bosjes: true
+  field_tekst_header: true
+  field_yoast_seo: true
+  search_api_excerpt: true

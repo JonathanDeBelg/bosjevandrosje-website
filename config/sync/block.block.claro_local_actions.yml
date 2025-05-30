@@ -1,0 +1,20 @@
+uuid: 072139a4-eae3-40a8-a444-e2464e08c1b2
+langcode: nl
+status: true
+dependencies:
+  theme:
+    - claro
+_core:
+  default_config_hash: gOwMVMrleMLXNXtmpX8OFQEuRtWKH1gy8mXVBHs_ROs
+id: claro_local_actions
+theme: claro
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primaire beheeracties'
+  label_display: '0'
+  provider: core
+visibility: {  }

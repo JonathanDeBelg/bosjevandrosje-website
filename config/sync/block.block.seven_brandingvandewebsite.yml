@@ -1,0 +1,25 @@
+uuid: 155c2553-d4bf-4d10-a870-9a0cac922433
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - seven
+_core:
+  default_config_hash: k81yqt11zfoV2SDe3el_LURjVnVGQ6Yyut-4tuZ4qFE
+id: seven_brandingvandewebsite
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Branding van de website'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

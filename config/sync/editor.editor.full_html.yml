@@ -1,0 +1,74 @@
+uuid: 59367a5f-3d9e-4a0a-93f7-8221585bd182
+langcode: nl
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+_core:
+  default_config_hash: 6TWwAFy6u8tPWZWzB1ojwzVXSQhlxQTowLKZaoKAU7g
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Opmaak
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Superscript
+            - Subscript
+            - RemoveFormat
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lijsten
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+            - Table
+            - HorizontalRule
+        -
+          name: 'Block formatting'
+          items:
+            - Styles
+            - Format
+        -
+          name: Hulpmiddelen
+          items:
+            - ShowBlocks
+            - Maximize
+            - Source
+        -
+          name: Align
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+  plugins:
+    stylescombo:
+      styles: "a.btn-primary|Primaire button\r\na.btn-secondary|Secundaire button\r\na.cta-default|Call to action\r\np.virtual-h1|Grote tekst (als H1)\r\na.icon-facebook|Facebook Icoon\r\na.icon-instagram|Instagram Icoon\r\nul.usps|UPS Lijst\r\nh3.underline|Onderstreepte tekst"
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: null
+  max_dimensions:
+    width: null
+    height: null

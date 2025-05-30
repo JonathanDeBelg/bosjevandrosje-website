@@ -1,0 +1,14 @@
+uuid: 77cd55b9-2f3a-414a-9954-886328f8de5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.beheerder
+  module:
+    - user
+id: user_add_role_action.beheerder
+label: 'Add the Beheerder role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: beheerder

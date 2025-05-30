@@ -1,0 +1,29 @@
+uuid: 1597ebab-de3c-48e1-b687-a7f31b784448
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - ef2_custom
+id: mainpagecontent
+theme: ef2_custom
+region: content
+weight: -7
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page over ons '
+  label_display: '0'
+  provider: system
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog: blog
+      over_ons: over_ons

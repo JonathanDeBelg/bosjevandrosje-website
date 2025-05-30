@@ -1,0 +1,67 @@
+uuid: 6cd1ba60-0dd2-4551-bb9b-9a9a0461acf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contentbanners
+    - node.type.homepagina
+    - paragraphs.paragraphs_type.productenrij
+    - paragraphs.paragraphs_type.tekst_links_met_afbeelding_recht
+    - paragraphs.paragraphs_type.tekst_rechts_met_achtergrondafbe
+    - paragraphs.paragraphs_type.text_with_image
+  module:
+    - entity_reference_revisions
+id: node.homepagina.field_contentbanners
+field_name: field_contentbanners
+entity_type: node
+bundle: homepagina
+label: Contentbanners
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tekst_links_met_afbeelding_recht: tekst_links_met_afbeelding_recht
+      tekst_rechts_met_achtergrondafbe: tekst_rechts_met_achtergrondafbe
+      text_with_image: text_with_image
+      productenrij: productenrij
+    negate: 0
+    target_bundles_drag_drop:
+      achtergrondafbeelding_geen_tekst:
+        weight: 11
+        enabled: false
+      contentblok_afbeelding_linksbove:
+        weight: 12
+        enabled: false
+      productenaanbod:
+        weight: 13
+        enabled: false
+      productenrij:
+        weight: 15
+        enabled: true
+      recensie:
+        weight: 14
+        enabled: false
+      resultaat:
+        weight: 15
+        enabled: false
+      tekst_links_met_achtergrondafbee:
+        weight: 16
+        enabled: false
+      tekst_links_met_afbeelding_recht:
+        weight: 4
+        enabled: true
+      tekst_rechts_met_achtergrondafbe:
+        weight: 5
+        enabled: true
+      tekst_zonder_achtergrondkleur:
+        weight: 19
+        enabled: false
+      text_with_image:
+        weight: 6
+        enabled: true
+field_type: entity_reference_revisions

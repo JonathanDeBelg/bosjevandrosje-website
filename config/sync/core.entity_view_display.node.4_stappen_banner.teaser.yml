@@ -1,0 +1,37 @@
+uuid: 0676c824-228a-47f2-85cb-bf1708da48a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.4_stappen_banner.field_icon
+    - field.field.node.4_stappen_banner.field_text
+    - field.field.node.4_stappen_banner.icon_stap_2
+    - field.field.node.4_stappen_banner.icon_stap_3
+    - field.field.node.4_stappen_banner.icon_stap_4
+    - field.field.node.4_stappen_banner.text_stap_2
+    - field.field.node.4_stappen_banner.text_stap_3
+    - field.field.node.4_stappen_banner.text_stap_4
+    - node.type.4_stappen_banner
+  module:
+    - user
+id: node.4_stappen_banner.teaser
+targetEntityType: node
+bundle: 4_stappen_banner
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_icon: true
+  field_text: true
+  icon_stap_2: true
+  icon_stap_3: true
+  icon_stap_4: true
+  search_api_excerpt: true
+  text_stap_2: true
+  text_stap_3: true
+  text_stap_4: true

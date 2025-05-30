@@ -1,0 +1,65 @@
+uuid: aaca07bf-c213-4f42-b4a1-38dc11b510b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contentblokken
+    - node.type.blog
+    - paragraphs.paragraphs_type.achtergrondafbeelding_geen_tekst
+    - paragraphs.paragraphs_type.tekst_links_met_achtergrondafbee
+    - paragraphs.paragraphs_type.tekst_links_met_afbeelding_recht
+    - paragraphs.paragraphs_type.tekst_rechts_met_achtergrondafbe
+    - paragraphs.paragraphs_type.tekst_zonder_achtergrondkleur
+    - paragraphs.paragraphs_type.text_with_image
+  module:
+    - entity_reference_revisions
+id: node.blog.field_contentblokken
+field_name: field_contentblokken
+entity_type: node
+bundle: blog
+label: Contentblokken
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      achtergrondafbeelding_geen_tekst: achtergrondafbeelding_geen_tekst
+      tekst_links_met_achtergrondafbee: tekst_links_met_achtergrondafbee
+      tekst_links_met_afbeelding_recht: tekst_links_met_afbeelding_recht
+      tekst_rechts_met_achtergrondafbe: tekst_rechts_met_achtergrondafbe
+      tekst_zonder_achtergrondkleur: tekst_zonder_achtergrondkleur
+      text_with_image: text_with_image
+    negate: 0
+    target_bundles_drag_drop:
+      achtergrondafbeelding_geen_tekst:
+        weight: 10
+        enabled: true
+      contentblok_afbeelding_linksbove:
+        weight: 9
+        enabled: false
+      recensie:
+        weight: 10
+        enabled: false
+      resultaat:
+        weight: 11
+        enabled: false
+      tekst_links_met_achtergrondafbee:
+        weight: 12
+        enabled: true
+      tekst_links_met_afbeelding_recht:
+        weight: 13
+        enabled: true
+      tekst_rechts_met_achtergrondafbe:
+        weight: 14
+        enabled: true
+      tekst_zonder_achtergrondkleur:
+        weight: 15
+        enabled: true
+      text_with_image:
+        weight: 16
+        enabled: true
+field_type: entity_reference_revisions

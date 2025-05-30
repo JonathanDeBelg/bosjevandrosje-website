@@ -63,7 +63,6 @@ class ZohoApiClient {
       ]);
 
       $data = json_decode($response->getBody(), TRUE);
-      dd($data);
 
       if (isset($data['access_token']) || isset($data['refresh_token'])) {
         // Store tokens and expiration time.
@@ -246,7 +245,7 @@ class ZohoApiClient {
                 'json' => print_r($customerData),
             ], TRUE),
         ]);
-        \Drupal::messenger()->addError($this->t('Something went wrong while creating the customer. Contact the site admin.'));
+        \Drupal::messenger()->addError(\Drupal::translation()->translate('Something went wrong while creating the customer. Contact the admin.'));
         throw new \Exception('Failed to create Zoho customer.');
     }
   }

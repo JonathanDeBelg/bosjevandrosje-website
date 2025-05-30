@@ -1,0 +1,40 @@
+uuid: 1d86b621-9dcd-426d-a915-946ca2cbbb28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contentblok_afbeelding_linksbove.field_textbox
+    - field.field.paragraph.contentblok_afbeelding_linksbove.field_textbox_image
+    - paragraphs.paragraphs_type.contentblok_afbeelding_linksbove
+  module:
+    - svg_image
+    - text
+id: paragraph.contentblok_afbeelding_linksbove.default
+targetEntityType: paragraph
+bundle: contentblok_afbeelding_linksbove
+mode: default
+content:
+  field_textbox:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_textbox_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

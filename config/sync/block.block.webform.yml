@@ -1,0 +1,30 @@
+uuid: f2b5bfed-464f-4732-8c2a-eb71cc7adfbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.inschrijfformulier
+  module:
+    - system
+    - webform
+  theme:
+    - ef2_custom
+id: webform
+theme: ef2_custom
+region: secondary_content
+weight: -7
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Inschrijfforumulier
+  label_display: '0'
+  provider: webform
+  webform_id: inschrijfformulier
+  default_data: ''
+  redirect: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /inschrijven

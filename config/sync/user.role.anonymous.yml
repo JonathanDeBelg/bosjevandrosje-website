@@ -1,0 +1,16 @@
+uuid: a669ca95-1c8d-42f8-87b7-22d64ff6a89e
+langcode: en
+status: true
+dependencies:
+  module:
+    - klaro
+    - system
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'use klaro'

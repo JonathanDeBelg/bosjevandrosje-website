@@ -1,0 +1,20 @@
+uuid: 9b82dcd8-6708-4621-8f85-87a375237c5e
+langcode: nl
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: B4tcoZeasMDp-KCGLuJClCG-PnCZbpx4NQCCHRCTCbY
+name: 'Eenvoudige pagina'
+type: basic_page
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

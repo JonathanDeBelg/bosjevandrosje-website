@@ -1,0 +1,21 @@
+uuid: a88f3962-c107-44c4-97c4-952db24cc8bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.text_stap_4
+    - node.type.4_stappen_banner
+  module:
+    - text
+id: node.4_stappen_banner.text_stap_3
+field_name: text_stap_3
+entity_type: node
+bundle: 4_stappen_banner
+label: 'Text stap 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

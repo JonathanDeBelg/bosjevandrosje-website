@@ -1,0 +1,31 @@
+uuid: b9743145-d86e-4557-9d36-edb5ec607de1
+langcode: nl
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - ef2_custom
+_core:
+  default_config_hash: lB3MIEq7qY-Yc1n7SFoI6uVe1oHJJv5MtPagbWYBhfU
+id: blog_intro
+theme: ef2_custom
+region: secondary_content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Primaire inhoud van de pagina'
+  label_display: '0'
+  provider: system
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog: blog
+      over_ons: over_ons

@@ -1,0 +1,23 @@
+uuid: 650b6790-a879-4551-b486-366a39faaf2a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_textbox
+    - paragraphs.paragraphs_type.text_with_image
+  module:
+    - text
+_core:
+  default_config_hash: 6Qok172De4o6dehY-RzWKy5Mn14QVhDl43we2LdhEjA
+id: paragraph.text_with_image.field_textbox
+field_name: field_textbox
+entity_type: paragraph
+bundle: text_with_image
+label: Tekst
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

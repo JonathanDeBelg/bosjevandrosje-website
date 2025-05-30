@@ -1,0 +1,35 @@
+uuid: 1b926daf-5b32-4818-9590-eaa862c7be60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recensie.field_rating
+    - field.field.paragraph.recensie.field_tekst
+    - paragraphs.paragraphs_type.recensie
+  module:
+    - starrating
+    - text
+id: paragraph.recensie.default
+targetEntityType: paragraph
+bundle: recensie
+mode: default
+content:
+  field_rating:
+    type: starrating
+    label: hidden
+    settings:
+      fill_blank: 0
+      icon_type: star
+      icon_color: 1
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tekst:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,51 @@
+uuid: 43f35393-ccf8-4617-9754-1c289511c773
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.productenaanbod.field_link
+    - field.field.paragraph.productenaanbod.field_productafbeelding
+    - field.field.paragraph.productenaanbod.field_productomschrijving
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.productenaanbod
+  module:
+    - focal_point
+    - imce
+    - link
+    - text
+id: paragraph.productenaanbod.default
+targetEntityType: paragraph
+bundle: productenaanbod
+mode: default
+content:
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_productafbeelding:
+    type: image_focal_point
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings:
+      imce:
+        enabled: true
+  field_productomschrijving:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

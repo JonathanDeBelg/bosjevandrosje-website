@@ -1,0 +1,38 @@
+uuid: 9b729603-27ab-4c52-8342-f4fae8db39fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_textbox_image
+    - paragraphs.paragraphs_type.contentblok_afbeelding_linksbove
+  module:
+    - image
+id: paragraph.contentblok_afbeelding_linksbove.field_textbox_image
+field_name: field_textbox_image
+entity_type: paragraph
+bundle: contentblok_afbeelding_linksbove
+label: Afbeelding
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

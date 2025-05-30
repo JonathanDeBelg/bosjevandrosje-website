@@ -1,0 +1,10 @@
+uuid: 67766843-ebc2-4198-8819-d5c9544f3214
+langcode: en
+status: true
+dependencies: {  }
+id: productenrij
+label: Productenrij
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

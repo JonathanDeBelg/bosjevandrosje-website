@@ -1,0 +1,196 @@
+uuid: 7689f357-3d73-4408-a3f7-165ca1c85539
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.homepagina.body
+    - field.field.node.homepagina.field_achtergrond
+    - field.field.node.homepagina.field_contentbanners
+    - field.field.node.homepagina.field_meta_tags
+    - field.field.node.homepagina.field_tekst_header
+    - field.field.node.homepagina.field_yoast_seo
+    - image.style.medium
+    - node.type.homepagina
+  module:
+    - field_group
+    - focal_point
+    - imce
+    - metatag
+    - paragraphs
+    - path
+    - text
+    - yoast_seo
+third_party_settings:
+  field_group:
+    group_wrapper:
+      children:
+        - group_header
+        - group_content
+      label: Wrapper
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_header:
+      children:
+        - field_tekst_header
+        - field_achtergrond
+      label: Header
+      region: content
+      parent_name: group_wrapper
+      weight: 13
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_content:
+      children:
+        - field_contentbanners
+        - body
+      label: Content
+      region: content
+      parent_name: group_wrapper
+      weight: 14
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.homepagina.default
+targetEntityType: node
+bundle: homepagina
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 6
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_achtergrond:
+    type: image_focal_point
+    weight: 13
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: medium
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings:
+      imce:
+        enabled: true
+  field_contentbanners:
+    type: entity_reference_paragraphs
+    weight: 5
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+  field_tekst_header:
+    type: text_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_yoast_seo:
+    type: yoast_seo_widget
+    weight: 27
+    region: content
+    settings:
+      body: body
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

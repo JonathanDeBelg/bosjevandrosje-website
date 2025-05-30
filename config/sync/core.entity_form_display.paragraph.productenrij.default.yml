@@ -1,0 +1,29 @@
+uuid: 5d4b507b-c89a-427a-9852-ab29e2881bad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.productenrij.field_producten
+    - paragraphs.paragraphs_type.productenrij
+  module:
+    - paragraphs
+id: paragraph.productenrij.default
+targetEntityType: paragraph
+bundle: productenrij
+mode: default
+content:
+  field_producten:
+    type: entity_reference_paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

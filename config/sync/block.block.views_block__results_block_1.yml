@@ -1,0 +1,37 @@
+uuid: bec2a2e3-4b80-4aa3-b0f4-e1c2c909f89b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.results
+  module:
+    - node
+    - system
+    - views
+  theme:
+    - ef2_custom
+id: views_block__results_block_1
+theme: ef2_custom
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:results-block_1'
+settings:
+  id: 'views_block:results-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      over_ons: over_ons
+  request_path:
+    id: request_path
+    negate: true
+    pages: /bedankt

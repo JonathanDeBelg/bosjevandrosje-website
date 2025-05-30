@@ -1,0 +1,33 @@
+uuid: 6301deae-d134-419c-be71-a2d4911598f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recensie.field_rating
+    - field.field.paragraph.recensie.field_tekst
+    - paragraphs.paragraphs_type.recensie
+  module:
+    - starrating
+    - text
+id: paragraph.recensie.default
+targetEntityType: paragraph
+bundle: recensie
+mode: default
+content:
+  field_rating:
+    type: starrating
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tekst:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

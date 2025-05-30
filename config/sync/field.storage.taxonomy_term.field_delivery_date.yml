@@ -1,0 +1,36 @@
+uuid: 8a8ac434-063e-48dc-ad8b-bef2c9bd84d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_delivery_date
+field_name: field_delivery_date
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: monday
+      label: monday
+    -
+      value: tuesday
+      label: tuesday
+    -
+      value: wednessday
+      label: wednessday
+    -
+      value: thursday
+      label: thursday
+    -
+      value: friday
+      label: friday
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

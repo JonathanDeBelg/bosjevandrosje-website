@@ -1,0 +1,22 @@
+uuid: d6c75ce8-3912-454f-a969-38a6dbd6d3f8
+langcode: nl
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - gin
+_core:
+  default_config_hash: h-33gf91w5wWI3a96tZ__8t3MeVPAqdfITJ5-hUmtFE
+id: gin_help
+theme: gin
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

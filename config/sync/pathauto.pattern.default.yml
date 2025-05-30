@@ -1,0 +1,16 @@
+uuid: d4e8f925-4ec9-433e-b162-ce73b47fa36f
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: jhLFPYbVuftxvW0PbdwMEYsojs87AqjF4rmbuv-8ooE
+id: default
+label: Default
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

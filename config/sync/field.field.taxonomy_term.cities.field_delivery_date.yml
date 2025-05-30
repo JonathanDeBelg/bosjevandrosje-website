@@ -1,0 +1,21 @@
+uuid: 7b63f0ac-fbfc-4deb-b973-05344ffb1d4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_delivery_date
+    - taxonomy.vocabulary.cities
+  module:
+    - options
+id: taxonomy_term.cities.field_delivery_date
+field_name: field_delivery_date
+entity_type: taxonomy_term
+bundle: cities
+label: 'Delivery date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,29 @@
+uuid: c5dfdce3-84e5-4930-98ed-725ab2e43e8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.achtergrondafbeelding_geen_tekst.field_afbeelding
+    - image.style.medium
+    - paragraphs.paragraphs_type.achtergrondafbeelding_geen_tekst
+  module:
+    - imce
+    - svg_image
+id: paragraph.achtergrondafbeelding_geen_tekst.default
+targetEntityType: paragraph
+bundle: achtergrondafbeelding_geen_tekst
+mode: default
+content:
+  field_afbeelding:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: medium
+    third_party_settings:
+      imce:
+        enabled: true
+hidden:
+  created: true
+  status: true

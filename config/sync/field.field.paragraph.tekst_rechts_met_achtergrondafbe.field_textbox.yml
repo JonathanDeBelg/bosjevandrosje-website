@@ -1,0 +1,21 @@
+uuid: 8afd840d-7e17-47a2-bb28-f51a8d4f5d87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_textbox
+    - paragraphs.paragraphs_type.tekst_rechts_met_achtergrondafbe
+  module:
+    - text
+id: paragraph.tekst_rechts_met_achtergrondafbe.field_textbox
+field_name: field_textbox
+entity_type: paragraph
+bundle: tekst_rechts_met_achtergrondafbe
+label: Tekst
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

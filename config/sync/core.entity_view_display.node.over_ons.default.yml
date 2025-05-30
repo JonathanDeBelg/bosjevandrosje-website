@@ -1,0 +1,77 @@
+uuid: 7c6f7aae-d06b-4ca7-8261-0a054f050b46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.over_ons.body
+    - field.field.node.over_ons.field_achtergrond
+    - field.field.node.over_ons.field_contentblokken
+    - field.field.node.over_ons.field_meta_tags
+    - field.field.node.over_ons.field_samengestelde_bosjes
+    - field.field.node.over_ons.field_tekst_header
+    - field.field.node.over_ons.field_yoast_seo
+    - node.type.over_ons
+  module:
+    - bg_image_formatter
+    - metatag
+    - text
+    - user
+id: node.over_ons.default
+targetEntityType: node
+bundle: over_ons
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_achtergrond:
+    type: bg_image_formatter
+    label: hidden
+    settings:
+      image_style: ''
+      css_settings:
+        bg_image_selector: .secondary-header
+        bg_image_z_index: auto
+        bg_image_color: ''
+        bg_image_x: center
+        bg_image_y: center
+        bg_image_attachment: '0'
+        bg_image_repeat: no-repeat
+        bg_image_background_size: cover
+        bg_image_media_query: all
+        bg_image_important: 1
+        bg_image_background_size_ie8: 0
+        bg_image_path_format: absolute
+        bg_image_gradient: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_yoast_seo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_contentblokken: true
+  field_samengestelde_bosjes: true
+  field_tekst_header: true
+  search_api_excerpt: true

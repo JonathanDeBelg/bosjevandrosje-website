@@ -1,0 +1,10 @@
+uuid: 1fb82fb5-d11e-4df9-b8b2-fcb3dde55e60
+langcode: en
+status: true
+dependencies: {  }
+id: tekst_zonder_achtergrondkleur
+label: 'Tekst zonder achtergrondkleur'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

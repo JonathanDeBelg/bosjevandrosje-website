@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+theme: ef2_custom
+defaults:
+  sender: SMTPMailSystem
+  formatter: SMTPMailSystem
+modules:
+  webform: {  }

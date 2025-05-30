@@ -1,0 +1,49 @@
+uuid: 0c98f0da-70fb-4c9b-8717-7c4d169f8a5a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_picture
+    - image.style.thumbnail
+  module:
+    - path
+    - svg_image
+    - user
+_core:
+  default_config_hash: Q4gQmNiVYRGqHVoh7w5C8ZmtjnZUcyF3KhuZWH9gwY8
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_picture:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  language:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

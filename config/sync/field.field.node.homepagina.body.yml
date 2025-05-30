@@ -1,0 +1,23 @@
+uuid: 5ce91087-2c1e-4ac0-b912-007b21760f9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.homepagina
+  module:
+    - text
+id: node.homepagina.body
+field_name: body
+entity_type: node
+bundle: homepagina
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

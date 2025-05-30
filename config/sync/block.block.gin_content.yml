@@ -1,0 +1,22 @@
+uuid: bca131da-6f2d-4b22-8a58-b5e1999a75cb
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gin
+_core:
+  default_config_hash: gjy3wCMojQRBn8y0wfsJcqNYUs1TDv_FEw6BjVeSkFg
+id: gin_content
+theme: gin
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Primaire inhoud van de pagina'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: en
+uuid: 8d460a2e-b7aa-4c0f-a65a-eb16d46d0901
+name: 'Bosje van Drosje'
+mail: no-reply@bosjevandrosje.nl
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

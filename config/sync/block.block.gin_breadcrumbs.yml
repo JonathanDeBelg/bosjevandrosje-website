@@ -1,0 +1,22 @@
+uuid: e0e32c8c-3e91-4553-bdf7-d6990e6034b3
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gin
+_core:
+  default_config_hash: qgALf7Vr2H0x7U9BXnBn2HgFIq-2NNmjDN0ZpuD6sp0
+id: gin_breadcrumbs
+theme: gin
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Kruimelpad
+  label_display: '0'
+  provider: system
+visibility: {  }

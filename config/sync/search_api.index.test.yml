@@ -1,0 +1,36 @@
+uuid: 56ccb11a-a215-4347-b85b-914945215fea
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+id: test
+name: test
+description: ''
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - basic_page
+        - blog
+        - homepagina
+        - over_ons
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: ''

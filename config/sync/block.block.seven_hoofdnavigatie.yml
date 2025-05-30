@@ -1,0 +1,33 @@
+uuid: ea50207a-2fbf-4b8e-9ed4-843b26cf4c54
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - seven
+_core:
+  default_config_hash: OYbBWvlukX6UMsd3IIRf6XuFMl5-Gss5TUEGMC-B1wI
+id: seven_hoofdnavigatie
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: Hoofdnavigatie
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'main:'
+  suggestion: main
+visibility: {  }

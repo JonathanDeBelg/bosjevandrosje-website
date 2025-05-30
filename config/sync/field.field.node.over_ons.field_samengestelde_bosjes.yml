@@ -1,0 +1,38 @@
+uuid: 7a482640-afd6-41b3-85ec-0b660827caa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_samengestelde_bosjes
+    - node.type.over_ons
+  module:
+    - image
+id: node.over_ons.field_samengestelde_bosjes
+field_name: field_samengestelde_bosjes
+entity_type: node
+bundle: over_ons
+label: 'Samengestelde bosjes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

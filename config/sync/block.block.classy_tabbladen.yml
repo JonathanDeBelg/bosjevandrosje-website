@@ -1,0 +1,22 @@
+uuid: cb4d5e0f-603e-4306-898f-0e2896a0dfc5
+langcode: nl
+status: true
+dependencies:
+  theme:
+    - classy
+_core:
+  default_config_hash: T7BEPQl-jU008C32n1w1NXxAIBdcpy7-y9RrjOatYlM
+id: classy_tabbladen
+theme: classy
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabbladen
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

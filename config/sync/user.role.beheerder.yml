@@ -1,0 +1,124 @@
+uuid: c2f12398-e242-4ffc-8732-769b1dad87c1
+langcode: nl
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.4_stappen_banner
+    - node.type.basic_page
+    - node.type.behaalde_resultaten
+    - node.type.blog
+    - node.type.homepagina
+    - node.type.klanttevredenheid
+    - node.type.over_ons
+    - taxonomy.vocabulary.tags
+  module:
+    - block
+    - block_content
+    - contextual
+    - entity_clone
+    - file
+    - filter
+    - help
+    - menu_link_attributes
+    - node
+    - paragraphs
+    - path
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+    - webform
+    - yoast_seo
+_core:
+  default_config_hash: tjJytOQLvMPJhIsAISjQJRswFH9lD5LnCDWN_ASjI-E
+id: beheerder
+label: Beheerder
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access own webform configuration'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'administer block content'
+  - 'administer block types'
+  - 'administer blocks'
+  - 'administer menu'
+  - 'administer webform element access'
+  - 'change own username'
+  - 'clone node entity'
+  - 'clone paragraph entity'
+  - 'clone taxonomy_term entity'
+  - 'clone webform entity'
+  - 'create basic_page content'
+  - 'create blog content'
+  - 'create homepagina content'
+  - 'create over_ons content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete any basic_page content'
+  - 'delete any blog content'
+  - 'delete any homepagina content'
+  - 'delete any over_ons content'
+  - 'delete any webform submission'
+  - 'delete basic_page revisions'
+  - 'delete own basic_page content'
+  - 'delete own blog content'
+  - 'delete own files'
+  - 'delete own homepagina content'
+  - 'delete own over_ons content'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'delete terms in tags'
+  - 'edit any 4_stappen_banner content'
+  - 'edit any basic_page content'
+  - 'edit any behaalde_resultaten content'
+  - 'edit any blog content'
+  - 'edit any homepagina content'
+  - 'edit any klanttevredenheid content'
+  - 'edit any over_ons content'
+  - 'edit any webform'
+  - 'edit any webform submission'
+  - 'edit own 4_stappen_banner content'
+  - 'edit own basic_page content'
+  - 'edit own behaalde_resultaten content'
+  - 'edit own blog content'
+  - 'edit own homepagina content'
+  - 'edit own klanttevredenheid content'
+  - 'edit own over_ons content'
+  - 'edit own webform'
+  - 'edit terms in tags'
+  - 'revert 4_stappen_banner revisions'
+  - 'revert basic_page revisions'
+  - 'revert behaalde_resultaten revisions'
+  - 'revert blog revisions'
+  - 'revert homepagina revisions'
+  - 'revert klanttevredenheid revisions'
+  - 'revert over_ons revisions'
+  - 'use menu link attributes'
+  - 'use text format full_html'
+  - 'use yoast seo'
+  - 'view 4_stappen_banner revisions'
+  - 'view all revisions'
+  - 'view any webform submission'
+  - 'view basic_page revisions'
+  - 'view behaalde_resultaten revisions'
+  - 'view blog revisions'
+  - 'view homepagina revisions'
+  - 'view klanttevredenheid revisions'
+  - 'view over_ons revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'

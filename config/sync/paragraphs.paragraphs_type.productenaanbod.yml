@@ -1,0 +1,10 @@
+uuid: 23b32d38-53f4-43a0-8cab-2bfffd757840
+langcode: en
+status: true
+dependencies: {  }
+id: productenaanbod
+label: Productenaanbiedingen
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

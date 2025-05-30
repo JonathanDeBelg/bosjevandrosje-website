@@ -1,0 +1,43 @@
+uuid: a7c6831a-02bc-4ba4-bb65-cd5a9490227f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_with_image.field_textbox
+    - field.field.paragraph.text_with_image.field_textbox_image
+    - paragraphs.paragraphs_type.text_with_image
+  module:
+    - svg_image
+    - text
+_core:
+  default_config_hash: wmZi6cV4N_0tMLhXufDk9X-3Zrgs3r7RWA5lPg-thZI
+id: paragraph.text_with_image.default
+targetEntityType: paragraph
+bundle: text_with_image
+mode: default
+content:
+  field_textbox:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_textbox_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

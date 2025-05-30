@@ -1,0 +1,33 @@
+uuid: ad041e86-baec-4e9e-845c-9ed5b7cbf6e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.image_overview_with_lightbox
+  module:
+    - ctools
+    - views
+  theme:
+    - ef2_custom
+id: views_block__image_overview_with_lightbox_block_1
+theme: ef2_custom
+region: secondary_content
+weight: -10
+provider: null
+plugin: 'views_block:image_overview_with_lightbox-block_1'
+settings:
+  id: 'views_block:image_overview_with_lightbox-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      over_ons: over_ons

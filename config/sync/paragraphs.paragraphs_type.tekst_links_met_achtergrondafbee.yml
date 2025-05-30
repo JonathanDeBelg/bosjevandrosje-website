@@ -1,0 +1,10 @@
+uuid: 8db54ac2-433e-4995-914c-8aa6d92e8263
+langcode: en
+status: true
+dependencies: {  }
+id: tekst_links_met_achtergrondafbee
+label: 'Tekst links met achtergrondafbeelding'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

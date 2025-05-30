@@ -1,0 +1,535 @@
+uuid: ddb26583-9a57-41a9-8b46-b6e4f60f0241
+langcode: en
+status: open
+dependencies:
+  module:
+    - mollie_webform
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: cadeaukaartformulier
+title: Cadeaukaartformulier
+description: ''
+categories: {  }
+elements: |-
+  abonnement_page:
+    '#type': webform_wizard_page
+    '#title': Pakketgegevens
+    '#open': true
+    '#prev_button_label': Vorige
+    '#next_button_label': Volgende
+    left_wrapper:
+      '#type': container
+      pakketkeuze:
+        '#type': webform_image_select
+        '#title': Pakketkeuze
+        '#description': '<h2>Welk pakket wil je cadeau doen?</h2>'
+        '#title_display': invisible
+        '#description_display': before
+        '#images':
+          M:
+            text: '<b>Pakket M</b><br>€10,-'
+            src: 'https://bosjevandrosje.nl/sites/default/files/2022-10/M_.jpeg-min.jpg'
+          L:
+            text: '<b>Pakket L</b><br>€12,50'
+            src: 'https://bosjevandrosje.nl/sites/default/files/2022-10/L-2.0-min_0.jpg'
+          XL:
+            text: '<b>Pakket XL</b><br>€15,-'
+            src: 'https://bosjevandrosje.nl/sites/default/files/2022-10/XL_-min_0.jpg'
+        '#show_label': true
+        '#required': true
+      hoevaak_other:
+        '#type': webform_radios_other
+        '#title': Hoevaak
+        '#options':
+          1: '1'
+          2: '2'
+          4: '4'
+        '#options_display': buttons_horizontal
+        '#other__type': number
+        '#other__option_label': Meer...
+        '#other__placeholder': 'Voer het aantal in...'
+        '#other__min': '1'
+        '#other__max': '10'
+        '#required': true
+      frequentie:
+        '#type': radios
+        '#title': Frequentie
+        '#description': '<h4>boeketjes, bezorgen&nbsp;</h4>'
+        '#title_display': none
+        '#description_display': before
+        '#help_display': title_before
+        '#options':
+          4: 'per week'
+          2: 'per 2 weken'
+        '#options_display': buttons_horizontal
+        '#required': true
+        '#wrapper_attributes':
+          class:
+            - radio-button-style
+      woonplaats:
+        '#type': select
+        '#title': Woonplaats
+        '#options':
+          '{"value": "Elst UT", "date": "friday"}': 'Elst (UT)'
+          '{"value": "Rhenen", "date": "friday"}': Rhenen
+          '{"value": "Veenendaal", "date": "friday"}': Veenendaal
+          '{"value": "Amerongen", "date": "friday"}': Amerongen
+          '{"value": "Achterberg", "date": "friday"}': Achterberg
+          '{"value": "Leersum", "date": "friday"}': Leersum
+          '{"value": "Ederveen", "date": "friday"}': Ederveen
+          '{"value": "Renswoude", "date": "friday"}': Renswoude
+          '{"value": "Scherpenzeel", "date": "friday"}': Scherpenzeel
+          '{"value": "Opheusden", "date": "thursday"}': Opheusden
+          '{"value": "Kesteren", "date": "thursday"}': Kesteren
+          '{"value": "Lienden", "date": "thursday"}': Lienden
+        '#required': true
+      bezorgdatum:
+        '#type': textfield
+        '#title': Bezorgdatum
+        '#required': true
+    payment_amount:
+      '#type': webform_computed_twig
+      '#title': 'Payment Amount'
+      '#description': '<h4>Totaal</h4>'
+      '#title_display': none
+      '#description_display': before
+      '#mode': text
+      '#template': |-
+        {% if data['pakketkeuze'] == 'M' %}
+          {% set amount = 10 %}
+        {% elseif data['pakketkeuze'] == 'L' %}
+          {% set amount = 12.5 %}
+        {% elseif data['pakketkeuze'] == 'XL' %}
+          {% set amount = 15 %}
+        {% endif %}
+
+        {% set total = amount * data['hoevaak_other'] %}
+        €{{ total }}
+      '#whitespace': spaceless
+      '#ajax': true
+  extra_s:
+    '#type': webform_wizard_page
+    '#title': 'Extra''s'
+    '#prev_button_label': Vorige
+    '#next_button_label': Volgende
+    left_wrapper_2:
+      '#type': container
+      extra_keuzes:
+        '#type': webform_image_select
+        '#title': 'Extra''s'
+        '#multiple': true
+        '#description': '<h2>Extra&#39;s cadeau doen?</h2>'
+        '#title_display': invisible
+        '#description_display': before
+        '#images':
+          vaas:
+            text: 'Vaas<br><b>+ €6,95</b>'
+            src: /sites/default/files/2022-10/Image.jpeg
+        '#show_label': true
+        '#format_items': custom
+        '#format_items_text': ','
+    payment_amount_extras:
+      '#type': webform_computed_twig
+      '#title': 'Payment Amount'
+      '#description': '<h4>Totaal</h4>'
+      '#title_display': none
+      '#description_display': before
+      '#mode': text
+      '#template': |-
+        {% set amount = 0 %}
+
+        {% if 'vaas' in data['extra_keuzes'] %}
+          {% set amount = 6.95 %}
+        {% endif %}
+
+        {% set total = amount + data['payment_amount_hidden'] %}
+        €{{ amount + data['payment_amount_hidden'] }}
+      '#whitespace': spaceless
+      '#ajax': true
+  contact:
+    '#type': webform_wizard_page
+    '#title': 'Wie mogen wij verrassen'
+    '#open': true
+    '#prev_button_label': Vorige
+    '#next_button_label': Volgende
+    wrapper:
+      '#type': webform_flexbox
+      markup:
+        '#type': webform_markup
+        '#markup': '<h4>Uw gegevens</h4>'
+      naam:
+        '#type': webform_flexbox
+        voornaam:
+          '#type': textfield
+          '#title': Voornaam
+          '#title_display': before
+          '#required': true
+          '#flex': 0
+        achternaam:
+          '#type': textfield
+          '#title': Achternaam
+          '#title_display': before
+          '#required': true
+          '#flex': 0
+      woon:
+        '#type': webform_flexbox
+        adres:
+          '#type': textfield
+          '#title': Adres
+          '#title_display': before
+          '#required': true
+        huisnummer:
+          '#type': textfield
+          '#title': Huisnummer
+      flexbox_02:
+        '#type': webform_flexbox
+        postcode:
+          '#type': textfield
+          '#title': Postcode
+          '#title_display': before
+          '#required': true
+    col_right:
+      '#type': container
+  abonnement:
+    '#type': webform_wizard_page
+    '#title': 'Wie geeft een Bosje van Drosje'
+    '#prev_button_label': Vorige
+    '#next_button_label': Volgende
+    container:
+      '#type': container
+      voornaam_gever:
+        '#type': textfield
+        '#title': Voornaam
+      achternaam_gever:
+        '#type': textfield
+        '#title': Achternaam
+      e_mailadres:
+        '#type': email
+        '#title': E-mailadres
+        '#title_display': before
+        '#required': true
+      mobiele_telefoonnummer:
+        '#type': tel
+        '#title': 'Mobiele telefoonnummer'
+        '#title_display': before
+        '#placeholder': 06-12345678
+        '#required': true
+        '#international_preferred_countries': {  }
+      couponcode:
+        '#type': textfield
+        '#title': Couponcode
+        '#title_display': before
+      hoe_bent_u_bij_ons_terecht_gekomen:
+        '#type': select
+        '#title': 'Hoe bent u bij ons terecht gekomen?'
+        '#options':
+          'Social media': 'Social media'
+          'Busbelettering ': 'Busbelettering '
+          'Van vrienden gehoord': 'Van vrienden gehoord'
+        '#default_value': 'Social media'
+    container_01:
+      '#type': container
+      betaalopties:
+        '#type': select
+        '#title': Betaalopties
+        '#title_display': before
+        '#options':
+          'Automatische incasso': 'Automatische incasso'
+        '#required': true
+    giftcardcode:
+      '#type': hidden
+      '#title': Giftcardcode
+      '#default_value': '[webform:handler:remote_post:completed:giftcard_code]'
+    giftcard_password:
+      '#type': hidden
+      '#title': 'Giftcard password'
+      '#default_value': '[webform:handler:remote_post:completed:password]'
+  payment_amount_hidden:
+    '#type': webform_computed_twig
+    '#title': 'Payment amount hidden'
+    '#display_on': view
+    '#template': |-
+      {% if data['pakketkeuze'] == 'M' %}
+        {% set amount = 10 %}
+      {% elseif data['pakketkeuze'] == 'L' %}
+        {% set amount = 12.5 %}
+      {% elseif data['pakketkeuze'] == 'XL' %}
+        {% set amount = 15 %}
+      {% endif %}
+
+      {% set total = amount * data['hoevaak_other'] %}
+      {{ total }}
+    '#whitespace': trim
+    '#store': true
+    '#ajax': true
+  hoevaak:
+    '#type': radios
+    '#title': Hoevaak
+    '#options':
+      1: '1'
+      2: '2'
+      4: '4'
+    '#options_display': buttons_horizontal
+    '#wrapper_attributes':
+      class:
+        - radio-button-style
+    '#access': false
+  payment_amount_total:
+    '#type': webform_computed_twig
+    '#title': 'Payment amount total'
+    '#display_on': view
+    '#mode': text
+    '#template': |-
+      {% set amount = 0 %}
+
+      {% if 'vaas' in data['extra_keuzes'] %}
+        {% set amount = 6.95 %}
+      {% endif %}
+
+      {% set total = amount + data['payment_amount_hidden'] %}
+      {{ total }}
+    '#whitespace': trim
+    '#ajax': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Schrijf mij in!'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: true
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: false
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: index
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: 'Email naar admin'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -49
+    settings:
+      states:
+        - completed
+      to_mail: _default
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  mollie_payment:
+    id: mollie_payment_handler
+    handler_id: mollie_payment
+    label: 'Mollie payment'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -50
+    settings:
+      currency: EUR
+      amount_element: payment_amount_total
+      description_element: ''
+      method_element: ''
+variants: {  }

@@ -1,0 +1,21 @@
+uuid: 59f218e1-558c-40f6-8688-5726e4bdb89c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tekst_header
+    - node.type.blog
+  module:
+    - text
+id: node.blog.field_tekst_header
+field_name: field_tekst_header
+entity_type: node
+bundle: blog
+label: 'Tekst header'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

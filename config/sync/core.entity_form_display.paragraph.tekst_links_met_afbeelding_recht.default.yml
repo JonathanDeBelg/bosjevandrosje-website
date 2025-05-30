@@ -1,0 +1,39 @@
+uuid: c7e26c37-5f17-4755-a93a-292b64b98e81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tekst_links_met_afbeelding_recht.field_textbox
+    - field.field.paragraph.tekst_links_met_afbeelding_recht.field_textbox_image
+    - image.style.medium
+    - paragraphs.paragraphs_type.tekst_links_met_afbeelding_recht
+  module:
+    - imce
+    - svg_image
+    - text
+id: paragraph.tekst_links_met_afbeelding_recht.default
+targetEntityType: paragraph
+bundle: tekst_links_met_afbeelding_recht
+mode: default
+content:
+  field_textbox:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_textbox_image:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: medium
+    third_party_settings:
+      imce:
+        enabled: true
+hidden:
+  created: true
+  status: true

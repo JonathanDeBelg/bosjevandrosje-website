@@ -1,0 +1,25 @@
+uuid: 07f69abb-0e56-4a51-868c-93236142a1b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.klanttevredenheid.field_button
+    - field.field.node.klanttevredenheid.field_recensie_s
+    - node.type.klanttevredenheid
+  module:
+    - user
+id: node.klanttevredenheid.teaser
+targetEntityType: node
+bundle: klanttevredenheid
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_button: true
+  field_recensie_s: true
+  search_api_excerpt: true

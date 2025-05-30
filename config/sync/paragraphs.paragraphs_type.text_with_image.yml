@@ -1,0 +1,12 @@
+uuid: 7101d8b7-981b-42a6-b6b3-47d78e1264c1
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: C-exUKBJNkHOJSP42PnZ7wS_EsFicO4jupMC9W2bgyU
+id: text_with_image
+label: 'Tekst rechts met afbeelding links'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

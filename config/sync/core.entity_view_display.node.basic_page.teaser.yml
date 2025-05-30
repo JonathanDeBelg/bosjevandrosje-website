@@ -1,0 +1,43 @@
+uuid: 638fe48e-9a38-4e8a-9f74-a360ec4446ce
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.basic_page.body
+    - field.field.node.basic_page.field_achtergrond
+    - field.field.node.basic_page.field_contentblokken
+    - field.field.node.basic_page.field_meta_tags
+    - field.field.node.basic_page.field_tekst_header
+    - field.field.node.basic_page.field_yoast_seo
+    - node.type.basic_page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: QCqg5XQ_2cuwtrz4CMHwHLtAdPVsCx832VhGyfIncas
+id: node.basic_page.teaser
+targetEntityType: node
+bundle: basic_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_achtergrond: true
+  field_contentblokken: true
+  field_meta_tags: true
+  field_tekst_header: true
+  field_yoast_seo: true
+  search_api_excerpt: true

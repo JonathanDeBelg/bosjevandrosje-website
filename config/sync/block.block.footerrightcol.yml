@@ -1,0 +1,22 @@
+uuid: abd4e4fb-1409-468b-9700-d94b0c2e775e
+langcode: en
+status: true
+dependencies:
+  config:
+    - blockgroup.block_group_content.footer_right_col
+  module:
+    - blockgroup
+  theme:
+    - ef2_custom
+id: footerrightcol
+theme: ef2_custom
+region: footer
+weight: -6
+provider: null
+plugin: 'block_group:footer_right_col'
+settings:
+  id: 'block_group:footer_right_col'
+  label: 'Footer right col'
+  label_display: '0'
+  provider: blockgroup
+visibility: {  }

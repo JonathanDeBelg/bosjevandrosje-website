@@ -1,0 +1,15 @@
+uuid: d5ec27c6-58ef-4990-8bf7-8314645cc7f5
+langcode: en
+status: true
+dependencies: {  }
+name: icoontjes
+label: Icoontjes
+effects:
+  22dabe7c-2674-4194-839b-d7b26412d331:
+    uuid: 22dabe7c-2674-4194-839b-d7b26412d331
+    id: image_scale
+    weight: 1
+    data:
+      width: 50
+      height: null
+      upscale: false

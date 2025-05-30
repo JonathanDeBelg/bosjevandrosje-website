@@ -1,0 +1,13 @@
+uuid: 842621cf-aad9-44af-ae7d-cc06918ac5c8
+langcode: nl
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: o-S7Iq8rOsReXYnQRUN9N9jmYvuzYLoScp4zyF3Bq-g
+id: user.register
+label: Inschrijven
+description: ''
+targetEntityType: user
+cache: true

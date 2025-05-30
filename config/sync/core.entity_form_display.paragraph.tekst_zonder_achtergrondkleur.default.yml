@@ -1,0 +1,25 @@
+uuid: 1a953127-1433-4da6-b6a4-98361a1e0d57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tekst_zonder_achtergrondkleur.field_tekst
+    - paragraphs.paragraphs_type.tekst_zonder_achtergrondkleur
+  module:
+    - text
+id: paragraph.tekst_zonder_achtergrondkleur.default
+targetEntityType: paragraph
+bundle: tekst_zonder_achtergrondkleur
+mode: default
+content:
+  field_tekst:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

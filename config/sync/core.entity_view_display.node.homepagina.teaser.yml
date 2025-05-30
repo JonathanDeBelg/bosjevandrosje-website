@@ -1,0 +1,41 @@
+uuid: bd3a3d6c-d841-4a92-807d-45c27613bb4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.homepagina.body
+    - field.field.node.homepagina.field_achtergrond
+    - field.field.node.homepagina.field_contentbanners
+    - field.field.node.homepagina.field_meta_tags
+    - field.field.node.homepagina.field_tekst_header
+    - field.field.node.homepagina.field_yoast_seo
+    - node.type.homepagina
+  module:
+    - text
+    - user
+id: node.homepagina.teaser
+targetEntityType: node
+bundle: homepagina
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_achtergrond: true
+  field_contentbanners: true
+  field_meta_tags: true
+  field_tekst_header: true
+  field_yoast_seo: true
+  search_api_excerpt: true

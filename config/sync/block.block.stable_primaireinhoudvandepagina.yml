@@ -1,0 +1,22 @@
+uuid: bc23a811-52f6-4b68-a36b-6e1eecaa4cce
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - stable
+_core:
+  default_config_hash: lB3MIEq7qY-Yc1n7SFoI6uVe1oHJJv5MtPagbWYBhfU
+id: stable_primaireinhoudvandepagina
+theme: stable
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Primaire inhoud van de pagina'
+  label_display: '0'
+  provider: system
+visibility: {  }

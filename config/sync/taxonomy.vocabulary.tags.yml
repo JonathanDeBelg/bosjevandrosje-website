@@ -1,0 +1,11 @@
+uuid: eb9da267-2b43-4b0f-884c-8ab51a602d6f
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: jrDJgMapuJuKs8sV0a-NXe1-KEo6VmJMR93TQT3hRmU
+name: Labels
+vid: tags
+description: null
+weight: 0
+new_revision: false

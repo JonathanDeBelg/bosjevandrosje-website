@@ -1,0 +1,14 @@
+uuid: 5005e0b4-8975-4c58-aa22-fb7d543cf5c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contentbeheerder
+  module:
+    - user
+id: user_add_role_action.contentbeheerder
+label: 'Add the Contentbeheerder role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: contentbeheerder

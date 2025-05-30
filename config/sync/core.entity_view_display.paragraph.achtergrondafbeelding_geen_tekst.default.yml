@@ -1,0 +1,31 @@
+uuid: c5c604e6-a176-4a46-afbb-8f3dc56c8e10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.achtergrondafbeelding_geen_tekst.field_afbeelding
+    - paragraphs.paragraphs_type.achtergrondafbeelding_geen_tekst
+  module:
+    - svg_image
+id: paragraph.achtergrondafbeelding_geen_tekst.default
+targetEntityType: paragraph
+bundle: achtergrondafbeelding_geen_tekst
+mode: default
+content:
+  field_afbeelding:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

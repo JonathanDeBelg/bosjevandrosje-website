@@ -1,0 +1,25 @@
+uuid: 24c2556a-5102-4359-a24a-4d5eb1aac9d7
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ef2_custom
+_core:
+  default_config_hash: k81yqt11zfoV2SDe3el_LURjVnVGQ6Yyut-4tuZ4qFE
+id: brandingvandewebsite
+theme: ef2_custom
+region: header
+weight: -4
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Branding van de website'
+  label_display: '0'
+  provider: system
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

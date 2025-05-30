@@ -1,0 +1,41 @@
+uuid: 494200ce-031d-4e0a-b5c5-c8e1c8cf004a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tekst_rechts_met_achtergrondafbe.field_textbox
+    - field.field.paragraph.tekst_rechts_met_achtergrondafbe.field_textbox_image
+    - image.style.medium
+    - paragraphs.paragraphs_type.tekst_rechts_met_achtergrondafbe
+  module:
+    - focal_point
+    - imce
+    - text
+id: paragraph.tekst_rechts_met_achtergrondafbe.default
+targetEntityType: paragraph
+bundle: tekst_rechts_met_achtergrondafbe
+mode: default
+content:
+  field_textbox:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_textbox_image:
+    type: image_focal_point
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: medium
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings:
+      imce:
+        enabled: true
+hidden:
+  created: true
+  status: true

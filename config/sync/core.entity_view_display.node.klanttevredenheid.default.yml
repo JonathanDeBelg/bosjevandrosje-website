@@ -1,0 +1,56 @@
+uuid: b0e1ab36-2e73-4752-aa7b-8e6e567adc3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.klanttevredenheid.field_button
+    - field.field.node.klanttevredenheid.field_recensie_s
+    - node.type.klanttevredenheid
+  module:
+    - ds
+    - link
+    - paragraphs
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_twocol
+      library: layout_discovery/twocol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      first:
+        - field_titel
+      second:
+        - field_button
+      bottom:
+        - field_recensie_s
+id: node.klanttevredenheid.default
+targetEntityType: node
+bundle: klanttevredenheid
+mode: default
+content:
+  field_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: second
+  field_recensie_s:
+    type: paragraph_summary
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: bottom
+hidden:
+  links: true
+  search_api_excerpt: true

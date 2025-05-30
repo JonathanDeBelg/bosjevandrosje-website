@@ -1,0 +1,10 @@
+uuid: fc60810f-aab6-49ad-9da5-18f32af5964c
+langcode: en
+status: true
+dependencies: {  }
+id: achtergrondafbeelding_geen_tekst
+label: 'Achtergrondafbeelding geen tekst'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

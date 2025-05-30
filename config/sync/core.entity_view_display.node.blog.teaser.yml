@@ -1,0 +1,41 @@
+uuid: 037de50e-cf13-4b1c-8746-4e700004d423
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.blog.body
+    - field.field.node.blog.field_achtergrond
+    - field.field.node.blog.field_contentblokken
+    - field.field.node.blog.field_meta_tags
+    - field.field.node.blog.field_tekst_header
+    - field.field.node.blog.field_yoast_seo
+    - node.type.blog
+  module:
+    - text
+    - user
+id: node.blog.teaser
+targetEntityType: node
+bundle: blog
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_achtergrond: true
+  field_contentblokken: true
+  field_meta_tags: true
+  field_tekst_header: true
+  field_yoast_seo: true
+  search_api_excerpt: true

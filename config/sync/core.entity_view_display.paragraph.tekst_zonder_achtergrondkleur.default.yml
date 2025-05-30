@@ -1,0 +1,23 @@
+uuid: beed39ab-04d8-4f0c-9d72-1c4fa35f8dfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tekst_zonder_achtergrondkleur.field_tekst
+    - paragraphs.paragraphs_type.tekst_zonder_achtergrondkleur
+  module:
+    - text
+id: paragraph.tekst_zonder_achtergrondkleur.default
+targetEntityType: paragraph
+bundle: tekst_zonder_achtergrondkleur
+mode: default
+content:
+  field_tekst:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

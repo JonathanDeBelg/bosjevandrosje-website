@@ -1,0 +1,6 @@
+entity_type_groups:
+  node:
+    homepagina:
+      basic: basic
+      advanced: advanced
+tag_trim_end: '|.,-:;/+&([{"'''

@@ -1,0 +1,29 @@
+uuid: f547508c-c844-4102-850e-52722d5e3c7c
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 5FaC8_PP76ON-gppVAhTdnHRYooCqaMf-cDj-tSBhos
+id: klaro
+label: 'Consent manager'
+description: 'Klaro! Cookie & Consent manager saves your consent status in the browser.'
+default: true
+purposes:
+  - cms
+cookies:
+  -
+    regex: klaro
+    path: ''
+    domain: ''
+required: true
+opt_out: false
+only_once: false
+contextual_consent_only: false
+contextual_consent_text: ''
+info_url: 'https://github.com/klaro-org/klaro-js/blob/master/README.md'
+privacy_policy_url: ''
+javascripts: {  }
+callback_code: ''
+wrapper_identifier: {  }
+attachments: {  }
+weight: 0

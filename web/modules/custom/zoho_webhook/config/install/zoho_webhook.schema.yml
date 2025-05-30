@@ -1,0 +1,37 @@
+zoho_webhook.settings:
+  type: config_object
+  label: 'Zoho Integration Settings'
+  mapping:
+    organization_id:
+      type: string
+      label: 'Organization ID'
+    client_id:
+      type: string
+      label: 'Client ID'
+    client_secret:
+      type: string
+      label: 'Client Secret'
+    redirect_uri:
+      type: uri
+      label: 'Redirect URI'
+    webform_redirect_url:
+      type: uri
+      label: 'Webform Redirect URL'
+    auth_url:
+      type: uri
+      label: 'Authorization URL'
+    token_url:
+      type: uri
+      label: 'Token URL'
+    api_base_url:
+      type: uri
+      label: 'API Base URL'
+    hosted_page_url:
+      type: uri
+      label: 'Hosted Page URL'
+    customer_url:
+      type: uri
+      label: 'Customer URL'
+    subscription_url:
+      type: uri
+      label: 'Subscription URL'

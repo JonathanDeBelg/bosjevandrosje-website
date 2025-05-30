@@ -1,0 +1,24 @@
+uuid: 0dda45bc-b0fe-419a-8765-3da1b22ada2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media
+    - field.field.block_content.social_media.body
+  module:
+    - text
+id: block_content.social_media.default
+targetEntityType: block_content
+bundle: social_media
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -40,6 +40,25 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
+	  <script>
+		window.dataLayer = window.dataLayer || [];
+		  function gtag(){ dataLayer.push(arguments); }
+
+		  // 1. Set on-page default to "denied"
+		  gtag('consent', 'default', {
+			'ad_storage': 'denied',
+			'analytics_storage': 'denied',
+			'ad_user_data': 'denied',
+			'ad_personalization': 'denied'
+		  });
+
+		  // 2. Restore user choice if consent was previously granted
+		  const savedConsent = localStorage.getItem('userConsent');
+		  if (savedConsent) {
+			gtag('consent', 'update', JSON.parse(savedConsent));
+		  }
+		</script>
+
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {

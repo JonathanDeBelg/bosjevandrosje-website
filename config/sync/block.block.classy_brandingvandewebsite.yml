@@ -1,0 +1,25 @@
+uuid: 5f5531c6-078c-4be2-8408-a64a0609a7af
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - classy
+_core:
+  default_config_hash: k81yqt11zfoV2SDe3el_LURjVnVGQ6Yyut-4tuZ4qFE
+id: classy_brandingvandewebsite
+theme: classy
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Branding van de website'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 06076e31-894a-4093-8288-481201a6bbee
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.text_stap_4
+field_name: text_stap_4
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

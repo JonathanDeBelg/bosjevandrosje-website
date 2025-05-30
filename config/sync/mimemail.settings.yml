@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: rLKGzzC9TqjbEZiBoiyMpOSyZgldADa5SzvbA2gQDxE
+name: 'Bosje van Drosje'
+mail: no-reply@bosjevandrosje.nl
+simple_address: false
+sitestyle: true
+textonly: false
+linkonly: false
+user_plaintext_field: ''
+format: full_html
+preserve_class: false
+advanced:
+  incoming: false
+  key: M0WPKW_Kgds2Vw1PbMKAlkC6X7ZK6NsuGc_pyNzV1dc

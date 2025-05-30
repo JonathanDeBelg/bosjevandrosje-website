@@ -1,0 +1,22 @@
+uuid: f2bd1d3a-a5ea-41d1-9a72-52fee08415f8
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - claro
+_core:
+  default_config_hash: Eqntk7lKoBOxOepyh3EZ2w-U0oVwN4WbVEyo_h3hPIg
+id: claro_breadcrumbs
+theme: claro
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Kruimelpad
+  label_display: '0'
+  provider: system
+visibility: {  }

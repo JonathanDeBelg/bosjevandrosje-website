@@ -1,0 +1,474 @@
+uuid: 41e9ef1f-c0d9-4bd8-8d82-6a2a2faf09ce
+langcode: en
+status: open
+dependencies:
+  module:
+    - zoho_webhook
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: inschrijfformulier
+title: Inschrijfformulier
+description: ''
+categories: {  }
+elements: |-
+  abonnement_page:
+    '#type': webform_wizard_page
+    '#title': Abonnement
+    '#open': true
+    '#next_button_label': Volgende
+    pakketkeuze:
+      '#type': webform_image_select
+      '#title': Pakketkeuze
+      '#description': |-
+        <p>Bij Bosje van Drosje kan je kiezen tussen 3 verschillende formaten bloemen: M, L, XL. Zoals de namen al aangeven, gaat dit om de grote van de pakketten. Bij het bloemenabonnement van Bosje van Drosje ontvang je geen gebonden boeket. Je krijgt verschillende bossen bloemen, die je naar je eigen zin en vazen kan schikken. Ondanks dat dit een bloemen abonnement is, zit je nergens aan vast. Wil je een keer een maatje groter, kleiner of een keertje niet? Jouw keuze! Het abonnement is 3 dagen voor levering ten alle tijden te annuleren! We maken het niet te moeilijk voor u!</p>
+
+        <p><br />
+        <strong>PS: bij maat XL krijg je n&uacute; een gratis vaas! Klik hieronder op het pakket die je thuis bezorgd wilt hebben.</strong></p>
+      '#description_display': before
+      '#images':
+        M:
+          text: '<b>Pakket M</b><br>€10,- per pakket incl. verzendkosten'
+          src: /sites/default/files/2022-10/M.jpeg
+        L:
+          text: '<b>Pakket L</b><br>€12,50 per pakket incl. verzendkosten'
+          src: /sites/default/files/2022-10/L.jpeg
+        XL:
+          text: '<b>Pakket XL</b><br>€15,- per pakket incl. verzendkosten     <span class="label">+ Gratis vaas</span>'
+          src: /sites/default/files/2022-10/XL.jpeg
+      '#show_label': true
+      '#required': true
+  contact:
+    '#type': webform_wizard_page
+    '#title': Bezorging
+    '#open': true
+    '#prev_button_label': Vorige
+    '#next_button_label': Volgende
+    wrapper:
+      '#type': webform_flexbox
+      naam:
+        '#type': webform_flexbox
+        voornaam:
+          '#type': textfield
+          '#title': Voornaam
+          '#title_display': before
+          '#required': true
+          '#flex': 0
+        achternaam:
+          '#type': textfield
+          '#title': Achternaam
+          '#title_display': before
+          '#required': true
+          '#flex': 0
+      woon:
+        '#type': webform_flexbox
+        adres:
+          '#type': textfield
+          '#title': Adres
+          '#title_display': before
+          '#required': true
+        huisnummer:
+          '#type': textfield
+          '#title': Huisnummer
+          '#required': true
+      flexbox_02:
+        '#type': webform_flexbox
+        woonplaats:
+          '#type': select
+          '#title': Woonplaats
+          '#options':
+            '{"value": "Elst UT", "date": "friday"}': 'Elst (UT)'
+            '{"value": "Rhenen", "date": "friday"}': Rhenen
+            '{"value": "Veenendaal", "date": "friday"}': Veenendaal
+            '{"value": "Amerongen", "date": "friday"}': Amerongen
+            '{"value": "Achterberg", "date": "friday"}': Achterberg
+            '{"value": "Leersum", "date": "friday"}': Leersum
+            '{"value": "Ederveen", "date": "friday"}': Ederveen
+            '{"value": "Renswoude", "date": "friday"}': Renswoude
+            '{"value": "Scherpenzeel", "date": "friday"}': Scherpenzeel
+            '{"value": "Opheusden", "date": "thursday"}': Opheusden
+            '{"value": "Kesteren", "date": "thursday"}': Kesteren
+            '{"value": "Lienden", "date": "thursday"}': Lienden
+          '#required': true
+        postcode:
+          '#type': textfield
+          '#title': Postcode
+          '#title_display': before
+          '#required': true
+    col_right:
+      '#type': container
+      bezorgdatum:
+        '#type': textfield
+        '#title': Bezorgdatum
+        '#title_display': before
+        '#required': true
+        '#default_value': '01/01/2000, zat'
+      frequentie:
+        '#type': radios
+        '#title': Frequentie
+        '#description': 'Ik wil de bloemen 1x .... ontvangen'
+        '#title_display': none
+        '#description_display': before
+        '#help_display': title_before
+        '#options':
+          4: 'elke week'
+          2: 'om de week'
+        '#options_display': buttons_horizontal
+        '#required': true
+        '#wrapper_attributes':
+          class:
+            - radio-button-style
+  abonnement:
+    '#type': webform_wizard_page
+    '#title': Gegevens
+    '#prev_button_label': Vorige
+    '#next_button_label': Volgende
+    container:
+      '#type': container
+      e_mailadres:
+        '#type': email
+        '#title': E-mailadres
+        '#title_display': before
+        '#required': true
+      mobiele_telefoonnummer:
+        '#type': tel
+        '#title': 'Mobiele telefoonnummer'
+        '#title_display': before
+        '#placeholder': 06-12345678
+        '#required': true
+        '#international_preferred_countries': {  }
+      couponcode:
+        '#type': textfield
+        '#title': Couponcode
+        '#title_display': before
+      hoe_bent_u_bij_ons_terecht_gekomen:
+        '#type': select
+        '#title': 'Hoe bent u bij ons terecht gekomen?'
+        '#options':
+          'Social media': 'Social media'
+          'Busbelettering ': 'Busbelettering '
+          'Van vrienden gehoord': 'Van vrienden gehoord'
+          Flyer: Flyer
+    container_01:
+      '#type': container
+      betaalopties:
+        '#type': select
+        '#title': Betaalopties
+        '#title_display': before
+        '#options':
+          cash: Contant
+          sepa: 'Automatische incasso (online betalen)'
+        '#required': true
+  payment_amount:
+    '#type': webform_computed_twig
+    '#title': 'Payment Amount'
+    '#display_on': view
+    '#template': |-
+      {% if data['pakketkeuze'] == 'M' or data['pakketkeuze'] == 'm' %}
+      10.00
+      {% elseif data['pakketkeuze'] == 'L' or data['pakketkeuze'] == 'l' %}
+      12.50
+      {% elseif data['pakketkeuze'] == 'XL' or data['pakketkeuze'] == 'xl' %}
+      15.00
+      {% endif %}
+    '#whitespace': trim
+    '#store': true
+    '#ajax': true
+  mollie_customer:
+    '#type': hidden
+    '#title': 'Mollie customer'
+  mollie_subscription:
+    '#type': hidden
+    '#title': 'Mollie subscription'
+  registration_url:
+    '#type': hidden
+    '#title': 'Registration URL'
+    '#default_value': '[webform:handler:remote_post:completed:registration_url]'
+  customer_no:
+    '#type': hidden
+    '#title': 'Customer NO'
+    '#default_value': '[webform:handler:remote_post:completed:customer_no]'
+  hosted_page_url:
+    '#type': hidden
+    '#title': 'Hosted Page URL'
+  bezorgdatum_raw:
+    '#type': hidden
+    '#title': bezorgdatum_raw
+  woonplaats_raw:
+    '#type': hidden
+    '#title': woonplaats_raw
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Schrijf mij in!'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: true
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: true
+  wizard_progress_states: false
+  wizard_start_label: Volgende
+  wizard_preview_link: false
+  wizard_confirmation: false
+  wizard_confirmation_label: Inschrijven
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: index
+  wizard_prev_button_label: Vorige
+  wizard_next_button_label: Volgende
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_url: /bedankt
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  aanvraagbevestiging_naar_aanvrager:
+    id: email
+    handler_id: aanvraagbevestiging_naar_aanvrager
+    label: Aanvraagnotificatie
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -49
+    settings:
+      states:
+        - completed
+      to_mail: beau@bosjevandrosje.nl
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: no-reply@bosjevandrosje.nl
+      from_options: {  }
+      from_name: 'Bosje van Drosje'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: _default
+      body: "<p>Submitted on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_naar_aanvrager:
+    id: email
+    handler_id: email_naar_aanvrager
+    label: 'Email naar aanvrager'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:e_mailadres:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: no-reply@bosjevandrosje.nl
+      from_options: {  }
+      from_name: 'Bosje van Drosje'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Hi [webform_submission:values:voornaam], jouw inschrijving bij Bosje van Drosje is bevestigd! 🎉🌸'
+      body: "<p>Hey {{ data.voornaam }},</p>\r\n\r\n<p>Beau van Bosje van Drosje hier! Wat ontzettend leuk dat jij je hebt ingeschreven voor Bosje van Drosje! Dan kunnen wij eigenlijk maar 1 ding zeggen: <strong>welkom bij de club!</strong> Zal ik je een geheimpje verklappen? Wij kunnen niet wachten om die mooie glimlach bij jou tevoorschijn te toveren!</p>\r\n\r\n<p>Wat onbeleefd trouwens, vergeet ik mezelf bijna voor te stellen: ik ben Beau van Bosje van Drosje. Al vroeg in de ochtend ben ik samen met mijn collega’s in de weer om de mooiste bloemen - nu ook bij jou - op de vaas te krijgen. Wij hopen dat het dan ook een echte verrassing is als wij <strong>{{ data.bezorgdatum_raw }}</strong> bij jou op de stoep staan in het mooie <strong>{{ data.woonplaats_raw }}</strong>.</p>\r\n\r\n<p>In die andere mail kan je gemakkelijk een account aanmaken en voortaan ook inloggen op jouw persoonlijke Bosje van Drosje-account. Wat kun je hier allemaal doen?</p>\r\n\r\n<p>\r\n🌸 Je abonnement pauzeren als je een weekendje weg bent</br>\r\n🎁 Iemand verrassen door jouw bos eenmalig op een ander adres te laten bezorgen</br>\r\n🎁 Een maatje meer (of minder) bestellen – volledig naar jouw wens</br></p>\r\n\r\n<p>Het is allemaal mogelijk met jouw Bosje van Drosje-account.</p>\r\n\r\n<p>En dat is nog niet alles! In je account vind je ook jouw persoonlijke klantnummer. Let op: met dit klantnummer doe je automatisch mee voor te gekke prijzen – en dat elke maand weer! Helemaal gratis, gewoon omdat we van verrassingen houden. 🎉</p>\r\n\r\n<p>Oh, en trouwens… We hebben ook nog een leuk <a target=\"_blank\" href=\"/sites/default/files/Handboek%20Bosje%20van%20Drosje.pdf\" >handboek</a> voor je klaar gezet waar allerlei handige informatie in staat omtrent jouw abonnement. 📖 Hierin vind je leuke tips, extra informatie en handige weetjes over hoe je het meeste uit jouw bos bloemen haalt. <strong>Waarschuwing:</strong> na het lezen krijg je alleen maar méér zin in jouw Bosje van Drosje!</p>\r\n\r\n<p>Heb je nog vragen of kom je ergens niet uit? Geen zorgen! Tussen het inkopen, water geven en het inpakken van de mooiste bossen maak ik altijd graag tijd vrij om jou te helpen. Stuur gerust een e-mail naar <a href=\"mailto:info@bosjevandrosje.nl\">info@bosjevandrosje.nl</a> of bel de <strong>Bosje van Drosje-hotline</strong> op <strong><a href=\"tel:06-82417074\">06-82417074</a></strong>.</p>\r\n\r\n<p>Ik wens jou een fleurige dag toe en zie je snel aan de deur!</p>\r\n\r\n<p>^Beau<br>\r\n<strong>Bosje van Drosje 🌸</strong></p>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  zoho_webhook_handler:
+    id: zoho_webhook_handler
+    handler_id: zoho_webhook_handler
+    label: 'Zoho Webhook Handler'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -50
+    settings: {  }
+variants: {  }

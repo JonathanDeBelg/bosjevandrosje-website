@@ -1,0 +1,19 @@
+uuid: 099e304a-9367-434e-a2c8-c2c7bfcbeadc
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_productomschrijving
+field_name: field_productomschrijving
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

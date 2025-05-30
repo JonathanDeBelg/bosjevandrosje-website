@@ -1,0 +1,41 @@
+uuid: 349383f9-00c7-4e5d-9915-17c2b117e3c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resultaat.field_afbeelding
+    - field.field.paragraph.resultaat.field_tekst
+    - image.style.icoontjes
+    - paragraphs.paragraphs_type.resultaat
+  module:
+    - svg_image
+    - text
+id: paragraph.resultaat.default
+targetEntityType: paragraph
+bundle: resultaat
+mode: default
+content:
+  field_afbeelding:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: icoontjes
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tekst:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

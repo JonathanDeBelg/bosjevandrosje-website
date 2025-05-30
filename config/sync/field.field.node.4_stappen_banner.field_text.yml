@@ -1,0 +1,21 @@
+uuid: 8aaf0a28-4f8f-4860-ac6f-ed42da7c707a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text
+    - node.type.4_stappen_banner
+  module:
+    - text
+id: node.4_stappen_banner.field_text
+field_name: field_text
+entity_type: node
+bundle: 4_stappen_banner
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

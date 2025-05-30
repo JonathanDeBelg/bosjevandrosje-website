@@ -1,0 +1,12 @@
+uuid: b6a04878-a05b-4384-afcb-a721dbb291ec
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: C-exUKBJNkHOJSP42PnZ7wS_EsFicO4jupMC9W2bgyU
+id: tekst_links_met_afbeelding_recht
+label: 'Tekst links met afbeelding rechts'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

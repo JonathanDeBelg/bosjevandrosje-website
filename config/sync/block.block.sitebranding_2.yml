@@ -1,0 +1,23 @@
+uuid: e8b98e3c-1094-4952-8d50-64276d5fcdaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ef2_custom
+id: sitebranding_2
+theme: ef2_custom
+region: footer_right_col
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

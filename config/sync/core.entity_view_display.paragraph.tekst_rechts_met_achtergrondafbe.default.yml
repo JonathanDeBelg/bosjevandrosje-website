@@ -1,0 +1,35 @@
+uuid: 0833cc20-6717-4cbf-acae-0dbb34c03315
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tekst_rechts_met_achtergrondafbe.field_textbox
+    - field.field.paragraph.tekst_rechts_met_achtergrondafbe.field_textbox_image
+    - paragraphs.paragraphs_type.tekst_rechts_met_achtergrondafbe
+  module:
+    - background_image_formatter
+    - text
+id: paragraph.tekst_rechts_met_achtergrondafbe.default
+targetEntityType: paragraph
+bundle: tekst_rechts_met_achtergrondafbe
+mode: default
+content:
+  field_textbox:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_textbox_image:
+    type: background_image_formatter
+    label: hidden
+    settings:
+      image_style: ''
+      background_image_output_type: css
+      background_image_selector: .paragraph--type--tekst-rechts-met-achtergrondafbe
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

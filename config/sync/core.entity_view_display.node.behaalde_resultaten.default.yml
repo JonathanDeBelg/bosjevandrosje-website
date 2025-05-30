@@ -1,0 +1,36 @@
+uuid: b0f0b53b-0cf9-4a60-ae81-c88751117d9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.behaalde_resultaten.body
+    - field.field.node.behaalde_resultaten.field_kolommen
+    - node.type.behaalde_resultaten
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.behaalde_resultaten.default
+targetEntityType: node
+bundle: behaalde_resultaten
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_kolommen:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true

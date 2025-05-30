@@ -1,0 +1,47 @@
+uuid: fd91f932-bd16-427e-873b-30063bd8ecad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.productenrij.field_producten
+    - paragraphs.paragraphs_type.productenrij
+  module:
+    - entity_reference_revisions
+    - field_group
+third_party_settings:
+  field_group:
+    group_container:
+      children:
+        - field_producten
+      label: Container
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: container
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.productenrij.default
+targetEntityType: paragraph
+bundle: productenrij
+mode: default
+content:
+  field_producten:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

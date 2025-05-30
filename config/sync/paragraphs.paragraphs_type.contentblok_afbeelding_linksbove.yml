@@ -1,0 +1,10 @@
+uuid: a89cf2aa-1235-49f3-8a7a-7eb4b4989edb
+langcode: en
+status: true
+dependencies: {  }
+id: contentblok_afbeelding_linksbove
+label: 'Contentblok afbeelding linksboven'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

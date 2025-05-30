@@ -1,0 +1,49 @@
+uuid: adb2bcf6-157e-4514-843c-9eb2c66f3244
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recensie_s
+    - node.type.klanttevredenheid
+    - paragraphs.paragraphs_type.recensie
+  module:
+    - entity_reference_revisions
+id: node.klanttevredenheid.field_recensie_s
+field_name: field_recensie_s
+entity_type: node
+bundle: klanttevredenheid
+label: "Recensie's"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      recensie: recensie
+    negate: 0
+    target_bundles_drag_drop:
+      contentblok_afbeelding_linksbove:
+        weight: 8
+        enabled: false
+      recensie:
+        weight: 9
+        enabled: true
+      resultaat:
+        weight: 10
+        enabled: false
+      tekst_links_met_achtergrondafbee:
+        weight: 11
+        enabled: false
+      tekst_links_met_afbeelding_recht:
+        weight: 12
+        enabled: false
+      tekst_rechts_met_achtergrondafbe:
+        weight: 13
+        enabled: false
+      text_with_image:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

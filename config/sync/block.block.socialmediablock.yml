@@ -1,0 +1,25 @@
+uuid: 6f622142-0ee5-441c-b380-bff6f6d7bb64
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:social_media:fc863035-6d18-4fef-a30c-e713d701f8f3'
+  module:
+    - block_content
+  theme:
+    - ef2_custom
+id: socialmediablock
+theme: ef2_custom
+region: footer_right_col
+weight: 0
+provider: null
+plugin: 'block_content:fc863035-6d18-4fef-a30c-e713d701f8f3'
+settings:
+  id: 'block_content:fc863035-6d18-4fef-a30c-e713d701f8f3'
+  label: 'Social media block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

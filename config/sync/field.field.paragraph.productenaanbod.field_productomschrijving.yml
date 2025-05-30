@@ -1,0 +1,21 @@
+uuid: d79cb704-dcb9-4abb-8d2c-6b2a020b6211
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_productomschrijving
+    - paragraphs.paragraphs_type.productenaanbod
+  module:
+    - text
+id: paragraph.productenaanbod.field_productomschrijving
+field_name: field_productomschrijving
+entity_type: paragraph
+bundle: productenaanbod
+label: Productomschrijving
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

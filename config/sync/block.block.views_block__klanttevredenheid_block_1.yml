@@ -1,0 +1,34 @@
+uuid: 4fa01f00-9a19-474a-a669-d9f6b26c3366
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.klanttevredenheid
+  module:
+    - ctools
+    - views
+  theme:
+    - ef2_custom
+id: views_block__klanttevredenheid_block_1
+theme: ef2_custom
+region: secondary_content
+weight: -9
+provider: null
+plugin: 'views_block:klanttevredenheid-block_1'
+settings:
+  id: 'views_block:klanttevredenheid-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog: blog
+      homepagina: homepagina
+      over_ons: over_ons

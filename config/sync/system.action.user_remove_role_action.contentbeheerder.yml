@@ -1,0 +1,14 @@
+uuid: e0927214-822c-4d72-a350-08c447064928
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contentbeheerder
+  module:
+    - user
+id: user_remove_role_action.contentbeheerder
+label: 'Remove the Contentbeheerder role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: contentbeheerder

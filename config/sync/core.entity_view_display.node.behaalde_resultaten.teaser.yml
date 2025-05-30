@@ -1,0 +1,33 @@
+uuid: a6eb71bb-458d-43a3-b0f2-94ea41ce0f77
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.behaalde_resultaten.body
+    - field.field.node.behaalde_resultaten.field_kolommen
+    - node.type.behaalde_resultaten
+  module:
+    - text
+    - user
+id: node.behaalde_resultaten.teaser
+targetEntityType: node
+bundle: behaalde_resultaten
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_kolommen: true
+  search_api_excerpt: true

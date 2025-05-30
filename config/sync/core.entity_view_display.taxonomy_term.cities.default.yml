@@ -1,0 +1,31 @@
+uuid: 5680cf4b-a375-4ac8-9065-412ead8a6d4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cities.field_delivery_date
+    - taxonomy.vocabulary.cities
+  module:
+    - options
+    - text
+id: taxonomy_term.cities.default
+targetEntityType: taxonomy_term
+bundle: cities
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_delivery_date:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

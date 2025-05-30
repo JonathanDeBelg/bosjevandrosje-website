@@ -1,0 +1,23 @@
+uuid: 1be9128e-1da8-4819-a04b-06e9fd1629de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.behaalde_resultaten
+  module:
+    - text
+id: node.behaalde_resultaten.body
+field_name: body
+entity_type: node
+bundle: behaalde_resultaten
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,46 @@
+uuid: f8cbb7e4-5079-4577-88c5-fb2cd7534d4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kolommen
+    - node.type.behaalde_resultaten
+    - paragraphs.paragraphs_type.resultaat
+  module:
+    - entity_reference_revisions
+id: node.behaalde_resultaten.field_kolommen
+field_name: field_kolommen
+entity_type: node
+bundle: behaalde_resultaten
+label: Kolommen
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      resultaat: resultaat
+    negate: 0
+    target_bundles_drag_drop:
+      contentblok_afbeelding_linksbove:
+        weight: 7
+        enabled: false
+      resultaat:
+        weight: 8
+        enabled: true
+      tekst_links_met_achtergrondafbee:
+        weight: 9
+        enabled: false
+      tekst_links_met_afbeelding_recht:
+        weight: 10
+        enabled: false
+      tekst_rechts_met_achtergrondafbe:
+        weight: 11
+        enabled: false
+      text_with_image:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

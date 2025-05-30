@@ -1,0 +1,41 @@
+uuid: e26727cf-8b1c-4880-8e00-ae72519f22e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contentblok_afbeelding_linksbove.field_textbox
+    - field.field.paragraph.contentblok_afbeelding_linksbove.field_textbox_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.contentblok_afbeelding_linksbove
+  module:
+    - focal_point
+    - imce
+    - text
+id: paragraph.contentblok_afbeelding_linksbove.default
+targetEntityType: paragraph
+bundle: contentblok_afbeelding_linksbove
+mode: default
+content:
+  field_textbox:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_textbox_image:
+    type: image_focal_point
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings:
+      imce:
+        enabled: true
+hidden:
+  created: true
+  status: true

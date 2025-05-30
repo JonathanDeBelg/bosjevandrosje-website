@@ -1,0 +1,21 @@
+uuid: 25ea040e-7fc9-4603-b2ed-e2f7368938d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tekst
+    - paragraphs.paragraphs_type.recensie
+  module:
+    - text
+id: paragraph.recensie.field_tekst
+field_name: field_tekst
+entity_type: paragraph
+bundle: recensie
+label: Tekst
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,10 @@
+uuid: 21261daa-5761-4fbc-94d9-2a6210fc6638
+langcode: en
+status: true
+dependencies: {  }
+id: resultaat
+label: Resultaat
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

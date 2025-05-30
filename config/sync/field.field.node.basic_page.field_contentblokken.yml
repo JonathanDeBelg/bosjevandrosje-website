@@ -1,0 +1,51 @@
+uuid: c74005df-adae-45b3-af2d-d4cf08d2dfbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contentblokken
+    - node.type.basic_page
+    - paragraphs.paragraphs_type.contentblok_afbeelding_linksbove
+    - paragraphs.paragraphs_type.tekst_links_met_afbeelding_recht
+  module:
+    - entity_reference_revisions
+id: node.basic_page.field_contentblokken
+field_name: field_contentblokken
+entity_type: node
+bundle: basic_page
+label: Contentblokken
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      contentblok_afbeelding_linksbove: contentblok_afbeelding_linksbove
+      tekst_links_met_afbeelding_recht: tekst_links_met_afbeelding_recht
+    negate: 0
+    target_bundles_drag_drop:
+      contentblok_afbeelding_linksbove:
+        weight: 5
+        enabled: true
+      recensie:
+        weight: 9
+        enabled: false
+      resultaat:
+        weight: 10
+        enabled: false
+      tekst_links_met_achtergrondafbee:
+        weight: 11
+        enabled: false
+      tekst_links_met_afbeelding_recht:
+        weight: 6
+        enabled: true
+      tekst_rechts_met_achtergrondafbe:
+        weight: 7
+        enabled: false
+      text_with_image:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

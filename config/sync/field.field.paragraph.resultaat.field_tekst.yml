@@ -1,0 +1,21 @@
+uuid: 1a798941-44d3-440f-947c-247338e34f4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tekst
+    - paragraphs.paragraphs_type.resultaat
+  module:
+    - text
+id: paragraph.resultaat.field_tekst
+field_name: field_tekst
+entity_type: paragraph
+bundle: resultaat
+label: Tekst
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

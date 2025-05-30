@@ -1,0 +1,18 @@
+uuid: 5415716f-87c9-4189-86a0-b13d095b15ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Over ons'
+type: over_ons
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

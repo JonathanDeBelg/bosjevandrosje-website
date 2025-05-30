@@ -58,7 +58,7 @@ class ZohoAuthController extends ControllerBase {
       if(isset($data['refresh_token'])){
         \Drupal::state()->set('zoho_refresh_token', $data['refresh_token']);
       }
-       \Drupal::messenger()->addStatus($this->t('Zoho authorization successful.'));
+      \Drupal::messenger()->addStatus($this->t('Zoho authorization successful., Refresh token: @refresh_token', ['@refresh_token' => $data['refresh_token']]));
      } else {
       \Drupal::messenger()->addError($this->t('Authorization response is missing expected parameters.'));
      }

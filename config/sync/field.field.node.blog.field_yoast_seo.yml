@@ -1,0 +1,21 @@
+uuid: c4f602ab-eec5-496d-95f6-0ff5fa737c8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yoast_seo
+    - node.type.blog
+  module:
+    - yoast_seo
+id: node.blog.field_yoast_seo
+field_name: field_yoast_seo
+entity_type: node
+bundle: blog
+label: 'Real-time SEO'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

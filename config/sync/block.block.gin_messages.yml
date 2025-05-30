@@ -1,0 +1,22 @@
+uuid: b730320a-887a-4aff-a880-baad63b0fd86
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gin
+_core:
+  default_config_hash: IbhHTwpy9L4ZzeKZUcA2_NNhXm18_2fIsNAalF_at-Q
+id: gin_messages
+theme: gin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Statusberichten
+  label_display: '0'
+  provider: system
+visibility: {  }

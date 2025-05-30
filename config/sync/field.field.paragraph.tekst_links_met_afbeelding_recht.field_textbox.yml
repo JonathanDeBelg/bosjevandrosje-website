@@ -1,0 +1,21 @@
+uuid: ac5cbd60-e4aa-4d17-be15-20042bf603cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_textbox
+    - paragraphs.paragraphs_type.tekst_links_met_afbeelding_recht
+  module:
+    - text
+id: paragraph.tekst_links_met_afbeelding_recht.field_textbox
+field_name: field_textbox
+entity_type: paragraph
+bundle: tekst_links_met_afbeelding_recht
+label: Tekst
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

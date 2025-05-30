@@ -1,0 +1,10 @@
+uuid: 22a6d8f9-34fc-408e-af3b-4cbcdeae4eb2
+langcode: en
+status: true
+dependencies: {  }
+id: recensie
+label: Recensie
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

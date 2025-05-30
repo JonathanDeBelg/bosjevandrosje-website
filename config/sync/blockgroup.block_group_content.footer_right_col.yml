@@ -1,0 +1,6 @@
+uuid: 58cce8a6-508a-4927-a4fb-005c2565a6f8
+langcode: en
+status: true
+dependencies: {  }
+id: footer_right_col
+label: 'Footer right col'

@@ -1,0 +1,25 @@
+uuid: e0fa4a44-0a86-4c23-a8e0-36a805db641d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:social_media:054861f9-262a-4883-98bc-9301ca3cd387'
+  module:
+    - block_content
+  theme:
+    - ef2_custom
+id: contactgegevens
+theme: ef2_custom
+region: footer
+weight: -7
+provider: null
+plugin: 'block_content:054861f9-262a-4883-98bc-9301ca3cd387'
+settings:
+  id: 'block_content:054861f9-262a-4883-98bc-9301ca3cd387'
+  label: Contactgegevens
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

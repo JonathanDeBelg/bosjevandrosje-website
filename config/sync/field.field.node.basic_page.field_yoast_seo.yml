@@ -1,0 +1,23 @@
+uuid: f73ad846-b8b3-42b0-8add-bae7e7eaf625
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yoast_seo
+    - node.type.basic_page
+  module:
+    - yoast_seo
+_core:
+  default_config_hash: wvaEKcJP4KfEhOUjiRLKq_NV0EL3suybVTL_WVKTbzM
+id: node.basic_page.field_yoast_seo
+field_name: field_yoast_seo
+entity_type: node
+bundle: basic_page
+label: 'Real-time SEO'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

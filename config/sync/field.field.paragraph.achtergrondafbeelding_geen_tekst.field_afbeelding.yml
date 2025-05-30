@@ -1,0 +1,38 @@
+uuid: 155da612-78dc-4307-af6c-cd4624f6292d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_afbeelding
+    - paragraphs.paragraphs_type.achtergrondafbeelding_geen_tekst
+  module:
+    - image
+id: paragraph.achtergrondafbeelding_geen_tekst.field_afbeelding
+field_name: field_afbeelding
+entity_type: paragraph
+bundle: achtergrondafbeelding_geen_tekst
+label: Afbeelding
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 1920x760
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image
