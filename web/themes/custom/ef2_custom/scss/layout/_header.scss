@@ -15,6 +15,22 @@ header {
     }
 }
 
+.header-wrapper {
+    @include section-spacing-padding;
+    @include make-container();
+    @include make-row();
+
+    .field--name-field-tekst-header {
+        @include make-col-ready();
+        @include make-col(10);
+        margin: auto;
+
+        @include media-breakpoint-down(md) {
+            @include make-col(12);
+        }
+    }
+}
+
 header.secondary-header {
     background-size: cover;
     padding-bottom: 50px;

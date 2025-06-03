@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.productenrij
     - paragraphs.paragraphs_type.tekst_links_met_afbeelding_recht
     - paragraphs.paragraphs_type.tekst_rechts_met_achtergrondafbe
+    - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.text_with_image
   module:
     - entity_reference_revisions
@@ -29,6 +30,7 @@ settings:
       tekst_rechts_met_achtergrondafbe: tekst_rechts_met_achtergrondafbe
       text_with_image: text_with_image
       productenrij: productenrij
+      text_image: text_image
     negate: 0
     target_bundles_drag_drop:
       achtergrondafbeelding_geen_tekst:
@@ -61,6 +63,9 @@ settings:
       tekst_zonder_achtergrondkleur:
         weight: 19
         enabled: false
+      text_image:
+        weight: 23
+        enabled: true
       text_with_image:
         weight: 6
         enabled: true

@@ -9,7 +9,54 @@ content_page:
       label: Header
     body_content:
       label: Body
-    aside_content:
-      label: Sidebar
-    banner_content:
-      label: Banner
+    # aside_content:
+    #   label: Sidebar
+    # banner_content:
+    #   label: Banner
+
+home_page:
+  label: Homepagina
+  category: Page
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/layout/page/home-page
+  regions:
+    header_content:
+      label: Header
+    body_content:
+      label: Body
+
+blog_page:
+  label: Blogpagina
+  category: Page
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/layout/page/blog-page
+  regions:
+    header_content:
+      label: Header
+    body_content:
+      label: Body
+
+about_us_page:
+  label: Over ons pagina
+  category: Page
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/layout/page/about-us-page
+  regions:
+    header_content:
+      label: Header
+    body_content:
+      label: Body
+
+tekst_split_layout:
+  label: 'Tekst + Afbeelding / Achtergrond'
+  category: 'Paragraphs'
+  template: 'templates/paragraphs/paragraph--text-with-image'
+  type: layout
+  regions:
+    text:
+      label: 'Tekst'
+    image:
+      label: 'Afbeelding of Achtergrond'

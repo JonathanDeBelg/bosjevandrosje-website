@@ -1,0 +1,21 @@
+uuid: d140de47-3b2f-46c6-8e16-f589c8ad94de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_image_on_the_right
+    - paragraphs.paragraphs_type.tekst_links_met_achtergrondafbee
+id: paragraph.tekst_links_met_achtergrondafbee.field_show_image_on_the_right
+field_name: field_show_image_on_the_right
+entity_type: paragraph
+bundle: tekst_links_met_achtergrondafbee
+label: 'Show image on the right'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

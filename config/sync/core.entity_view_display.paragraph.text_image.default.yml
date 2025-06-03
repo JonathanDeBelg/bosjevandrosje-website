@@ -1,0 +1,70 @@
+uuid: da6e69e8-5ee6-42d1-8dc8-5dfebc9571a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_image.field_show_background_color
+    - field.field.paragraph.text_image.field_show_image_as_background
+    - field.field.paragraph.text_image.field_show_image_on_the_right
+    - field.field.paragraph.text_image.field_textbox
+    - field.field.paragraph.text_image.field_textbox_image
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - ds
+    - svg_image
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: tekst_split_layout
+      library: templates/paragraph--text-with-image
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      text:
+        - field_tekst
+      image:
+        - field_textbox_image
+id: paragraph.text_image.default
+targetEntityType: paragraph
+bundle: text_image
+mode: default
+content:
+  field_show_background_color:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_textbox:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_textbox_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: image
+hidden:
+  field_show_image_as_background: true
+  field_show_image_on_the_right: true
+  search_api_excerpt: true

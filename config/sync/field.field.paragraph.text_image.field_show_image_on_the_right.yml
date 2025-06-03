@@ -1,0 +1,21 @@
+uuid: 4fc098b8-a77e-4858-bfab-4a57aab9b79a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_image_on_the_right
+    - paragraphs.paragraphs_type.text_image
+id: paragraph.text_image.field_show_image_on_the_right
+field_name: field_show_image_on_the_right
+entity_type: paragraph
+bundle: text_image
+label: 'Show image on the right'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

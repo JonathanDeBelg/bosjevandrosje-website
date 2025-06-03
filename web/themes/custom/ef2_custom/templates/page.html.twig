@@ -53,37 +53,37 @@
 {{ page.help }}
 
 <div id="page-wrapper">
-
   {% if page.header %}
     <header>
       {{ page.header }}
     </header>
   {% endif %}
 
-  {% if page.secondary_header %}
+  {# {% if page.secondary_header %}
     <header class="secondary-header">
       <div class="region region-content">
         {{ page.secondary_header }}
       </div>
     </header>
-  {% endif %}
+  {% endif %} #}
 
   <main id="main">
+
     {% if page.content %}
-    <div id="main-content-container" class="container">
-      {{ page.content }}
-    </div>
+      <div id="main-content-container">
+        {{ page.content }}
+      </div>
     {% endif %}
 
-    {% if page.full_width_content %}
+    {# {% if page.full_width_content %}
       {{ page.full_width_content }}
-    {% endif %}
+    {% endif %} #}
 
-    {% if page.secondary_content %}
-    <div id="main-content-container" class="container">
+    {# {% if page.secondary_content %}
+    <div id="main-content-container">
       {{ page.secondary_content }}
     </div>
-    {% endif %}
+    {% endif %} #}
   </main>
 
   <footer>

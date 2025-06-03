@@ -25,7 +25,8 @@ use Symfony\Component\HttpFoundation\Response;
  *   category = @Translation("Bosje van drosje"),
  *   description = @Translation("Sends recurring payment to Mollie."),
  *   cardinality = \Drupal\webform\Plugin\WebformHandlerInterface::CARDINALITY_SINGLE,
- *   results = \Drupal\webform\Plugin\WebformHandlerInterface::RESULTS_PROCESSED,
+ *   
+ * 
  *   submission = \Drupal\webform\Plugin\WebformHandlerInterface::SUBMISSION_REQUIRED,
  * )
  */

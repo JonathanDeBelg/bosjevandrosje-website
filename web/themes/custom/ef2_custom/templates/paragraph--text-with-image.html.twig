@@ -38,7 +38,7 @@
  * @ingroup themeable
  */
 #}
-{%
+{# {%
   set classes = [
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
@@ -54,4 +54,49 @@
       </div>
     {% endblock %}
   </div>
-{% endblock paragraph %}
+{% endblock paragraph %} #}
+
+{% set show_background_color = paragraph.field_show_background_color.value %}
+{% set show_right = paragraph.field_show_image_on_the_right.value %}
+{% set show_as_background = paragraph.field_show_image_as_background.value %}
+{% set image_url = content.field_textbox_image['#item'].entity.uri.value is defined
+  ? file_url(content.field_textbox_image['#item'].entity.uri.value)
+  : null %}
+  
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  show_background_color ? 'row-has-background-color' : null,
+  show_as_background ? 'row-style-background-image' : 'row-style-basic-image',
+  show_right ? 'row-text-right' : 'row-text-left',
+] %}
+
+<div{{ attributes.addClass(classes, ) }}>
+  {% if show_as_background and image_url %}
+    <div class="bg-cover bg-center" style="background-image: url('{{ image_url }}')">
+      <div class="container mx-auto">
+        <div class="col-md-8 md-auto">
+          <div class="text-wrapper bg-white/80 p-6 rounded-md {{ show_right ? 'text-right' : '' }}">
+            {{ content.field_textbox }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="container mx-auto">
+      <div class="col-12">
+        <div class="d-flex row-wrapper items-center">
+          {% if show_right %}
+            <div class="text">{{ content.field_textbox }}</div>
+            <div class="image">{{ content.field_textbox_image }}</div>
+          {% else %}
+            <div class="image">{{ content.field_textbox_image }}</div>
+            <div class="text">{{ content.field_textbox }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

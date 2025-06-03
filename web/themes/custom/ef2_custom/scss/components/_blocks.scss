@@ -1,5 +1,19 @@
 .view-how-does-it-work {
+    @include make-container();
+    @include make-row();
+
     margin: 50px 0;
+
+    > .view-content {
+        margin: auto;
+        @include make-col-ready();
+        @include make-col(10);
+
+        @include media-breakpoint-down(md) {
+            @include make-col(12);
+        }
+    }
+    
     .field--name-node-title {
         margin-bottom: 3.5rem;
         h2 {
@@ -50,8 +64,22 @@
 }
 
 .view-klanttevredenheid {
+    @include make-container();
+    @include make-row();
+
     padding: 50px 0 30px;
     border-bottom: 1px solid #dee2e6;
+
+    > .view-content {
+        margin: auto;
+        @include make-col-ready();
+        @include make-col(10);
+
+        @include media-breakpoint-down(md) {
+            @include make-col(10);
+        }
+    }
+
     .top-row {
         margin-bottom: 3rem;
     }
@@ -140,4 +168,19 @@
       }
     }
   }
+}
+
+.block-webform {
+    @include make-container();
+    @include make-row();
+
+    form {
+        @include make-col-ready();
+        @include make-col(10);
+        margin: auto;
+
+        @include media-breakpoint-down(sm) {
+            @include make-col(12);
+        }
+    }
 }

@@ -1,0 +1,23 @@
+uuid: 676c2f27-0ada-4a36-8e2f-e48d2a3e8237
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_how_does_it_work
+    - node.type.basic_page
+id: node.basic_page.field_show_how_does_it_work
+field_name: field_show_how_does_it_work
+entity_type: node
+bundle: basic_page
+label: "Show 'how does it work'"
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -11,8 +11,8 @@ dependencies:
     - ef2_custom
 id: webform_3
 theme: ef2_custom
-region: secondary_content
-weight: 0
+region: content
+weight: -1
 provider: null
 plugin: webform_block
 settings:
@@ -23,6 +23,7 @@ settings:
   webform_id: contact
   default_data: ''
   redirect: false
+  lazy: false
 visibility:
   request_path:
     id: request_path

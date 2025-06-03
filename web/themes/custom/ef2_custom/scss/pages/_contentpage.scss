@@ -10,10 +10,20 @@
         }
 
         > .field__item {
-            background-color: $color-main;
+            @include make-container();
+            @include make-row();
+            // background-color: $color-main;
             margin: 50px 0;
             
             .paragraph {
+                @include make-col-ready();
+                @include make-col(10);
+                margin: auto;
+
+                @include media-breakpoint-down(md) {
+                    @include make-col(12);
+                }
+
                 display: grid;
                 grid-template-columns: 3fr 7fr;
 
@@ -73,21 +83,22 @@
                 }
             }
 
-            &:nth-child(4n+1) {
+            &:nth-child(4n+1) .paragraph {
                 background-color: #94B6C1;
             }
             
-            &:nth-child(4n+2) {
+            &:nth-child(4n+2) .paragraph {
                 background-color: rgba(67, 69, 79, 0.3);
             }
 
-            &:nth-child(4n+3) {
+            &:nth-child(4n+3) .paragraph {
                 background-color: rgba(227, 179, 208, 0.37);
             }
 
-            &:nth-child(4n+4) {
+            &:nth-child(4n+4) .paragraph {
                 background-color: rgba(223, 215, 213, 0.37);
             }
+
 
             &:last-of-type {
                 margin-bottom: 100px;

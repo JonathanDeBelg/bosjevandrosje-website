@@ -1,0 +1,21 @@
+uuid: d0f03c51-8bb8-4e3a-bb34-203d0e4914d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_image_as_background
+    - paragraphs.paragraphs_type.tekst_links_met_achtergrondafbee
+id: paragraph.tekst_links_met_achtergrondafbee.field_show_image_as_background
+field_name: field_show_image_as_background
+entity_type: paragraph
+bundle: tekst_links_met_achtergrondafbee
+label: 'Show image as background'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

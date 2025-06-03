@@ -1,0 +1,23 @@
+uuid: 8082daa2-b72e-46e6-a0d3-c4427fefcb0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_background_color
+    - paragraphs.paragraphs_type.text_image
+id: paragraph.text_image.field_show_background_color
+field_name: field_show_background_color
+entity_type: paragraph
+bundle: text_image
+label: 'Show background-color'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -5,14 +5,14 @@ dependencies:
   config:
     - views.view.image_overview_with_lightbox
   module:
-    - ctools
+    - node
     - views
   theme:
     - ef2_custom
 id: views_block__image_overview_with_lightbox_block_1
 theme: ef2_custom
-region: secondary_content
-weight: -10
+region: content
+weight: -5
 provider: null
 plugin: 'views_block:image_overview_with_lightbox-block_1'
 settings:

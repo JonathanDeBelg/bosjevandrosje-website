@@ -1,0 +1,19 @@
+uuid: ece91253-ae08-45e5-8ac1-59c0c87e8087
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_coloru
+    - paragraphs.paragraphs_type.tekst_links_met_achtergrondafbee
+id: paragraph.tekst_links_met_achtergrondafbee.field_coloru
+field_name: field_coloru
+entity_type: paragraph
+bundle: tekst_links_met_achtergrondafbee
+label: Colour
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

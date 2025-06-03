@@ -20,21 +20,28 @@
             </div>
         {% endif %}
 
-        {% if content.body_content|render %}
-            <div class="body-wrapper container">
-                <div class="row">
-                    <div class="col-md-8">
-                        {{ content.body_content }}
-                    </div>
+        {% if node.field_show_how_does_it_work.value %}
+        <div class="overview-view-wrapper">
+            {{ drupal_view('how_does_it_work', 'block_1') }}
+        </div>
+        {% endif %}
 
-                    {% if content.aside_content|render %}
-                        <div class="col-lg-3 offset-lg-1 col-md-4">
-                            <aside class="section-aside">
-                                {{ content.aside_content }}
-                            </aside>
-                        </div>
-                    {% endif %}
+{# {{dd(node.field_show_how_does_it_work.value)}} #}
+        {% if content.field_contentblokken|render %}
+            {{ content.field_contentblokken }}
+        {% endif %}
+
+        {% if content.body|render %}
+            <div class="body-content">
+                <div class="body-wrapper">
+                    {{ content.body }}
                 </div>
+            </div>
+        {% endif %}
+
+        {% if node.field_show_reviews.value %}
+            <div class="overview-view-wrapper">
+                {{ drupal_view('klanttevredenheid', 'block_1') }}
             </div>
         {% endif %}
 

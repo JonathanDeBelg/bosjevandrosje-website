@@ -1,0 +1,21 @@
+uuid: 6f82a611-d9be-4abd-8193-d60817f87f85
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_coloru
+field_name: field_coloru
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

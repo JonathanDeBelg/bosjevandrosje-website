@@ -12,10 +12,40 @@ dependencies:
     - field.field.node.over_ons.field_yoast_seo
     - node.type.over_ons
   module:
+    - background_image_formatter
     - bg_image_formatter
-    - metatag
+    - ds
+    - entity_reference_revisions
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: about_us_page
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        classes:
+          layout_class: {  }
+          header_content: {  }
+          body_content: {  }
+        wrappers:
+          header_content: div
+          body_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      header_content:
+        - field_tekst_header
+        - field_achtergrond
+      body_content:
+        - field_contentblokken
+        - field_samengestelde_bosjes
+        - body
 id: node.over_ons.default
 targetEntityType: node
 bundle: over_ons
@@ -26,8 +56,8 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
-    region: content
+    weight: 4
+    region: body_content
   field_achtergrond:
     type: bg_image_formatter
     label: hidden
@@ -48,30 +78,36 @@ content:
         bg_image_path_format: absolute
         bg_image_gradient: ''
     third_party_settings: {  }
+    weight: 1
+    region: header_content
+  field_contentblokken:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: '1'
+    third_party_settings: {  }
     weight: 2
-    region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
+    region: body_content
+  field_samengestelde_bosjes:
+    type: background_image_formatter
+    label: hidden
+    settings:
+      image_style: ''
+      background_image_output_type: inline
+      background_image_selector: ''
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_yoast_seo:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  links:
+    region: body_content
+  field_tekst_header:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
+    region: header_content
 hidden:
-  field_contentblokken: true
-  field_samengestelde_bosjes: true
-  field_tekst_header: true
+  field_meta_tags: true
+  field_yoast_seo: true
+  links: true
   search_api_excerpt: true

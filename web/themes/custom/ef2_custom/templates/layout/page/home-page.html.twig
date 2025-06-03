@@ -1,0 +1,56 @@
+{#
+/**
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+**/
+#}
+
+{% set classes = [
+    'layout',
+    'home-page'
+] %}
+
+{% if content %}
+    <div{{ attributes.addClass(classes) }}>
+        {% if content.header_content|render %}
+            <div class="header-wrapper">
+                {{ content.header_content }}
+            </div>
+        {% endif %}
+
+
+        <div class="overview-view-wrapper">
+            {{ drupal_view('how_does_it_work', 'block_1') }}
+        </div>
+
+
+        {% if content.field_contentbanners|render %}
+            {{ content.field_contentbanners }}
+        {% endif %}
+
+        {{ drupal_view('klanttevredenheid', 'block_1') }}
+
+        {% if content.body|render %}
+            <div class="body-content">
+                <div class="body-wrapper">
+                    {{ content.body }}
+                </div>
+            </div>
+        {% endif %}
+
+        {# {{ drupal_block('block_views_block_klanttevredenheid_block_1') }} #}        
+
+        {# {% if content.banner|render %}
+            <section class="section-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            {{ content.banner_content }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %} #}
+    </div>
+{% endif %}

@@ -1,18 +1,18 @@
 uuid: 4fa01f00-9a19-474a-a669-d9f6b26c3366
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.klanttevredenheid
   module:
-    - ctools
+    - node
     - views
   theme:
     - ef2_custom
 id: views_block__klanttevredenheid_block_1
 theme: ef2_custom
-region: secondary_content
-weight: -9
+region: content
+weight: -4
 provider: null
 plugin: 'views_block:klanttevredenheid-block_1'
 settings:

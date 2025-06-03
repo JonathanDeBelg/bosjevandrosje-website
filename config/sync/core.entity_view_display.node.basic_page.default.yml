@@ -7,14 +7,45 @@ dependencies:
     - field.field.node.basic_page.field_achtergrond
     - field.field.node.basic_page.field_contentblokken
     - field.field.node.basic_page.field_meta_tags
+    - field.field.node.basic_page.field_show_how_does_it_work
+    - field.field.node.basic_page.field_show_reviews
     - field.field.node.basic_page.field_tekst_header
     - field.field.node.basic_page.field_yoast_seo
     - node.type.basic_page
   module:
     - bg_image_formatter
+    - ds
     - entity_reference_revisions
+    - readmore
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: content_page
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        classes:
+          layout_class: {  }
+          header_content: {  }
+          body_content: {  }
+        wrappers:
+          header_content: div
+          body_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      header_content:
+        - field_achtergrond
+        - field_tekst_header
+      body_content:
+        - field_contentblokken
+        - body
 _core:
   default_config_hash: kzMFFE9Lx0HF9JohfEBo3hTkGwWoDPPisAsU49lNz2I
 id: node.basic_page.default
@@ -27,8 +58,8 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
-    region: content
+    weight: 3
+    region: body_content
   field_achtergrond:
     type: bg_image_formatter
     label: hidden
@@ -50,7 +81,7 @@ content:
         bg_image_gradient: ''
     third_party_settings: {  }
     weight: 0
-    region: content
+    region: header_content
   field_contentblokken:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -59,10 +90,24 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 2
-    region: content
+    region: body_content
+  field_tekst_header:
+    type: readmore
+    label: hidden
+    settings:
+      trim_length: 500
+      trim_on_break: true
+      show_readmore: true
+      show_readless: false
+      ellipsis: true
+      wordsafe: false
+    third_party_settings: {  }
+    weight: 1
+    region: header_content
 hidden:
   field_meta_tags: true
-  field_tekst_header: true
+  field_show_how_does_it_work: true
+  field_show_reviews: true
   field_yoast_seo: true
   links: true
   search_api_excerpt: true

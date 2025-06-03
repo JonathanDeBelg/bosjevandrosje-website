@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.tekst_links_met_achtergrondafbee.field_coloru
+    - field.field.paragraph.tekst_links_met_achtergrondafbee.field_show_image_as_background
+    - field.field.paragraph.tekst_links_met_achtergrondafbee.field_show_image_on_the_right
     - field.field.paragraph.tekst_links_met_achtergrondafbee.field_textbox
     - field.field.paragraph.tekst_links_met_achtergrondafbee.field_textbox_image
     - image.style.thumbnail
@@ -16,6 +19,28 @@ targetEntityType: paragraph
 bundle: tekst_links_met_achtergrondafbee
 mode: default
 content:
+  field_coloru:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_show_image_as_background:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_image_on_the_right:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_textbox:
     type: text_textarea
     weight: 0

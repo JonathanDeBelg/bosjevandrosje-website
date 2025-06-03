@@ -1,0 +1,102 @@
+@use "sass:map";
+
+$paragraph-max-width: map.get($grid-breakpoints, xl);
+
+.paragraph--type--text-image,
+.view-paragraphs-full-width,
+.view-id-full_width_content {
+  @include section-spacing-padding;
+
+  .paragraph .paragraph,
+  .paragraph-wrapper {
+    max-width: $paragraph-max-width;
+    width: 100%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    align-items: center;
+    padding: 50px 20px;
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
+
+    &.bg-cover {
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &.row-text-left {
+    background-color: #edefee;
+  }
+
+  &.row-text-right {
+    background-color: #e7c2d6;
+  }
+
+  .row-wrapper {
+    gap: 50px;
+  }
+
+  .text-wrapper {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: left;
+
+    &.text-right {
+      text-align: right;
+    }
+  }
+
+  // Contextual backgrounds by paragraph type
+  .views-row.row-text-with-image,
+  .paragraph--type--text-with-image {
+    background-color: $color-background;
+  }
+
+  .views-row.row-tekst-links-met-afbeelding-recht,
+  .paragraph--type--tekst-links-met-afbeelding-recht {
+    background-color: #EDEFEE;
+  }
+
+  .views-row.row-tekst-rechts-met-achtergrondafbe {
+    background-size: cover;
+
+    @include media-breakpoint-up(md) {
+      padding: 100px 0;
+    }
+  }
+
+  // Text field spacing
+  .field--name-field-textbox {
+    margin: auto;
+  }
+}
+
+// Readmore styling
+.readmore-summary,
+.readmore-text {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-top: 35px;
+
+  p {
+    text-align: left;
+  }
+
+  a {
+    border: 1px solid $color-white;
+    border-radius: 12px;
+    padding: 15px;
+    color: $color-white;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($color-white, 10%);
+    }
+  }
+}

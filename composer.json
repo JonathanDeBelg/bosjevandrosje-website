@@ -85,6 +85,7 @@
         "drupal/starrating": "^4.1@alpha",
         "drupal/svg_image": "^3.2",
         "drupal/token": "^1.15",
+        "drupal/twig_tweak": "^3.4",
         "drupal/video_embed_field": "^2.5",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/views_row_insert": "^2.1",

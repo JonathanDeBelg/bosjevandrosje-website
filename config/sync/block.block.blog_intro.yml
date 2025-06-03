@@ -3,7 +3,7 @@ langcode: nl
 status: true
 dependencies:
   module:
-    - ctools
+    - node
     - system
   theme:
     - ef2_custom
@@ -11,7 +11,7 @@ _core:
   default_config_hash: lB3MIEq7qY-Yc1n7SFoI6uVe1oHJJv5MtPagbWYBhfU
 id: blog_intro
 theme: ef2_custom
-region: secondary_content
+region: content
 weight: -8
 provider: null
 plugin: system_main_block

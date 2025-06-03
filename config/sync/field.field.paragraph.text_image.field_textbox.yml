@@ -1,0 +1,24 @@
+uuid: b184affc-457d-4b03-9126-cf11725009dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_textbox
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - text
+id: paragraph.text_image.field_textbox
+field_name: field_textbox
+entity_type: paragraph
+bundle: text_image
+label: Tekst
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

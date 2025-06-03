@@ -5,10 +5,27 @@
         }
     }
 
-    .block-system-main-block .field--name-body {
-        column-count: 2;
-        column-gap: 50px;
-        margin-top: 50px;
-        margin-bottom: 50px;
+    .body-content {
+        .field--name-body {
+            column-count: 2;
+            column-gap: 50px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .header-wrapper {
+        @include make-container();
+        @include make-row();
+
+        .field--name-field-tekst-header {
+            @include make-col-ready();
+            @include make-col(10);
+            margin: auto;
+
+            @include media-breakpoint-down(md) {
+                @include make-col(12);
+            }
+        }
     }
 }

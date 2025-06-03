@@ -1,0 +1,48 @@
+{#
+/**
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+**/
+#}
+
+{% set classes = [
+    'layout',
+    'about-us-page'
+] %}
+
+{% if content %}
+    <div{{ attributes.addClass(classes) }}>
+        {% if content.header_content|render %}
+            <div class="header-wrapper">
+                {{ content.header_content }}
+            </div>
+        {% endif %}
+
+        {{ drupal_view('results', 'block_1') }}
+
+        {# {% if content.field_contentblokken|render %}
+            {{ content.field_contentblokken }}
+        {% endif %} #}
+
+        {% if content.body|render %}
+            <div class="body-content">
+                <div class="body-wrapper">
+                    {{ content.body }}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if content.banner|render %}
+            <section class="section-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            {{ content.banner_content }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    </div>
+{% endif %}

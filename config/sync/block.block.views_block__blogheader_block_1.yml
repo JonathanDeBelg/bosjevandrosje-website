@@ -1,11 +1,11 @@
 uuid: 0e797017-f910-4592-9fbb-942237e10311
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.blogheader
   module:
-    - ctools
+    - node
     - views
   theme:
     - ef2_custom

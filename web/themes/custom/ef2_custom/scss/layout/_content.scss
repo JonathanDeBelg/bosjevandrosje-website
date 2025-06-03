@@ -13,6 +13,19 @@ main {}
     @include ckeditor();
 }
 
-.field--name-body {
+.body-content {
     @include ckeditor();
+
+    @include make-container();
+    @include make-row();
+
+    .body-wrapper {
+        @include make-col-ready();
+        @include make-col(10);
+        margin: auto;
+
+        @include media-breakpoint-down(md) {
+            @include make-col(12);
+        }
+    }
 }

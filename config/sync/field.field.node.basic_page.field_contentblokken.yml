@@ -6,7 +6,9 @@ dependencies:
     - field.storage.node.field_contentblokken
     - node.type.basic_page
     - paragraphs.paragraphs_type.contentblok_afbeelding_linksbove
+    - paragraphs.paragraphs_type.tekst_links_met_achtergrondafbee
     - paragraphs.paragraphs_type.tekst_links_met_afbeelding_recht
+    - paragraphs.paragraphs_type.text_image
   module:
     - entity_reference_revisions
 id: node.basic_page.field_contentblokken
@@ -25,11 +27,22 @@ settings:
     target_bundles:
       contentblok_afbeelding_linksbove: contentblok_afbeelding_linksbove
       tekst_links_met_afbeelding_recht: tekst_links_met_afbeelding_recht
+      tekst_links_met_achtergrondafbee: tekst_links_met_achtergrondafbee
+      text_image: text_image
     negate: 0
     target_bundles_drag_drop:
+      achtergrondafbeelding_geen_tekst:
+        weight: 12
+        enabled: false
       contentblok_afbeelding_linksbove:
         weight: 5
         enabled: true
+      productenaanbod:
+        weight: 14
+        enabled: false
+      productenrij:
+        weight: 15
+        enabled: false
       recensie:
         weight: 9
         enabled: false
@@ -38,13 +51,19 @@ settings:
         enabled: false
       tekst_links_met_achtergrondafbee:
         weight: 11
-        enabled: false
+        enabled: true
       tekst_links_met_afbeelding_recht:
         weight: 6
         enabled: true
       tekst_rechts_met_achtergrondafbe:
         weight: 7
         enabled: false
+      tekst_zonder_achtergrondkleur:
+        weight: 21
+        enabled: false
+      text_image:
+        weight: 23
+        enabled: true
       text_with_image:
         weight: 8
         enabled: false
