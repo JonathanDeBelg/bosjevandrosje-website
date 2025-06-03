@@ -37,8 +37,8 @@
              }
 
             &:nth-child(odd) {
-                padding-bottom: 30px;
-
+                padding-top: 30px;
+                
                 .field--name-field-textbox-image {
                     img {
                         margin-top: -30px;
@@ -80,6 +80,7 @@
                 .field--name-field-textbox {
                     order: 1;
                     padding-left: 30px;
+                    padding-top: 30px;
                 }
             }
 

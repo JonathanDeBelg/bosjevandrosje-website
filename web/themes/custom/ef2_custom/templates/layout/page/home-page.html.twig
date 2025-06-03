@@ -16,6 +16,14 @@
         {% if content.header_content|render %}
             <div class="header-container">
                 <div class="header-wrapper">
+                    {% if site_logo %}
+                        <div class="site-logo">
+                            <a href="{{ path('<front>') }}" title="Home" rel="home">
+                                <img src="{{ site_logo }}" alt="Home" />
+                            </a>
+                        </div>
+                    {% endif %}
+
                     {{ content.header_content }}
                 </div>
             </div>
