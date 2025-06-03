@@ -1,0 +1,28 @@
+{#
+/**
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+**/
+#}
+
+{% set classes = [
+    'layout',
+    'media-video-embed-youtube',
+    'section-spacing-margin'
+] %}
+
+{% if content %}
+    <section{{ attributes.addClass(classes) }}>
+        <div class="row">
+            <div class="col-12">
+                {% if content.field_media_oembed_video %}
+                    <ef2-youtube-wrapper
+                        iframe-src="{{ content.field_media_oembed_video.0['#context']['value'] }}"
+                        thumbnail-src="{{ video_thumbnail_url }}"
+                    ></ef2-youtube-wrapper>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endif %}

@@ -1,0 +1,37 @@
+uuid: f438cbc2-19ef-4432-8862-bf5700b3fbb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.video_youtube.field_media_video_embed_field
+    - image.style.medium
+    - media.type.video_youtube
+  module:
+    - svg_image
+id: media.video_youtube.media_library
+targetEntityType: media
+bundle: video_youtube
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_video_embed_field: true
+  name: true
+  search_api_excerpt: true
+  uid: true

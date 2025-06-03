@@ -1,23 +1,13 @@
-import Vue from 'vue';
+import { createApp } from "vue";
 
 window.axios = require('axios');
 window.lodash = require('lodash');
 
 import DeliveryDateComponent from './DeliveryDateComponent';
+import YoutubeWrapper from './YoutubeWrapper'
 
-const moment = require('moment')
 require('moment/locale/nl')
 
-Vue.use(require('vue-moment'), {
-  moment
-})
-
-new Vue({
-    'el': '#page-wrapper',
-    components: {
-      'delivery-date': DeliveryDateComponent,
-    },
-    comments: true,
-});
-
-
+const app = createApp({})
+app.component('delivery-date', DeliveryDateComponent);
+app.component('ef2-youtube-wrapper', YoutubeWrapper);

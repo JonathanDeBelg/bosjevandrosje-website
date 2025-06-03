@@ -24,17 +24,19 @@
                     @include make-col(12);
                 }
 
-                display: grid;
-                grid-template-columns: 3fr 7fr;
+                &.paragraph--type--contentblok-afbeelding-linksbove {
+                    display: grid;
+                    grid-template-columns: 3fr 7fr;
 
-                @include media-breakpoint-down(md) {
-                    grid-template-columns: 4fr 6fr;
+                    @include media-breakpoint-down(md) {
+                        grid-template-columns: 4fr 6fr;
+                    }
+                    
+                    @include media-breakpoint-down(sm) {
+                        grid-template-columns: 1fr;
+                    }
                 }
-                
-                @include media-breakpoint-down(sm) {
-                    grid-template-columns: 1fr;
-                }
-             }
+            }
 
             &:nth-child(odd) {
                 padding-top: 30px;
@@ -84,19 +86,19 @@
                 }
             }
 
-            &:nth-child(4n+1) .paragraph {
+            &:nth-child(4n+1) .paragraph--type--contentblok-afbeelding-linksbove {
                 background-color: #94B6C1;
             }
             
-            &:nth-child(4n+2) .paragraph {
+            &:nth-child(4n+2) .paragraph--type--contentblok-afbeelding-linksbove {
                 background-color: rgba(67, 69, 79, 0.3);
             }
 
-            &:nth-child(4n+3) .paragraph {
+            &:nth-child(4n+3) .paragraph--type--contentblok-afbeelding-linksbove {
                 background-color: rgba(227, 179, 208, 0.37);
             }
 
-            &:nth-child(4n+4) .paragraph {
+            &:nth-child(4n+4) .paragraph--type--contentblok-afbeelding-linksbove {
                 background-color: rgba(223, 215, 213, 0.37);
             }
 

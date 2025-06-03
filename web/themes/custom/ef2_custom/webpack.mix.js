@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const webpack = require('webpack');
 
 require('laravel-mix-polyfill');
 /*
@@ -14,7 +15,7 @@ require('laravel-mix-polyfill');
 
 mix.options({ processCssUrls: false });
 
-mix.js('js/vue/app.js', 'js').vue({version: 2})
+mix.js('js/vue/app.js', 'js').vue({version: 3})
     .js('js/theme/*.js', 'js/bundle.js')
     .sass('scss/main.scss', 'css')
     .sass('scss/editor.scss', 'css')

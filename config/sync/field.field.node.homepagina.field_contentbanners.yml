@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.tekst_rechts_met_achtergrondafbe
     - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.text_with_image
+    - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
 id: node.homepagina.field_contentbanners
@@ -31,6 +32,7 @@ settings:
       text_with_image: text_with_image
       productenrij: productenrij
       text_image: text_image
+      video: video
     negate: 0
     target_bundles_drag_drop:
       achtergrondafbeelding_geen_tekst:
@@ -68,5 +70,8 @@ settings:
         enabled: true
       text_with_image:
         weight: 6
+        enabled: true
+      video:
+        weight: 26
         enabled: true
 field_type: entity_reference_revisions

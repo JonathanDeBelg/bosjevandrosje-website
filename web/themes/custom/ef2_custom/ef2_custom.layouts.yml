@@ -60,3 +60,15 @@ tekst_split_layout:
       label: 'Tekst'
     image:
       label: 'Afbeelding of Achtergrond'
+
+media_video_embed_layout:
+  label: Video embed field (YouTube)
+  category: Media
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/layout/media/youtube-video
+  regions:
+    hidden_fields:
+      label: Verborgen velden
+    body_wrapper:
+      label: Video

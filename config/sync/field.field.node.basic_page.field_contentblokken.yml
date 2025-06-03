@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.tekst_links_met_achtergrondafbee
     - paragraphs.paragraphs_type.tekst_links_met_afbeelding_recht
     - paragraphs.paragraphs_type.text_image
+    - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
 id: node.basic_page.field_contentblokken
@@ -29,6 +30,7 @@ settings:
       tekst_links_met_afbeelding_recht: tekst_links_met_afbeelding_recht
       tekst_links_met_achtergrondafbee: tekst_links_met_achtergrondafbee
       text_image: text_image
+      video: video
     negate: 0
     target_bundles_drag_drop:
       achtergrondafbeelding_geen_tekst:
@@ -67,4 +69,7 @@ settings:
       text_with_image:
         weight: 8
         enabled: false
+      video:
+        weight: 26
+        enabled: true
 field_type: entity_reference_revisions

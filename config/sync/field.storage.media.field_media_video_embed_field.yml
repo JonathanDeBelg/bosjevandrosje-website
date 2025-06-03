@@ -1,13 +1,13 @@
-uuid: 534abdf8-f30d-4b99-acf3-686283f43cca
+uuid: dc21ddac-5bab-4f4d-8323-510783f8c4d3
 langcode: en
 status: true
 dependencies:
   module:
-    - paragraphs
+    - media
     - video_embed_field
-id: paragraph.field_video
-field_name: field_video
-entity_type: paragraph
+id: media.field_media_video_embed_field
+field_name: field_media_video_embed_field
+entity_type: media
 type: video_embed_field
 settings: {  }
 module: video_embed_field

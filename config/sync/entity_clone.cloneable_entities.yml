@@ -58,3 +58,5 @@ cloneable_entities:
   - base_field_override
   - klaro_app
   - klaro_purpose
+  - media_type
+  - media
