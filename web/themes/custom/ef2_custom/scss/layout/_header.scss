@@ -15,18 +15,21 @@ header {
     }
 }
 
-.header-wrapper {
-    @include section-spacing-padding;
-    @include make-container();
-    @include make-row();
+.header-container {
+    .header-wrapper {
+        @include make-container();
+        @include make-row();
 
-    .field--name-field-tekst-header {
-        @include make-col-ready();
-        @include make-col(10);
-        margin: auto;
+        .field--name-field-tekst-header {
+            @include section-spacing-padding;
+            
+            @include make-col-ready();
+            @include make-col(10);
+            margin: auto;
 
-        @include media-breakpoint-down(md) {
-            @include make-col(12);
+            @include media-breakpoint-down(md) {
+                @include make-col(12);
+            }
         }
     }
 }

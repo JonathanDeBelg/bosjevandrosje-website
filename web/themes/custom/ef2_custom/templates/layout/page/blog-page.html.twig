@@ -14,8 +14,10 @@
 {% if content %}
     <div{{ attributes.addClass(classes) }}>
         {% if content.header_content|render %}
-            <div class="header-wrapper">
-                {{ content.header_content }}
+            <div class="header-container">
+                <div class="header-wrapper">
+                    {{ content.header_content }}
+                </div>
             </div>
         {% endif %}
 

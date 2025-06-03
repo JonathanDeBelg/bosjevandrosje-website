@@ -39,7 +39,7 @@ $paragraph-max-width: map.get($grid-breakpoints, xl);
 
   .row-wrapper {
     display: grid;
-    grid-template-columns: 1fr1 fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
 
     @include media-breakpoint-down(md) {
