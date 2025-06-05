@@ -25,4 +25,12 @@ mix.js('js/vue/app.js', 'js').vue({version: 3})
         enabled: true,
         useBuiltIns: "entry",
         targets: {"ie": 11}
+    }).webpackConfig({
+        plugins: [
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery',
+                'window.jQuery': 'jquery'
+                })    
+        ]
     });

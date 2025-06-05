@@ -1,0 +1,60 @@
+.paragraph--type--veelgestelde-vragen {
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+
+  // FAQ items inside the parent
+  .paragraph--type--question {
+    margin-bottom: 1.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    padding: 1.25rem 1rem;
+
+    .faq-title {
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s;
+      color: green;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      &::before {
+        content: '▶';
+        font-size: 0.8em;
+        margin-left: 0.5em;
+        transition: transform 0.2s;
+        display: inline-block;
+      }
+    }
+
+    &.is-open .faq-title::before {
+        transform: rotate(90deg);
+      }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s;
+      pointer-events: none;
+    }
+
+    &.is-open {
+      .faq-content {
+        max-height: 500px; // adjust as needed
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}

@@ -14,15 +14,12 @@
 
 {% if content %}
     <section{{ attributes.addClass(classes) }}>
-        <div class="row">
-            <div class="col-12">
-                {% if content.field_media_oembed_video %}
-                    <ef2-youtube-wrapper
-                        iframe-src="{{ content.field_media_oembed_video.0['#context']['value'] }}"
-                        thumbnail-src="{{ video_thumbnail_url }}"
-                    ></ef2-youtube-wrapper>
-                {% endif %}
-            </div>
-        </div>
+    {{dd(content.field_media_video_embed_field)}}
+        {% if content.field_media_video_embed_field %}
+            <ef2-youtube-wrapper
+                iframe-src="{{ content.field_media_video_embed_field.0['#context']['value'] }}"
+                thumbnail-src="{{ video_thumbnail_url }}"
+            ></ef2-youtube-wrapper>
+        {% endif %}
     </section>
 {% endif %}

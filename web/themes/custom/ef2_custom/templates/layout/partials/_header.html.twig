@@ -1,0 +1,20 @@
+<div class="header-container">
+    <div class="header-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    {% if site_logo and show_logo %}
+                        <div class="site-logo">
+                            <a href="{{ path('<front>') }}" title="Home" rel="home">
+                            <img src="{{ site_logo }}" alt="Home" />
+                            </a>
+                        </div>
+                    {% endif %}
+                    
+                    {{ header_content }}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

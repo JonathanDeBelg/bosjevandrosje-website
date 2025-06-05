@@ -15,11 +15,10 @@
 {% if content %}
     <div{{ attributes.addClass(classes) }}>
         {% if content.header_content|render %}
-            <div class="header-container">
-                <div class="header-wrapper">
-                    {{ content.header_content }}
-                </div>
-            </div>
+            {{ include('@ef2_custom/layout/partials/_header.html.twig', {
+                'header_content': content.header_content,
+                'show_logo': false
+            }) }}
         {% endif %}
 
         {% if node.field_show_how_does_it_work.value %}

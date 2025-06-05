@@ -61,6 +61,37 @@ tekst_split_layout:
     image:
       label: 'Afbeelding of Achtergrond'
 
+paragraph_faqs:
+  label: 'Veelgestelde vragen'
+  category: 'Paragraphs'
+  template: 'templates/paragraphs/paragraph--faqs'
+  type: layout
+  regions:
+    text:
+      label: 'Titel'
+    content:
+      label: 'Content'
+
+paragraph_faq:
+  label: 'Vraag en antwoord'
+  category: 'Paragraphs'
+  template: 'templates/paragraphs/paragraph--faq'
+  type: layout
+  regions:
+    text:
+      label: 'Vraag'
+    content:
+      label: 'Content'
+
+paragraph_vide:
+  label: 'Video'
+  category: 'Paragraphs'
+  template: 'templates/paragraphs/paragraph--video'
+  type: layout
+  regions:
+    content:
+      label: 'Content'
+
 media_video_embed_layout:
   label: Video embed field (YouTube)
   category: Media

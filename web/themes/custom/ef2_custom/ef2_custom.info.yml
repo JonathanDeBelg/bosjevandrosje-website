@@ -17,3 +17,6 @@ regions:
   secondary_content: 'Secundainre hoofd inhoud'      
   footer: 'Footer'
   copyright: 'Copyright'
+twig:
+  namespace:
+    ef2_custom: templates

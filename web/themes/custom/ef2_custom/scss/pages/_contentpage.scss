@@ -15,7 +15,8 @@
             // background-color: $color-main;
             margin: 50px 0;
             
-            .paragraph {
+            .paragraph--type--contentblok-afbeelding-linksbove,
+            .paragraph--type--text-with-image {
                 @include make-col-ready();
                 @include make-col(10);
                 margin: auto;
@@ -23,8 +24,9 @@
                 @include media-breakpoint-down(md) {
                     @include make-col(12);
                 }
+            }
 
-                &.paragraph--type--contentblok-afbeelding-linksbove {
+            .paragraph--type--contentblok-afbeelding-linksbove {
                     display: grid;
                     grid-template-columns: 3fr 7fr;
 
@@ -35,7 +37,6 @@
                     @include media-breakpoint-down(sm) {
                         grid-template-columns: 1fr;
                     }
-                }
             }
 
             &:nth-child(odd) {
