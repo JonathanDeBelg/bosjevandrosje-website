@@ -1,0 +1,26 @@
+uuid: fac528b3-da62-4ff9-944c-6a35cf12d34f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_answer
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.question
+  module:
+    - text
+id: paragraph.question.field_answer
+field_name: field_answer
+entity_type: paragraph
+bundle: question
+label: Antwoord
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - full_html
+field_type: text_with_summary

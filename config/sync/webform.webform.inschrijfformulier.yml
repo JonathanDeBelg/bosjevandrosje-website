@@ -92,6 +92,8 @@ elements: |-
             '{"value": "Opheusden", "date": "thursday"}': Opheusden
             '{"value": "Kesteren", "date": "thursday"}': Kesteren
             '{"value": "Lienden", "date": "thursday"}': Lienden
+            '{"value": "Ingen", "date": "thursday"}': Ingen
+            '{"value": "Wijk bij Duurstede", "date": "friday"}': 'Wijk bij Duurstede'
           '#required': true
         postcode:
           '#type': textfield

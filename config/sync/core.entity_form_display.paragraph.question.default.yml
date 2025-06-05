@@ -1,0 +1,53 @@
+uuid: 2f2d54b9-a19f-4dbc-b901-5cbca289603c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.question.field_answer
+    - field.field.paragraph.question.field_question
+    - field.field.paragraph.question.field_toggle_open
+    - field.field.paragraph.question.field_video_youtube
+    - paragraphs.paragraphs_type.question
+  module:
+    - media_library
+    - text
+id: paragraph.question.default
+targetEntityType: paragraph
+bundle: question
+mode: default
+content:
+  field_answer:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_question:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_toggle_open:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_video_youtube:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

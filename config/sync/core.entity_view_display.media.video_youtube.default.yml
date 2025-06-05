@@ -6,12 +6,62 @@ dependencies:
     - field.field.media.video_youtube.field_media_video_embed_field
     - media.type.video_youtube
   module:
+    - background_image_formatter
+    - ds
+    - user
     - video_embed_field
+third_party_settings:
+  ds:
+    layout:
+      id: media_video_embed_layout
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        classes:
+          layout_class: {  }
+          hidden_fields: {  }
+          body_wrapper: {  }
+        wrappers:
+          hidden_fields: div
+          body_wrapper: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      hidden_fields:
+        - uid
+        - name
+        - thumbnail
+        - created
+      body_wrapper:
+        - field_media_video_embed_field
 id: media.video_youtube.default
 targetEntityType: media
 bundle: video_youtube
 mode: default
 content:
+  created:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings: {  }
+    weight: 3
+    region: hidden_fields
   field_media_video_embed_field:
     type: video_embed_field_video
     label: visually_hidden
@@ -21,11 +71,32 @@ content:
       width: 854
       height: 480
     third_party_settings: {  }
+    weight: 4
+    region: body_wrapper
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: hidden_fields
+  thumbnail:
+    type: background_image_formatter
+    label: above
+    settings:
+      image_style: ''
+      background_image_output_type: inline
+      background_image_selector: ''
+    third_party_settings: {  }
+    weight: 2
+    region: hidden_fields
+  uid:
+    type: author
+    label: above
+    settings: {  }
+    third_party_settings: {  }
     weight: 0
-    region: content
+    region: hidden_fields
 hidden:
-  created: true
-  name: true
   search_api_excerpt: true
-  thumbnail: true
-  uid: true

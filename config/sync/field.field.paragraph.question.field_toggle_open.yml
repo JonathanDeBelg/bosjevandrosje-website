@@ -1,0 +1,21 @@
+uuid: 86f365a9-3ca2-4ff2-857d-aaba7807c056
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_toggle_open
+    - paragraphs.paragraphs_type.question
+id: paragraph.question.field_toggle_open
+field_name: field_toggle_open
+entity_type: paragraph
+bundle: question
+label: 'Toggle open'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

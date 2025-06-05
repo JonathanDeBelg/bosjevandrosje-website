@@ -1,0 +1,10 @@
+uuid: 648e48aa-ed46-4edc-9bd7-ae9751f4f9c8
+langcode: en
+status: true
+dependencies: {  }
+id: veelgestelde_vragen
+label: 'Veelgestelde vragen'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

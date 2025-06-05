@@ -1,21 +1,19 @@
-uuid: c74005df-adae-45b3-af2d-d4cf08d2dfbb
+uuid: e508609a-3bdb-4721-8b59-0eaa51838a7f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_contentblokken
-    - node.type.basic_page
-    - paragraphs.paragraphs_type.contentblok_afbeelding_linksbove
-    - paragraphs.paragraphs_type.text_image
+    - field.storage.paragraph.field_vragen
+    - paragraphs.paragraphs_type.question
     - paragraphs.paragraphs_type.veelgestelde_vragen
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
-id: node.basic_page.field_contentblokken
-field_name: field_contentblokken
-entity_type: node
-bundle: basic_page
-label: Contentblokken
+id: paragraph.veelgestelde_vragen.field_vragen
+field_name: field_vragen
+entity_type: paragraph
+bundle: veelgestelde_vragen
+label: Vragen
 description: ''
 required: false
 translatable: false
@@ -25,55 +23,53 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      contentblok_afbeelding_linksbove: contentblok_afbeelding_linksbove
-      text_image: text_image
+      question: question
       video: video
-      veelgestelde_vragen: veelgestelde_vragen
     negate: 0
     target_bundles_drag_drop:
       achtergrondafbeelding_geen_tekst:
-        weight: 12
+        weight: 16
         enabled: false
       contentblok_afbeelding_linksbove:
-        weight: 5
-        enabled: true
+        weight: 17
+        enabled: false
       productenaanbod:
-        weight: 14
+        weight: 18
         enabled: false
       productenrij:
-        weight: 15
+        weight: 19
         enabled: false
       question:
         weight: 20
-        enabled: false
+        enabled: true
       recensie:
-        weight: 9
-        enabled: false
-      resultaat:
-        weight: 10
-        enabled: false
-      tekst_links_met_achtergrondafbee:
-        weight: 11
-        enabled: false
-      tekst_links_met_afbeelding_recht:
-        weight: 6
-        enabled: false
-      tekst_rechts_met_achtergrondafbe:
-        weight: 7
-        enabled: false
-      tekst_zonder_achtergrondkleur:
         weight: 21
         enabled: false
-      text_image:
+      resultaat:
+        weight: 22
+        enabled: false
+      tekst_links_met_achtergrondafbee:
         weight: 23
-        enabled: true
+        enabled: false
+      tekst_links_met_afbeelding_recht:
+        weight: 24
+        enabled: false
+      tekst_rechts_met_achtergrondafbe:
+        weight: 25
+        enabled: false
+      tekst_zonder_achtergrondkleur:
+        weight: 26
+        enabled: false
+      text_image:
+        weight: 27
+        enabled: false
       text_with_image:
-        weight: 8
+        weight: 28
         enabled: false
       veelgestelde_vragen:
         weight: 29
-        enabled: true
+        enabled: false
       video:
-        weight: 26
+        weight: 30
         enabled: true
 field_type: entity_reference_revisions

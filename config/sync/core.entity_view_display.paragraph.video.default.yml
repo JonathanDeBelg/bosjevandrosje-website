@@ -5,6 +5,26 @@ dependencies:
   config:
     - field.field.paragraph.video.field_video_youtube
     - paragraphs.paragraphs_type.video
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      content:
+        - field_video_youtube
 id: paragraph.video.default
 targetEntityType: paragraph
 bundle: video
