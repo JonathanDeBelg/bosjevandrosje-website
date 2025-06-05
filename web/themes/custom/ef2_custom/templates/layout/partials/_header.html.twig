@@ -1,3 +1,7 @@
+{# Try to extract the background image URL from the field_achtergrond render array #}
+{# {% set bg_url = header_content.field_achtergrond.entity.fileuri ?? null %}
+{{dd(header_content.field_achtergrond|file_url)}}
+ {{ bg_url ? ' has-background' : ' has-no-background' }}" {% if bg_url %}style="background-image: url('{{ bg_url }}');"{% endif %} #}
 <div class="header-container">
     <div class="header-wrapper">
         <div class="container">
@@ -6,14 +10,13 @@
                     {% if site_logo and show_logo %}
                         <div class="site-logo">
                             <a href="{{ path('<front>') }}" title="Home" rel="home">
-                            <img src="{{ site_logo }}" alt="Home" />
+                                <img src="{{ site_logo }}" alt="Home" />
                             </a>
                         </div>
                     {% endif %}
                     
-                    {{ header_content }}
+                    {{ header_content.field_tekst_header }}
                 </div>
-            </div>
             </div>
         </div>
     </div>

@@ -14,7 +14,6 @@
 
 {% if content %}
     <section{{ attributes.addClass(classes) }}>
-    {{dd(content.field_media_video_embed_field)}}
         {% if content.field_media_video_embed_field %}
             <ef2-youtube-wrapper
                 iframe-src="{{ content.field_media_video_embed_field.0['#context']['value'] }}"

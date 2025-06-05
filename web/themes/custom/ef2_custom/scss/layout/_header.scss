@@ -16,6 +16,8 @@ header {
 }
 
 .header-container {
+    background-size: cover;
+
     .header-wrapper {
         @include make-container();
         @include make-row();
@@ -30,34 +32,26 @@ header {
             @include media-breakpoint-down(md) {
                 @include make-col(12);
             }
-        }
-    }
-}
 
-header.secondary-header {
-    background-size: cover;
-    padding-bottom: 50px;
-    padding-top: 30px;
-    min-height: 375px;
-    .block-system-branding-block {
-        margin-bottom: 20px;
-        .site-logo img {
-            max-width: 150px;
-            height: 150px;
-        }
-    }
-    .views-field-field-tekst-header {
-        max-width: 500px;
-        width: 100%;
-        h1,
-        p {
-            color: white;
-        }
-        p {
-            font-size: 1.2rem;
-        }
-        a {
-            font-weight: $font-weight-bold
+            .block-system-branding-block {
+                margin-bottom: 20px;
+                .site-logo img {
+                    max-width: 150px;
+                    height: 150px;
+                }
+            }
+
+            h1,
+            p {
+                color: white;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+            a {
+                font-weight: $font-weight-bold
+            }
+
         }
     }
 }

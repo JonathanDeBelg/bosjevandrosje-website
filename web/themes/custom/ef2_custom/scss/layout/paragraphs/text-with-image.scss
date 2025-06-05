@@ -41,6 +41,7 @@ $paragraph-max-width: map.get($grid-breakpoints, xl);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
+    align-items: center;
 
     @include media-breakpoint-down(md) {
       grid-template-columns: 1fr;
