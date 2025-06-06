@@ -3,6 +3,7 @@
   background: #f9f9f9;
   border-radius: 1rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  @include section-spacing-margin();
 
   h3 {
     font-size: 2rem;

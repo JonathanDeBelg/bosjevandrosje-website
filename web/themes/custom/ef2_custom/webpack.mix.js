@@ -33,4 +33,18 @@ mix.js('js/vue/app.js', 'js').vue({version: 3})
                 'window.jQuery': 'jquery'
                 })    
         ]
+    }).webpackConfig({
+        resolve: {
+            alias: {
+                lodash: 'lodash-es'
+            }
+        },
+        plugins: [
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery',
+                'window.jQuery': 'jquery'
+                // ❗ Do NOT add '_' here — let Drupal own `_`
+            })
+        ]
     });
